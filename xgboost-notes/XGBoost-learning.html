@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>XGBoost-learing</title>
+  <meta name="description" content="XGBoost-learing" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="XGBoost-learing" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="XGBoost-learing" />
+  
+  
+  
+
+<meta name="author" content="高文欣" />
+
+
+<meta name="date" content="2020-02-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path=""><a href="#序言"><i class="fa fa-check"></i>序言</a></li>
+<li class="chapter" data-level="1" data-path=""><a href="#xgboost"><i class="fa fa-check"></i><b>1</b> XGBoost</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#定义"><i class="fa fa-check"></i><b>1.1</b> 定义</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#特点"><i class="fa fa-check"></i><b>1.2</b> 特点</a><ul>
+<li class="chapter" data-level="1.2.1" data-path=""><a href="#回归树综述"><i class="fa fa-check"></i><b>1.2.1</b> 回归树综述</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#正则化目标函数"><i class="fa fa-check"></i><b>1.3</b> 正则化目标函数</a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#xgboost目标函数"><i class="fa fa-check"></i><b>1.4</b> XGBoost目标函数</a><ul>
+<li class="chapter" data-level="1.4.1" data-path=""><a href="#常见的正则优化函数"><i class="fa fa-check"></i><b>1.4.1</b> 常见的正则优化函数</a></li>
+<li class="chapter" data-level="1.4.2" data-path=""><a href="#损失函数分类"><i class="fa fa-check"></i><b>1.4.2</b> 损失函数分类</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path=""><a href="#贪心算法"><i class="fa fa-check"></i><b>1.5</b> 贪心算法</a><ul>
+<li class="chapter" data-level="1.5.1" data-path=""><a href="#过程"><i class="fa fa-check"></i><b>1.5.1</b> 过程</a></li>
+<li class="chapter" data-level="1.5.2" data-path=""><a href="#如何使用决策树表示目标函数"><i class="fa fa-check"></i><b>1.5.2</b> 如何使用决策树表示目标函数</a></li>
+<li class="chapter" data-level="1.5.3" data-path=""><a href="#如何优化目标函数"><i class="fa fa-check"></i><b>1.5.3</b> 如何优化目标函数</a></li>
+<li class="chapter" data-level="1.5.4" data-path=""><a href="#如何分裂一个结点"><i class="fa fa-check"></i><b>1.5.4</b> 如何分裂一个结点</a></li>
+<li class="chapter" data-level="1.5.5" data-path=""><a href="#寻找最佳分裂点"><i class="fa fa-check"></i><b>1.5.5</b> 寻找最佳分裂点</a></li>
+<li class="chapter" data-level="1.5.6" data-path=""><a href="#停止生长"><i class="fa fa-check"></i><b>1.5.6</b> 停止生长</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path=""><a href="#总结"><i class="fa fa-check"></i><b>1.6</b> 总结</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path=""><a href="#xgboost20问"><i class="fa fa-check"></i><b>2</b> XGBoost20问</a><ul>
+<li class="chapter" data-level="2.1" data-path=""><a href="#简述xgboost"><i class="fa fa-check"></i><b>2.1</b> 简述XGBoost</a></li>
+<li class="chapter" data-level="2.2" data-path=""><a href="#xgboost与gbdt的差异"><i class="fa fa-check"></i><b>2.2</b> XGBoost与GBDT的差异</a></li>
+<li class="chapter" data-level="2.3" data-path=""><a href="#xgboost为何使用二阶泰勒展开"><i class="fa fa-check"></i><b>2.3</b> XGBoost为何使用二阶泰勒展开</a></li>
+<li class="chapter" data-level="2.4" data-path=""><a href="#xgboost为何可并行训练"><i class="fa fa-check"></i><b>2.4</b> XGBoost为何可并行训练</a></li>
+<li class="chapter" data-level="2.5" data-path=""><a href="#xgboost为何快"><i class="fa fa-check"></i><b>2.5</b> XGBoost为何快</a></li>
+<li class="chapter" data-level="2.6" data-path=""><a href="#xgboost防止过拟合的方法"><i class="fa fa-check"></i><b>2.6</b> XGBoost防止过拟合的方法</a></li>
+<li class="chapter" data-level="2.7" data-path=""><a href="#xgboost处理缺失值"><i class="fa fa-check"></i><b>2.7</b> XGBoost处理缺失值</a></li>
+<li class="chapter" data-level="2.8" data-path=""><a href="#xgboost叶子结点权重计算过程"><i class="fa fa-check"></i><b>2.8</b> XGBoost叶子结点权重计算过程</a></li>
+<li class="chapter" data-level="2.9" data-path=""><a href="#xgboost一棵树停止生长的条件"><i class="fa fa-check"></i><b>2.9</b> XGBoost一棵树停止生长的条件</a></li>
+<li class="chapter" data-level="2.10" data-path=""><a href="#rf和gbdt的区别"><i class="fa fa-check"></i><b>2.10</b> RF和GBDT的区别</a><ul>
+<li class="chapter" data-level="2.10.1" data-path=""><a href="#相同"><i class="fa fa-check"></i><b>2.10.1</b> 相同</a></li>
+<li class="chapter" data-level="2.10.2" data-path=""><a href="#不同"><i class="fa fa-check"></i><b>2.10.2</b> 不同</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path=""><a href="#xgboost如何处理不平衡数据"><i class="fa fa-check"></i><b>2.11</b> XGBoost如何处理不平衡数据</a></li>
+<li class="chapter" data-level="2.12" data-path=""><a href="#比较lr和gbdt"><i class="fa fa-check"></i><b>2.12</b> 比较LR和GBDT</a></li>
+<li class="chapter" data-level="2.13" data-path=""><a href="#xgboost中如何对树进行剪枝"><i class="fa fa-check"></i><b>2.13</b> XGBoost中如何对树进行剪枝</a></li>
+<li class="chapter" data-level="2.14" data-path=""><a href="#xgboost如何选择最佳分裂点"><i class="fa fa-check"></i><b>2.14</b> XGBoost如何选择最佳分裂点</a></li>
+<li class="chapter" data-level="2.15" data-path=""><a href="#xgboost的scalable性如何体现"><i class="fa fa-check"></i><b>2.15</b> XGBoost的Scalable性如何体现</a></li>
+<li class="chapter" data-level="2.16" data-path=""><a href="#xgboost如何评价特征的重要性"><i class="fa fa-check"></i><b>2.16</b> XGBoost如何评价特征的重要性</a></li>
+<li class="chapter" data-level="2.17" data-path=""><a href="#xgbooost参数调优的一般步骤"><i class="fa fa-check"></i><b>2.17</b> XGBooost参数调优的一般步骤</a></li>
+<li class="chapter" data-level="2.18" data-path=""><a href="#xgboost模型如果过拟合了怎么解决"><i class="fa fa-check"></i><b>2.18</b> XGBoost模型如果过拟合了怎么解决</a></li>
+<li class="chapter" data-level="2.19" data-path=""><a href="#xgboost和lightgbm的区别"><i class="fa fa-check"></i><b>2.19</b> XGBoost和LightGBM的区别</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path=""><a href="#波士顿房价预测"><i class="fa fa-check"></i><b>3</b> 波士顿房价预测</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">XGBoost-learing</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">XGBoost-learing</h1>
+<p class="author"><em>高文欣</em></p>
+<p class="date"><em>2020-02-27</em></p>
+</div>
+<div id="序言" class="section level1 unnumbered">
+<h1>序言</h1>
+<ul>
+<li>XGBoost学习笔记</li>
+<li>原理推导+实例</li>
+</ul>
+
+</div>
+<div id="xgboost" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> XGBoost</h1>
+<div id="定义" class="section level2">
+<h2><span class="header-section-number">1.1</span> 定义</h2>
+<p>a novel sparsity-aware algorithm for sparse data and weighted quantile sketch for approximate tree learning. <span class="citation">(Chen and Guestrin <a href="#ref-DBLP:journals/corr/ChenG16" role="doc-biblioref">2016</a>)</span></p>
+<blockquote>
+<p>provide insights on cache access patterns, data compression and sharding to build a scalable tree boosting system. By combining these insights, XGBoost scales beyond billions of examples using far fewer resources than existing systems</p>
+</blockquote>
+<ul>
+<li>提供了一种有关缓存访问模式，数据压缩和分片，以构建可扩展的boosting tree。 因此，XGBoost使用比现有系统少得多的资源来扩展数十亿个示例。</li>
+</ul>
+</div>
+<div id="特点" class="section level2">
+<h2><span class="header-section-number">1.2</span> 特点</h2>
+<blockquote>
+<p>The scalability of XGBoost is due to several important systems and algorithmic optimizations. These innovations include: a novel tree learning algorithm is for handling sparse data; a theoretically justified weighted quantile sketch procedure enables handling instance weights in approximate tree learning. Parallel and distributed computing makes learning faster which enables quicker model exploration. More importantly, XGBoost exploits out-of-core computation and enables data scientists to process hundred millions of examples on a desktop. Finally, it is even more exciting to combine these techniques to make an end-to-end system that scales to even larger data with the least amount of cluster resources.</p>
+</blockquote>
+<ul>
+<li>可以处理稀疏矩阵</li>
+<li>合适的权重使得误差较小</li>
+<li>并行计算更快</li>
+<li>可以利用核外资源，更快的处理大规模的数据</li>
+<li>可扩展性强</li>
+<li>构成一个端到端系统，以最少的集群资源扩展到更大的数据</li>
+</ul>
+<div id="回归树综述" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> 回归树综述</h3>
+<p><strong>回归树也叫回归与分类树，也是一棵叶子结点具有权重的二叉树</strong></p>
+<ul>
+<li><p>分类的规则与决策树的规则一样</p></li>
+<li><p>每个叶子结点都包含一个权重（分数）</p></li>
+<li><p>优点</p>
+<ul>
+<li>对数据输入范围不敏感，因此不需要归一化处理</li>
+<li>能学习特征之间更高阶别的相互关系</li>
+<li>可拓展性强</li>
+<li>适用范围广</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="正则化目标函数" class="section level2">
+<h2><span class="header-section-number">1.3</span> 正则化目标函数</h2>
+<p>假设一个数据集有<span class="math inline">\(n\)</span>个样本和<span class="math inline">\(m\)</span>个特征，<span class="math inline">\(\mathcal{D}=\left\{\left(\mathbf{x}_{i}, y_{i}\right)\right\}\left(|\mathcal{D}|=n, \mathbf{x}_{i} \in \mathbb{R}^{m}, y_{i} \in \mathbb{R}\right)\)</span>，一个集成树使用<span class="math inline">\(k\)</span>个加法模型进行预测。</p>
+<p><span class="math inline">\(\hat{y}_{i}=\sum_{k=1}^{K} f_{k}\left(x_{i}\right), f_{k} \in \mathcal{F}\)</span> (1)</p>
+<ul>
+<li><span class="math inline">\(\hat{y}_{i}\)</span>表示第 i个样本的预测值</li>
+<li>K 表示一共K棵树</li>
+<li>其中<span class="math inline">\(\mathcal{F}=\left\{f(\mathbf{x})=w_{q(\mathbf{x})}\right\}\left(q: \mathbb{R}^{m} \rightarrow T, w \in \mathbb{R}^{T}\right)\)</span> ,<span class="math inline">\(\mathcal{F}\)</span>表示所有基分类器组成的函数空间，比如CART.</li>
+<li><span class="math inline">\(q\)</span>表示表示将样本映射到的每棵树上相应的叶子索引</li>
+<li><span class="math inline">\(T\)</span>是叶子结点的数量</li>
+<li><span class="math inline">\(f_{k}(x_i)\)</span>表示第i个样本样本第k棵树中落在叶子结点得到的权重值</li>
+</ul>
+<p>假设我们boosting的基模型用决策树来实现，则一颗生成好的决策树，即结构确定，也就是说树的叶子结点其实是确定了的。假设这棵树的叶子结点有 <span class="math inline">\(T\)</span> 片叶子，而每片叶子对应的值 <span class="math inline">\(w \in R^{T}\)</span> 。熟悉决策树的同学应该清楚，每一片叶子结点中样本的预测值都会是一样的，在<strong>分类问题中是某一类</strong>，<strong>在回归问题中，是某一个值</strong>（在GBDT中都是回归树，即分类问题转化成对概率的回归了），那么肯定存在这样一个函数<span class="math inline">\(q:R^d-&gt;{1,2,...T}\)</span>,即将 <span class="math inline">\(f_{t}(x)\)</span> 中的每个样本映射到每一个叶子结点上，当然 <span class="math inline">\(f_{t}(x)\)</span>和 q 我们都是不知道的，但我们也不关心，这里只是说明一下决策树表达数据结构的方法是怎么样的，不理解也没有问题。</p>
+<p>下面来正式推导：</p>
+<p><span class="math inline">\(f_{t}(x)\)</span>可以转化为<span class="math inline">\(w_{q(x)}\)</span>,其中<span class="math inline">\(q(x)\)</span> 代表了每个样本在哪个叶子结点上,而 <span class="math inline">\(w_q\)</span> 则代表了哪个叶子结点取什么 <span class="math inline">\(w\)</span> 值，所以 <span class="math inline">\(w_{q(x)}\)</span> 就代表了每个样本的取值<span class="math inline">\(w\)</span> (即预测值).</p>
+<p>如果决策树的复杂度可以由正则项来定义 <span class="math inline">\(\Omega\left(f_{t}\right)=\gamma T+\frac{1}{2} \lambda \sum_{j=1}^{T} w_{j}^{2}\)</span> ，即决策树模型的复杂度由生成的树的叶子节点数量和叶子节点对应的值向量的L2范数决定。</p>
+<p><strong>在回归问题中，需要求出的就是<span class="math inline">\(f_{k}\)</span>,也就是每个树的结构和每个叶子结点的权重</strong></p>
+</div>
+<div id="xgboost目标函数" class="section level2">
+<h2><span class="header-section-number">1.4</span> XGBoost目标函数</h2>
+<p><span class="math inline">\(\mathcal{L}(\phi)=\sum_{i} l\left(\hat{y}_{i}, y_{i}\right)+\sum_{k} \Omega\left(f_{k}\right)\)</span></p>
+<p>where <span class="math inline">\(\Omega(f)=\gamma T+\frac{1}{2} \lambda\|w\|^{2}\)</span> (2)</p>
+<ul>
+<li><span class="math inline">\(\sum_{i} l\left(\hat{y}_{i},y_{i}\right)\)</span>是损失函数，也就是训练误差，换句话说就是训练出来的函数与测试集的匹配程度。</li>
+<li><span class="math inline">\(\sum_{k} \Omega\left(f_{k}\right)\)</span>表示模型的复杂度，也就是分段的琐碎程度</li>
+<li>加入正则惩罚项时为了防止过拟合</li>
+</ul>
+<p><strong>为什么说加入正则化可以防止过拟合</strong>
+正则项时我们假设反应模型的复杂度的，因此模型应该是越简单越好，需要加入正则项进行控制
+- L2范数Ridge：<span class="math inline">\(\Omega(w)=\lambda\|w\|^{2}\)</span>，可以认为是摸的平方
+- L1范数Lasso：<span class="math inline">\(\Omega(w)=\lambda\|w\|_{1}\)</span></p>
+<div id="常见的正则优化函数" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> 常见的正则优化函数</h3>
+<ul>
+<li><p>岭回归Ridge：由方差和L2范数构成
+<span class="math inline">\(\sum_{i=1}^{n}\left(y_{i}-w^{T} x_{i}\right)^{2}+\lambda\|w\|^{2}\)</span></p></li>
+<li><p>套索回归Lasso：方差和L1范数构成
+<span class="math inline">\(\sum_{i=1}^{n}\left(y_{i}-w^{T} x_{i}\right)^{2}+\lambda\|w\|_{1}\)</span></p></li>
+<li><p>logistics回归：logistics误差和L2范数构成，主要用于二分类问题，最常见
+<span class="math inline">\(\sum_{i=1}^{n}\left[y_{i} \ln \left(1+e^{-w^{T} x_{i}}\right)+\left(1-y_{i}\right) \ln \left(1+e^{w^{T} x_{i}}\right)\right]+\lambda\|w\|^{2}\)</span></p></li>
+</ul>
+<p>训练模型的目标就是得到最小化的损失函数，因此需要，<span class="math inline">\(\mathcal{L}(\phi)\)</span>越小越好，那就是<span class="math inline">\(\sum_{i} l\left(\hat{y}_{i},y_{i}\right)\)</span>和正则项都取小，但是根据trade-off思维，需要权衡bias和variance的大小</p>
+</div>
+<div id="损失函数分类" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> 损失函数分类</h3>
+<ul>
+<li>若训练误差为：<span class="math inline">\(l\left(y, \hat{y}_{i}\right)=\left(y_{i}-\hat{y}_{i}\right)^{2}\)</span>，此使就是GBDT</li>
+<li>若训练误差为<span class="math inline">\(l\left(y, \hat{y}_{i}\right)=y_{i} \ln \left(1+e^{-\hat{y}_{i}}+\left(1-y_{i}\right) \ln \left(1+e^{\hat{y}_{i}}\right)\right)\)</span>那就是logistics</li>
+</ul>
+</div>
+</div>
+<div id="贪心算法" class="section level2">
+<h2><span class="header-section-number">1.5</span> 贪心算法</h2>
+<p>贪心算法的思想就是一棵树，一棵树的往上加，加到K棵树直到算法停止
+对于Boosting来说，它采用的是前向优化算法，即从前往后，逐渐建立基模型来优化逼近目标函数，具体过程如下：</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\hat{y}_{i}^{0}=0\\
+&amp;\hat{y}_{i}^{1}=f_{1}\left(x_{i}\right)=\hat{y}_{i}^{0}+f_{1}\left(x_{i}\right)\\
+&amp;\begin{array}{l}
+\hat{y}_{i}^{2}=f_{1}\left(x_{i}\right)+f_{2}\left(x_{i}\right)=\hat{y}_{i}^{1}+f_{2}\left(x_{i}\right) \\
+\therefore \quad \hat{y}_{i}^{t}=\sum_{k=1}^{t} f_{k}\left(x_{i}\right)=\hat{y}_{i}^{t-1}+f_{t}\left(x_{i}\right)
+\end{array}
+\end{aligned}
+\]</span></p>
+<p>其中<span class="math inline">\(f_{k}\)</span>的加入，也就是新模型的加入总是以优化目标函数为目的的。</p>
+<div id="过程" class="section level3">
+<h3><span class="header-section-number">1.5.1</span> 过程</h3>
+<p>以第t步的模型拟合为例，在这一步，模型对第 <span class="math inline">\(i\)</span>个样本 <span class="math inline">\(x_i\)</span> 的预测为：
+<span class="math inline">\(\hat{y}_{i}^{t}=\hat{y}_{i}^{t-1}+f_{t}\left(x_{i}\right)\)</span></p>
+<p>其中 <span class="math inline">\(f_{t}(x_{i})\)</span> 就是我们这次需要加入的新模型，即需要拟合的模型，此时，目标函数就可以写成：</p>
+<p><span class="math inline">\(\begin{aligned} O b j^{(t)} &amp;=\sum_{i=1}^{n} l\left(y_{i}, \hat{y}_{i}^{t}\right)+\sum_{i=i}^{t} \Omega\left(f_{i}\right) \\ &amp;=\sum_{i=1}^{n} l\left(y_{i}, \hat{y}_{i}^{t-1}+f_{t}\left(x_{i}\right)\right)+\Omega\left(f_{t}\right)+\text { constant } \end{aligned}\)</span> (3)</p>
+<p>因此当求出最优目标函数的时候也就相当于求出了<span class="math inline">\(f_{t}\left(x_{i}\right)\)</span></p>
+<p>我们知道泰勒公式中，若<span class="math inline">\(\Delta x\)</span> 很小时，我们只保留二阶导是合理的（GBDT是一阶导，XGBoost是二阶导，我们以二阶导为例，一阶导可以自己去推，因为更简单）
+<strong>或许也可以说我们更希望将优化问题转化为一个凸优化问题，因此而引入二阶泰特展开式</strong>，即：</p>
+<p><span class="math inline">\(f(x+\Delta x) \approx f(x)+f^{\prime}(x) \Delta x+\frac{1}{2} f^{\prime \prime}(x) \Delta x^{2}\)</span> (4)</p>
+<p>那么在等式（3）中，我们把 <span class="math inline">\(\hat{y}_{i}^{t-1}\)</span> 看成是等式（4）中的x， <span class="math inline">\(f_{t}\left(x_{i}\right)\)</span> 看成是 <span class="math inline">\(\Delta x\)</span> ，因此等式（3）可以写成：</p>
+<p><span class="math inline">\(O b j^{(t)}=\sum_{i=1}^{n}\left[l\left(y_{i}, \hat{y}_{i}^{t-1}\right)+g_{i} f_{t}\left(x_{i}\right)+\frac{1}{2} h_{i} f_{t}^{2}\left(x_{i}\right)\right]+\Omega\left(f_{t}\right)+\)</span> constant (5)</p>
+<p>其中 <span class="math inline">\(g_{i}\)</span> 为损失函数的一阶导， <span class="math inline">\(h_i\)</span> 为损失函数的二阶导，注意这里的导是对 <span class="math inline">\(\hat{y}_{i}^{t-1}\)</span> 求导。我们以 平方损失函数为例<span class="math inline">\(\sum_{i=1}^{n}\left(y_{i}-\left(\hat{y}_{i}^{t-1}+f_{t}\left(x_{i}\right)\right)\right)^{2}\)</span> ，则分别给出<span class="math inline">\(g_i\)</span>,<span class="math inline">\(h_i\)</span></p>
+<p><span class="math inline">\(g_{i}=\partial_{\hat{y}^{t-1}}\left(\hat{y}^{t-1}-y_{i}\right)^{2}=2\left(\hat{y}^{t-1}-y_{i}\right), \quad h_{i}=\partial_{\hat{y}^{t-1}}^{2}\left(\hat{y}^{t-1}-y_{i}\right)^{2}=2\)</span></p>
+<p>由于在第t步 <span class="math inline">\(\hat{y}_{i}^{t-1}\)</span> 其实是一个已知的值，所以 <span class="math inline">\(l\left(y_{i}, \hat{y}_{i}^{t-1}\right)\)</span> 是一个常数，其对函数优化不会产生影响，因此，等式（3）可以写成：
+<span class="math inline">\(O b j^{(t)} \approx \sum_{i=1}^{n}\left[g_{i} f_{t}\left(x_{i}\right)+\frac{1}{2} h_{i} f_{t}^{2}\left(x_{i}\right)\right]+\Omega\left(f_{t}\right)\)</span> (6)</p>
+<p>所以我么只要求出每一步损失函数的一阶和二阶导的值（由于前一步的 <span class="math inline">\(\hat{y}_{i}^{t-1}\)</span> 是已知的，所以这两个值就是常数）代入等式4，然后最优化目标函数，就可以得到每一步的 <span class="math inline">\(f(x)\)</span> ，最后根据加法模型得到一个整体模型</p>
+</div>
+<div id="如何使用决策树表示目标函数" class="section level3">
+<h3><span class="header-section-number">1.5.2</span> 如何使用决策树表示目标函数</h3>
+<p>假设我们boosting的基模型用决策树来实现，则一颗生成好的决策树，即结构确定，也就是说树的叶子结点其实是确定了的。假设这棵树的叶子结点有 <span class="math inline">\(T\)</span> 片叶子，而每片叶子对应的值 <span class="math inline">\(w \in R^{T}\)</span> 。熟悉决策树的同学应该清楚，每一片叶子结点中样本的预测值都会是一样的，在<strong>分类问题中是某一类</strong>，<strong>在回归问题中，是某一个值</strong>（在GBDT中都是回归树，即分类问题转化成对概率的回归了），那么肯定存在这样一个函数<span class="math inline">\(q:R^d-&gt;{1,2,...T}\)</span>,即将 <span class="math inline">\(f_{t}(x)\)</span> 中的每个样本映射到每一个叶子结点上，当然 <span class="math inline">\(f_{t}(x)\)</span>和 q 我们都是不知道的，但我们也不关心，这里只是说明一下决策树表达数据结构的方法是怎么样的，不理解也没有问题。</p>
+<p>下面来正式推导：</p>
+<p><span class="math inline">\(f_{t}(x)\)</span>可以转化为<span class="math inline">\(w_{q(x)}\)</span>,其中<span class="math inline">\(q(x)\)</span> 代表了每个样本在哪个叶子结点上,而 <span class="math inline">\(w_q\)</span> 则代表了哪个叶子结点取什么 <span class="math inline">\(w\)</span> 值，所以 <span class="math inline">\(w_{q(x)}\)</span> 就代表了每个样本的取值<span class="math inline">\(w\)</span> (即预测值).</p>
+<p>如果决策树的复杂度可以由正则项来定义 <span class="math inline">\(\Omega\left(f_{t}\right)=\gamma T+\frac{1}{2} \lambda \sum_{j=1}^{T} w_{j}^{2}\)</span> ，即决策树模型的复杂度由生成的树的叶子节点数量和叶子节点对应的值向量的L2范数决定。</p>
+<p>我们假设 <span class="math inline">\(I_{j}=\left\{i | q\left(x_{i}\right)=j\right\}\)</span> 为第 j 个叶子节点的样本集合，则等式4根据上面的一些变换可以写成：</p>
+<p><span class="math inline">\(\begin{aligned} O b j^{(t)} &amp; \approx \sum_{i=1}^{n}\left[g_{i} f_{t}\left(x_{i}\right)+\frac{1}{2} h_{i} f_{t}^{2}\left(x_{i}\right)\right]+\Omega\left(f_{t}\right) \\ &amp;=\sum_{i=1}^{n}\left[g_{i} w_{q\left(x_{i}\right)}+\frac{1}{2} h_{i} w_{q\left(x_{i}\right)}^{2}\right]+\gamma T+\frac{1}{2} \lambda \sum_{j=1}^{T} w_{j}^{2} \\ &amp;=\sum_{j=1}^{T}\left[\left(\sum_{i \in I_{j}} g_{i}\right) w_{j}+\frac{1}{2}\left(\sum_{i \in I_{j}} h_{i}+\lambda\right) w_{j}^{2}\right]+\gamma T \end{aligned}\)</span> (7)</p>
+<p>即我们之前样本的集合，现在都改写成叶子结点的集合，由于一个叶子结点有多个样本存在，因此才有了<span class="math inline">\(\sum_{i \in I_{j}} g_{i}\)</span>和<span class="math inline">\(\sum_{i \in I_{j}} h_{i}\)</span>两 项，定义<span class="math inline">\(G_i=\sum_{i \in I_{j}} g_{i}\)</span>,<span class="math inline">\(H_i=\sum_{i \in I_{j}} h_{i}\)</span>,则公式7可以写成:
+<span class="math inline">\(O b j^{(t)}=\sum_{j=1}^{T}\left[G_{j} w_{j}+\frac{1}{2}\left(H_{j}+\lambda\right) w_{j}^{2}\right]+\gamma T\)</span></p>
+</div>
+<div id="如何优化目标函数" class="section level3">
+<h3><span class="header-section-number">1.5.3</span> 如何优化目标函数</h3>
+<p>那么对于单棵决策树，一种理想的优化状态就是枚举所有可能的树结构，因此过程如下：</p>
+<p>a、首先枚举所有可能的树结构，即 <span class="math inline">\(q\)</span>；</p>
+<p>b、计算每种树结构下的目标函数值，即等式7的值；</p>
+<p>c、取目标函数最小（大）值为最佳的数结构，根据等式6求得每个叶子节点的 <span class="math inline">\(w\)</span> 取值，即样本的预测值。</p>
+<p>但上面的方法肯定是不可行的，因为树的结构千千万，所以一般用贪心策略来优化：</p>
+<p>a、从深度为0的树开始，对每个叶节点枚举所有的可用特征</p>
+<p>b、 针对每个特征，把属于该节点的训练样本根据该特征值升序排列，通过线性扫描的方式来决定该特征的最佳分裂点，并记录该特征的最大收益（采用最佳分裂点时的收益）</p>
+<p>c、 选择收益最大的特征作为分裂特征，用该特征的最佳分裂点作为分裂位置，把该节点生长出左右两个新的叶节点，并为每个新节点关联对应的样本集</p>
+<p>d、回到第1步，递归执行到满足特定条件为止</p>
+</div>
+<div id="如何分裂一个结点" class="section level3">
+<h3><span class="header-section-number">1.5.4</span> 如何分裂一个结点</h3>
+<p>那么如何计算上面的收益呢，很简单，仍然紧扣目标函数就可以了。假设我们在某一节点上二分裂成两个节点，分别是左（L）右（R），则分列前的目标函数是:
+<span class="math display">\[-\frac{1}{2}\left[\frac{\left(G_{L}+G_{R}\right)^{2}}{H_{L}+H_{R}+\lambda}\right]+\gamma\]</span>
+分裂后<span class="math display">\[-\frac{1}{2}\left[\frac{G_{L}^{2}}{H_{L}+\lambda}+\frac{G_{R}^{2}}{H_{R}+\lambda}\right]+2\gamma\]</span>，则对于目标函数来说，分裂后的收益是（这里假设是最小化目标函数，所以用分裂前-分裂后）
+<span class="math display">\[Gain =\frac{1}{2}\left[\frac{G_{L}^{2}}{H_{L}+\lambda}+\frac{G_{R}^{2}}{H_{R}+\lambda}-\frac{\left(G_{L}+G_{R}\right)^{2}}{H_{L}+H_{R}+\lambda}\right]-\gamma\]</span></p>
+<p>如果增益Gain&gt;0，即分裂为两个叶子节点后，目标函数下降了，那么我们会考虑此次分裂的结果。</p>
+<p>但是，在一个结点分裂时，可能有很多个分裂点，每个分裂点都会产生一个增益，如何才能寻找到最优的分裂点呢？接下来会讲到。</p>
+</div>
+<div id="寻找最佳分裂点" class="section level3">
+<h3><span class="header-section-number">1.5.5</span> 寻找最佳分裂点</h3>
+<p>在分裂一个结点时，我们会有很多个候选分割点，寻找最佳分割点的大致步骤如下：</p>
+<p>遍历每个结点的每个特征；
+对每个特征，按特征值大小将特征值排序；
+线性扫描，找出每个特征的最佳分裂特征值；
+在所有特征中找出最好的分裂点（分裂后增益最大的特征及特征值）
+上面是一种贪心的方法，每次进行分裂尝试都要遍历一遍全部候选分割点，也叫做全局扫描法。</p>
+<p>但当数据量过大导致内存无法一次载入或者在分布式情况下，贪心算法的效率就会变得很低，全局扫描法不再适用。</p>
+<ul>
+<li><p>特征预排序+缓存：XGBoost在训练之前，预先对每个特征按照特征值大小进行排序，然后保存为block结构，后面的迭代中会重复地使用这个结构，使计算量大大减小。</p></li>
+<li><p>分位点近似法：对每个特征按照特征值排序后，采用类似分位点选取的方式，仅仅选出常数个特征值作为该特征的候选分割点，在寻找该特征的最佳分割点时，从候选分割点中选出最优的一个。</p></li>
+<li><p>并行查找：由于各个特性已预先存储为block结构，XGBoost支持利用多个线程并行地计算每个特征的最佳分割点，这不仅大大提升了结点的分裂速度，也极利于大规模训练集的适应性扩展。</p></li>
+</ul>
+</div>
+<div id="停止生长" class="section level3">
+<h3><span class="header-section-number">1.5.6</span> 停止生长</h3>
+<p>一棵树不会一直生长下去，下面是一些常见的限制条件。</p>
+<ol style="list-style-type: decimal">
+<li><p>当新引入的一次分裂所带来的增益Gain&lt;0时，放弃当前的分裂。这是训练损失和模型结构复杂度的博弈过程。</p></li>
+<li><p>当树达到最大深度时，停止建树，因为树的深度太深容易出现过拟合，这里需要设置一个超参数max_depth。</p></li>
+<li><p>当引入一次分裂后，重新计算新生成的左、右两个叶子结点的样本权重和。如果任一个叶子结点的样本权重低于某一个阈值，也会放弃此次分裂。这涉及到一个超参数:最小样本权重和，是指如果一个叶子节点包含的样本数量太少也会放弃分裂，防止树分的太细，这也是过拟合的一种措施。</p></li>
+</ol>
+</div>
+</div>
+<div id="总结" class="section level2">
+<h2><span class="header-section-number">1.6</span> 总结</h2>
+<p>a、算法在拟合的每一步都新生成一颗决策树；</p>
+<p>b、在拟合这棵树之前，需要计算损失函数在每个样本上的一阶导和二阶导，即 <span class="math inline">\(g_i\)</span> 和 <span class="math inline">\(h_i\)</span> ；</p>
+<p>c、通过上面的贪心策略生成一颗树，计算每个叶子结点的的 <span class="math inline">\(G_j\)</span>和 <span class="math inline">\(H_j\)</span> ，利用等式6计算预测值 <span class="math inline">\(w\)</span> ；</p>
+<p>d、把新生成的决策树 <span class="math inline">\(f_{t}(x)\)</span> 加入 <span class="math inline">\(\hat{y}_{i}^{t}=\hat{y}_{i}^{t-1}+\epsilon f_{t}\left(x_{i}\right)\)</span> ，其中<span class="math inline">\(\epsilon\)</span> 为学习率，主要为了抑制模型的过拟</p>
+
+</div>
+</div>
+<div id="xgboost20问" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> XGBoost20问</h1>
+<div id="简述xgboost" class="section level2">
+<h2><span class="header-section-number">2.1</span> 简述XGBoost</h2>
+<p><strong>首先</strong>需要说一说<a href="https://www.cnblogs.com/gaowenxingxing/p/12348666.html">GBDT</a>，它是一种基于boosting(串行)增强策略的加法模型，训练的时候采用前向分布算法进行贪婪的学习，每次迭代都学习一棵<a href="https://www.cnblogs.com/gaowenxingxing/p/12344879.html">CART</a>树来拟合之前 t-1 棵树的预测结果与训练样本真实值的残差。</p>
+<p>XGBoost对GBDT进行了一系列优化，比如损失函数进行了二阶泰勒展开、目标函数加入正则项、支持并行和默认缺失值处理等，在可扩展性和训练速度上有了巨大的提升，但其核心思想没有大的变化</p>
+</div>
+<div id="xgboost与gbdt的差异" class="section level2">
+<h2><span class="header-section-number">2.2</span> XGBoost与GBDT的差异</h2>
+<p><strong>基分类器：</strong>XGBoost的基分类器不仅支持CART决策树，还支持线性分类器，在支持线性分类器的时候XGBoost相当于加入L1和L2的logistic回归(分类)，或者线性回归(回归)。</p>
+<p><strong>损失函数导数：</strong>XGBoost对损失函数做了二阶泰勒展开式，GBDT只是一阶泰勒，，并且，XGBoost还<strong>支持自定义损失函数，只要损失函数一阶，二阶可导</strong>。</p>
+<p><strong>正则项：</strong>XGBoost的目标函数加了正则项惩罚，相当于预剪枝，使学习出来的模型更加不容易过拟合，泛化能力相对更强。</p>
+<p><strong>列抽样：</strong>列抽样个人理解就是随机属性取样，与随机森林相似，可防止过拟合。</p>
+<p><strong>缺失值处理：</strong>对树中的每个非叶子结点，XGBoost可以自动学习出它默认的分裂方向，若某个仰恩该特征缺失，会将其划入默认分支。</p>
+<p><strong>并行化：</strong>不是tree的维度并行，而是特征维度并行。XGBoost预先将每个特征按特征值排好顺序，存储为块结构，分裂结点时可以采用线性并行查找每个特征的最佳分割点，极大提升训练速度。</p>
+</div>
+<div id="xgboost为何使用二阶泰勒展开" class="section level2">
+<h2><span class="header-section-number">2.3</span> XGBoost为何使用二阶泰勒展开</h2>
+<ul>
+<li><p>准确性：相对于GBDT一阶泰勒展开，XGBoost采用二阶泰勒展开精度更加靠近真实的损失函数。</p></li>
+<li><p>可扩展性：损失函数支持自定义，只需要新的损失函数二阶可导就行。</p></li>
+</ul>
+</div>
+<div id="xgboost为何可并行训练" class="section level2">
+<h2><span class="header-section-number">2.4</span> XGBoost为何可并行训练</h2>
+<ul>
+<li><p>XGBoost的并行并不是每棵树都可以并行训练，XGB本质上仍然采用boosting思维，每棵树训练前需要等前面的树训练完成才能开始训练。也就是加法思维</p></li>
+<li><p>XGBoost的并行是指特征维度的并行，在训练之前，每个特征按特征值对样本进行预排序，并存储为block结构，在后面查找特征分割点时可以重复使用，而且特征值已经被存储为一个个block结构，那么在寻找每个特征的最佳分割点时，可以利用多线程对每个block进行计算。</p></li>
+</ul>
+</div>
+<div id="xgboost为何快" class="section level2">
+<h2><span class="header-section-number">2.5</span> XGBoost为何快</h2>
+<ul>
+<li><p>分块并行：训练前每个特征按特征值进行排序并存储为Block结构，后面查找特征分割点时重复使用，并且支持并行查找每个特征的分割点</p></li>
+<li><p>候选分位点：每个特征采用常数个分位点作为候选分割点</p></li>
+<li><p>CPU cache 命中优化：使用缓存预取的方法，对每个线程分配一个连续的buffer，读取每个block中样本的梯度信息并存入连续的Buffer中。</p></li>
+<li><p>Block 处理优化：Block预先放入内存；Block按列进行解压缩；将Block划分到不同硬盘来提高吞吐</p></li>
+</ul>
+</div>
+<div id="xgboost防止过拟合的方法" class="section level2">
+<h2><span class="header-section-number">2.6</span> XGBoost防止过拟合的方法</h2>
+<ul>
+<li>加入正则项：叶子结点的个数+叶子结点的权重</li>
+<li>属性抽样，训练时只选取一部分特征，不考虑block剩余部分</li>
+<li>子采样：每轮计算可以不使用全部样本，使算法更加保守</li>
+<li>shrinkage: 可以叫学习率或步长，为了给后面的训练留出更多的学习空间</li>
+</ul>
+</div>
+<div id="xgboost处理缺失值" class="section level2">
+<h2><span class="header-section-number">2.7</span> XGBoost处理缺失值</h2>
+<p>模型的一个优点就是允许特征存在缺失值。对缺失值的处理方式如下：</p>
+<ul>
+<li><p>在特征k上寻找最佳 split point 时，不会对该列特征 missing 的样本进行遍历，而只对该列特征值为 non-missing 的样本上对应的特征值进行遍历，通过这个技巧来减少了为稀疏离散特征寻找 split point 的时间开销。</p></li>
+<li><p>在逻辑实现上，为了保证完备性，会将该特征值missing的样本分别分配到左叶子结点和右叶子结点，两种情形都计算一遍后，选择分裂后增益最大的那个方向（左分支或是右分支），作为预测时特征值缺失样本的默认分支方向。</p></li>
+<li><p>如果在训练中没有缺失值而在预测中出现缺失，那么会自动将缺失值的划分方向放到右子结点。</p></li>
+</ul>
+</div>
+<div id="xgboost叶子结点权重计算过程" class="section level2">
+<h2><span class="header-section-number">2.8</span> XGBoost叶子结点权重计算过程</h2>
+</div>
+<div id="xgboost一棵树停止生长的条件" class="section level2">
+<h2><span class="header-section-number">2.9</span> XGBoost一棵树停止生长的条件</h2>
+<ul>
+<li><p>当新引入的一次分裂所带来的增益Gain&lt;0时，放弃当前的分裂。这是训练损失和模型结构复杂度的博弈过程。</p></li>
+<li><p>当树达到最大深度时，停止建树，因为树的深度太深容易出现过拟合，这里需要设置一个超参数max_depth。</p></li>
+<li><p>当引入一次分裂后，重新计算新生成的左、右两个叶子结点的样本权重和。如果任一个叶子结点的样本权重低于某一个<strong>阈值</strong>，也会放弃此次分裂。这涉及到一个超参数:<strong>最小样本权重和</strong>，是指如果一个叶子节点包含的样本数量太少也会放弃分裂，防止树分的太细。</p></li>
+</ul>
+</div>
+<div id="rf和gbdt的区别" class="section level2">
+<h2><span class="header-section-number">2.10</span> RF和GBDT的区别</h2>
+<div id="相同" class="section level3">
+<h3><span class="header-section-number">2.10.1</span> 相同</h3>
+<p>都是由多棵树组成，最终的结果都是由多棵树一起决定。</p>
+</div>
+<div id="不同" class="section level3">
+<h3><span class="header-section-number">2.10.2</span> 不同</h3>
+<ul>
+<li>集成学习：RF属于bagging思想，而GBDT是boosting思想</li>
+<li>偏差-方差权衡：RF不断的降低模型的方差，而GBDT不断的降低模型的偏差</li>
+<li>训练样本：RF每次迭代的样本是从全部训练集中有放回抽样形成的，而GBDT每次使用全部样本</li>
+<li>并行性：RF的树可以并行生成，而GBDT只能顺序生成(需要等上一棵树完全生成)</li>
+<li>最终结果：RF最终是多棵树进行多数表决（回归问题是取平均），而GBDT是加权融合</li>
+<li>数据敏感性：RF对异常值不敏感，而GBDT对异常值比较敏感</li>
+<li>泛化能力：RF不易过拟合，而GBDT容易过拟合</li>
+</ul>
+</div>
+</div>
+<div id="xgboost如何处理不平衡数据" class="section level2">
+<h2><span class="header-section-number">2.11</span> XGBoost如何处理不平衡数据</h2>
+<p>对于不平衡的数据集，例如用户的购买行为，肯定是极其不平衡的，这对XGBoost的训练有很大的影响，XGBoost有两种自带的方法来解决：</p>
+<ul>
+<li><p>第一种，如果你在意AUC，采用AUC来评估模型的性能，那你可以通过设置scale_pos_weight来平衡正样本和负样本的权重。例如，当正负样本比例为1:10时，scale_pos_weight可以取10；</p></li>
+<li><p>第二种，如果你在意概率(预测得分的合理性)，你不能重新平衡数据集(会破坏数据的真实分布)，应该设置max_delta_step为一个有限数字来帮助收敛（基模型为LR时有效）。</p></li>
+</ul>
+<p>原话是这么说的：
+&gt;For common cases such as ads clickthrough log, the dataset is extremely imbalanced. This can affect the training of xgboost model,
+and there are two ways to improve it.
+If you care only about the ranking order (AUC) of your prediction
+Balance the positive and negative weights, via scale_pos_weight
+Use AUC for evaluation
+If you care about predicting the right probability
+In such a case, you cannot re-balance the dataset
+In such a case, set parameter max_delta_step to a finite number (say 1) will help convergence</p>
+<p>那么，源码到底是怎么利用scale_pos_weight来平衡样本的呢，是调节权重还是过采样呢？请看源码：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="cf">if</span> (info.labels[i] <span class="op">==</span> <span class="fl">1.0</span>f)  w <span class="op">*=</span> param_.scale_pos_weight</a></code></pre></div>
+<p>可以看出，应该是增大了少数样本的权重。</p>
+<p>除此之外，还可以通过上采样、下采样、SMOTE算法或者自定义代价函数的方式解决正负样本不平衡的问题。</p>
+</div>
+<div id="比较lr和gbdt" class="section level2">
+<h2><span class="header-section-number">2.12</span> 比较LR和GBDT</h2>
+<p>先说说LR和GBDT的区别：</p>
+<p>LR是线性模型，可解释性强，很容易并行化，但学习能力有限，需要大量的人工特征工程
+GBDT是非线性模型，具有天然的特征组合优势，特征表达能力强，但是树与树之间无法并行训练，而且树模型很容易过拟合；
+当在高维稀疏特征的场景下，LR的效果一般会比GBDT好。原因如下：</p>
+<p>先看一个例子：</p>
+<blockquote>
+<p>假设一个二分类问题，label为0和1，特征有100维，如果有1w个样本，但其中只要10个正样本1，而这些样本的特征 f1的值为全为1，而其余9990条样本的f1特征都为0(在高维稀疏的情况下这种情况很常见)。</p>
+</blockquote>
+<p>我们都知道在这种情况下，树模型很容易优化出一个使用f1特征作为重要分裂节点的树，因为这个结点直接能够将训练数据划分的很好，但是当测试的时候，却会发现效果很差，因为这个特征f1只是刚好偶然间跟y拟合到了这个规律，这也是我们常说的过拟合。</p>
+<p>那么这种情况下，如果采用LR的话，应该也会出现类似过拟合的情况呀：y = W1<em>f1 + Wi</em>fi+….，其中 W1特别大以拟合这10个样本。为什么此时树模型就过拟合的更严重呢？</p>
+<p>仔细想想发现，因为现在的模型普遍都会带着正则项，而 LR 等线性模型的正则项是对权重的惩罚，也就是 W1一旦过大，惩罚就会很大，进一步压缩 W1的值，使他不至于过大。但是，树模型则不一样，树模型的惩罚项通常为叶子节点数和深度等，而我们都知道，对于上面这种 case，树只需要一个节点就可以完美分割9990和10个样本，一个结点，最终产生的惩罚项极其之小。</p>
+<p>这也就是为什么在高维稀疏特征的时候，线性模型会比非线性模型好的原因了：带正则化的线性模型比较不容易对稀疏特征过拟合。</p>
+</div>
+<div id="xgboost中如何对树进行剪枝" class="section level2">
+<h2><span class="header-section-number">2.13</span> XGBoost中如何对树进行剪枝</h2>
+<ul>
+<li><p>在目标函数中增加了正则项：使用叶子结点的数目和叶子结点权重的L2模的平方，控制树的复杂度。</p></li>
+<li><p>在结点分裂时，定义了一个阈值，如果分裂后目标函数的增益小于该阈值，则不分裂。</p></li>
+<li><p>当引入一次分裂后，重新计算新生成的左、右两个叶子结点的样本权重和。如果任一个叶子结点的样本权重低于某一个阈值（最小样本权重和），也会放弃此次分裂。</p></li>
+<li><p>XGBoost 先从顶到底建立树直到最大深度，再从底到顶反向检查是否有不满足分裂条件的结点，进行剪枝。</p></li>
+</ul>
+</div>
+<div id="xgboost如何选择最佳分裂点" class="section level2">
+<h2><span class="header-section-number">2.14</span> XGBoost如何选择最佳分裂点</h2>
+<p>XGBoost在训练前预先将特征按照特征值进行了排序，并存储为block结构，以后在结点分裂时可以重复使用该结构。
+因此，可以采用特征并行的方法利用多个线程分别计算每个特征的最佳分割点，根据每次分裂后产生的增益，最终选择增益最大的那个特征的特征值作为最佳分裂点。
+如果在计算每个特征的最佳分割点时，对每个样本都进行遍历，计算复杂度会很大，这种全局扫描的方法并不适用大数据的场景。XGBoost还提供了一种直方图近似算法，对特征排序后仅选择常数个候选分裂位置作为候选分裂点，极大提升了结点分裂时的计算效率。</p>
+</div>
+<div id="xgboost的scalable性如何体现" class="section level2">
+<h2><span class="header-section-number">2.15</span> XGBoost的Scalable性如何体现</h2>
+<p>基分类器的scalability：弱分类器可以支持CART决策树，也可以支持LR和Linear。
+目标函数的scalability：支持自定义loss function，只需要其一阶、二阶可导。有这个特性是因为泰勒二阶展开，得到通用的目标函数形式。
+学习方法的scalability：Block结构支持并行化，支持 Out-of-core计算。</p>
+</div>
+<div id="xgboost如何评价特征的重要性" class="section level2">
+<h2><span class="header-section-number">2.16</span> XGBoost如何评价特征的重要性</h2>
+<p>我们采用三种方法来评判XGBoost模型中特征的重要程度：</p>
+<blockquote>
+<p>官方文档：
+（1）weight - the number of times a feature is used to split the data across all trees.
+（2）gain - the average gain of the feature when it is used in trees.
+（3）cover - the average coverage of the feature when it is used in trees.</p>
+</blockquote>
+<ul>
+<li><p>weight ：该特征在所有树中被用作分割样本的特征的总次数。</p></li>
+<li><p>gain ：该特征在其出现过的所有树中产生的平均增益。</p></li>
+<li><p>cover ：该特征在其出现过的所有树中的平均覆盖范围。</p></li>
+</ul>
+<p><strong>注意：覆盖范围这里指的是一个特征用作分割点后，其影响的样本数量，即有多少样本经过该特征分割到两个子节点。</strong></p>
+</div>
+<div id="xgbooost参数调优的一般步骤" class="section level2">
+<h2><span class="header-section-number">2.17</span> XGBooost参数调优的一般步骤</h2>
+<p>首先需要初始化一些基本变量，例如：</p>
+<p>max_depth = 5</p>
+<p>min_child_weight = 1</p>
+<p>gamma = 0</p>
+<p>subsample, colsample_bytree = 0.8</p>
+<p>scale_pos_weight = 1</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>确定learning rate和estimator的数量
+learning rate可以先用0.1，用cv来寻找最优的estimators</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>max_depth和 min_child_weight
+我们调整这两个参数是因为，这两个参数对输出结果的影响很大。我们首先将这两个参数设置为较大的数，然后通过迭代的方式不断修正，缩小范围。</li>
+</ol></li>
+</ul>
+<p>max_depth，每棵子树的最大深度，check from range(3,10,2)。</p>
+<p>min_child_weight，子节点的权重阈值，check from range(1,6,2)。</p>
+<p>如果一个结点分裂后，它的所有子节点的权重之和都大于该阈值，该叶子节点才可以划分。</p>
+<ul>
+<li><ol start="3" style="list-style-type: decimal">
+<li>gamma
+也称作最小划分损失min_split_loss，check from 0.1 to 0.5，指的是，对于一个叶子节点，当对它采取划分之后，损失函数的降低值的阈值。
+如果大于该阈值，则该叶子节点值得继续划分</li>
+</ol></li>
+</ul>
+<p>如果小于该阈值，则该叶子节点不值得继续划分</p>
+<ul>
+<li><ol start="4" style="list-style-type: decimal">
+<li>subsample, colsample_bytree
+subsample是对训练的采样比例</li>
+</ol></li>
+</ul>
+<p>colsample_bytree是对特征的采样比例</p>
+<p>both check from 0.6 to 0.9</p>
+<ul>
+<li><ol start="5" style="list-style-type: decimal">
+<li>正则化参数
+alpha 是L1正则化系数，try 1e-5, 1e-2, 0.1, 1, 100</li>
+</ol></li>
+</ul>
+<p>lambda 是L2正则化系数</p>
+<ul>
+<li><ol start="6" style="list-style-type: decimal">
+<li>降低学习率
+降低学习率的同时增加树的数量，通常最后设置学习率为0.01~0.1</li>
+</ol></li>
+</ul>
+</div>
+<div id="xgboost模型如果过拟合了怎么解决" class="section level2">
+<h2><span class="header-section-number">2.18</span> XGBoost模型如果过拟合了怎么解决</h2>
+<p>当出现过拟合时，有两类参数可以缓解：
+- 第一类参数：用于直接控制模型的复杂度。包括max_depth,min_child_weight,gamma - 等参数
+第二类参数：用于增加随机性，从而使得模型在训练时对于噪音不敏感。包括subsample,colsample_bytree
+- 还有就是直接减小learning rate，但需要同时增加estimator 参数。
+## 为什么XGBoost相比某些模型对缺失值不敏感</p>
+<p>对存在缺失值的特征，一般的解决方法是：</p>
+<p>离散型变量：用出现次数最多的特征值填充；</p>
+<p>连续型变量：用中位数或均值填充；</p>
+<p>一些模型如SVM和KNN，其模型原理中涉及到了对样本距离的度量，如果缺失值处理不当，最终会导致模型预测效果很差。</p>
+<p>而树模型对缺失值的敏感度低，大部分时候可以在数据缺失时时使用。原因就是，一棵树中每个结点在分裂时，寻找的是某个特征的最佳分裂点（特征值），完全可以不考虑存在特征值缺失的样本，也就是说，如果某些样本缺失的特征值缺失，对寻找最佳分割点的影响不是很大。
+XGBoost对缺失数据有特定的处理方法，详情参考上篇文章第7题。</p>
+<p>因此，对于有缺失值的数据在经过缺失处理后：
+- 当数据量很小时，优先用朴素贝叶斯
+- 数据量适中或者较大，用树模型，优先XGBoost
+- 数据量较大，也可以用神经网络
+- 避免使用距离度量相关的模型，如KNN和SVM</p>
+</div>
+<div id="xgboost和lightgbm的区别" class="section level2">
+<h2><span class="header-section-number">2.19</span> XGBoost和LightGBM的区别</h2>
+<ul>
+<li>（1）树生长策略：XGB采用level-wise的分裂策略，LGB采用leaf-wise的分裂策略。XGB对每一层所有节点做无差别分裂，但是可能有些节点增益非常小，对结果影响不大，带来不必要的开销。Leaf-wise是在所有叶子节点中选取分裂收益最大的节点进行的，但是很容易出现过拟合问题，所以需要对最大深度做限制 。</li>
+<li>（2）分割点查找算法：XGB使用特征预排序算法，LGB使用基于直方图的切分点算法，其优势如下：</li>
+</ul>
+<p>减少内存占用，比如离散为256个bin时，只需要用8位整形就可以保存一个样本被映射为哪个bin(这个bin可以说就是转换后的特征)，对比预排序的exactgreedy算法来说(用int_32来存储索引+ 用float_32保存特征值)，可以节省7/8的空间。
+计算效率提高，预排序的Exactgreedy对每个特征都需要遍历一遍数据，并计算增益，复杂度为𝑂(#𝑓𝑒𝑎𝑡𝑢𝑟𝑒×#𝑑𝑎𝑡𝑎)。而直方图算法在建立完直方图后，只需要对每个特征遍历直方图即可，复杂度为𝑂(𝑓𝑒𝑎𝑡𝑢𝑟𝑒
+×#𝑏𝑖𝑛𝑠)。
+LGB还可以使用直方图做差加速，一个节点的直方图可以通过父节点的直方图减去兄弟节点的直方图得到，从而加速计算
+&gt;但实际上xgboost的近似直方图算法也类似于lightgbm这里的直方图算法，为什么xgboost的近似算法比lightgbm还是慢很多呢？
+xgboost在每一层都动态构建直方图， 因为xgboost的直方图算法不是针对某个特定的feature，而是所有feature共享一个直方图(每个样本的权重是二阶导)，所以每一层都要重新构建直方图，而lightgbm中对每个特征都有一个直方图，所以构建一次直方图就够了。</p>
+<ul>
+<li><p>（3）支持离散变量：无法直接输入类别型变量，因此需要事先对类别型变量进行编码（例如独热编码），而LightGBM可以直接处理类别型变量。</p></li>
+<li><p>（4）缓存命中率：XGB使用Block结构的一个缺点是取梯度的时候，是通过索引来获取的，而这些梯度的获取顺序是按照特征的大小顺序的，这将导致非连续的内存访问，可能使得CPU cache缓存命中率低，从而影响算法效率。而LGB是基于直方图分裂特征的，梯度信息都存储在一个个bin中，所以访问梯度是连续的，缓存命中率高。</p></li>
+<li><p>（5）LightGBM 与 XGboost 的并行策略不同：
+特征并行 ：LGB特征并行的前提是每个worker留有一份完整的数据集，但是每个worker仅在特征子集上进行最佳切分点的寻找；worker之间需要相互通信，通过比对损失来确定最佳切分点；然后将这个最佳切分点的位置进行全局广播，每个worker进行切分即可。XGB的特征并行与LGB的最大不同在于XGB每个worker节点中仅有部分的列数据，也就是垂直切分，每个worker寻找局部最佳切分点，worker之间相互通信，然后在具有最佳切分点的worker上进行节点分裂，再由这个节点广播一下被切分到左右节点的样本索引号，其他worker才能开始分裂。二者的区别就导致了LGB中worker间通信成本明显降低，只需通信一个特征分裂点即可，而XGB中要广播样本索引。</p>
+<ul>
+<li><p>数据并行 ：当数据量很大，特征相对较少时，可采用数据并行策略。LGB中先对数据水平切分，每个worker上的数据先建立起局部的直方图，然后合并成全局的直方图，采用直方图相减的方式，先计算样本量少的节点的样本索引，然后直接相减得到另一子节点的样本索引，这个直方图算法使得worker间的通信成本降低一倍，因为只用通信以此样本量少的节点。XGB中的数据并行也是水平切分，然后单个worker建立局部直方图，再合并为全局，不同在于根据全局直方图进行各个worker上的节点分裂时会单独计算子节点的样本索引，因此效率贼慢，每个worker间的通信量也就变得很大。</p></li>
+<li><p>投票并行（LGB）：当数据量和维度都很大时，选用投票并行，该方法是数据并行的一个改进。数据并行中的合并直方图的代价相对较大，尤其是当特征维度很大时。大致思想是：每个worker首先会找到本地的一些优秀的特征，然后进行全局投票，根据投票结果，选择top的特征进行直方图的合并，再寻求全局的最优分割点。</p></li>
+</ul></li>
+</ul>
+
+</div>
+</div>
+<div id="波士顿房价预测" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> 波士顿房价预测</h1>
+
+<div id="refs" class="references">
+<div id="ref-DBLP:journals/corr/ChenG16">
+<p>Chen, Tianqi, and Carlos Guestrin. 2016. “XGBoost: A Scalable Tree Boosting System.” <em>CoRR</em> abs/1603.02754. <a href="http://arxiv.org/abs/1603.02754">http://arxiv.org/abs/1603.02754</a>.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false,
+"instapper": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toolbar": {
+"position": "fixed",
+"search": false
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
