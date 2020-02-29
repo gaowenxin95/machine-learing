@@ -197,7 +197,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5" data-path=""><a href="#前向分步算法"><i class="fa fa-check"></i><b>5.5</b> 前向分步算法</a></li>
 <li class="chapter" data-level="5.6" data-path=""><a href="#boosting与adaboost的关系"><i class="fa fa-check"></i><b>5.6</b> boosting与adaboost的关系</a></li>
 <li class="chapter" data-level="5.7" data-path=""><a href="#残差树"><i class="fa fa-check"></i><b>5.7</b> 残差树</a></li>
-<li class="chapter" data-level="5.8" data-path=""><a href="#复现-1"><i class="fa fa-check"></i><b>5.8</b> 复现</a></li>
+<li class="chapter" data-level="5.8" data-path=""><a href="#复现-1"><i class="fa fa-check"></i><b>5.8</b> 复现</a><ul>
+<li class="chapter" data-level="5.8.1" data-path=""><a href="#属性-1"><i class="fa fa-check"></i><b>5.8.1</b> 属性</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path=""><a href="#gradient-boost-decision-tree"><i class="fa fa-check"></i><b>6</b> Gradient Boost Decision Tree</a><ul>
 <li class="chapter" data-level="6.1" data-path=""><a href="#定义-1"><i class="fa fa-check"></i><b>6.1</b> 定义</a></li>
@@ -239,6 +241,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path=""><a href="#总结"><i class="fa fa-check"></i><b>8.3</b> 总结</a></li>
 <li class="chapter" data-level="8.4" data-path=""><a href="#error"><i class="fa fa-check"></i><b>8.4</b> error</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path=""><a href="#tuning-hyperparameters"><i class="fa fa-check"></i><b>9</b> Tuning-Hyperparameters</a></li>
 </ul>
 
       </nav>
@@ -284,11 +287,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-2" title="2">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/01.png&quot;</span>)</a></code></pre></div>
 <p><img src="figs/01.png" width="314" /></p>
 <p>这是一个决策树流程图，正方形代表判断模块，椭圆代表终止模块，表示已经得出结论，可以终止运行，左右箭头叫做分支。</p>
-<p>上节介绍的k-近邻算法可以完成很多分类任务，但是其最大的缺点是无法给出数据的内在含义，决策树的优势在于数据形式非常容易理解。</p>
+<p>虽然k-近邻算法可以完成很多分类任务，但是其最大的缺点是无法给出数据的内在含义，决策树的优势在于数据形式非常容易理解。</p>
 </div>
 <div id="构造决策树" class="section level2">
 <h2><span class="header-section-number">1.2</span> 构造决策树</h2>
-<p>决策树学习的算法通常是一个递归地选择最优特征，并根据该特征对训练数据进行分割，使得各个子数据集有一个最好的分类的过程。这一过程对应着对特征空间的划分，也对应着决策树的构建。</p>
+<p>决策树学习的算法通常是一个<strong>递归</strong>地选择最优特征，并根据该特征对训练数据进行分割，使得各个子数据集有一个最好的分类的过程。这一过程对应着对特征空间的划分，也对应着决策树的构建。</p>
 <p>1.开始：构建根节点，将所有训练数据都放在根节点，选择一个最优特征，按着这一特征将训练数据集分割成子集，使得各个子集有一个在当前条件下最好的分类。</p>
 <p>2.如果这些子集已经能够被基本正确分类，那么构建叶节点，并将这些子集分到所对应的叶节点去。</p>
 <p>3.如果还有子集不能够被正确的分类，那么就对这些子集选择新的最优特征，继续对其进行分割，构建相应的节点，如果递归进行，直至所有训练数据子集被基本正确的分类，或者没有合适的特征为止。</p>
@@ -397,6 +400,7 @@ Gini 指数更偏向于连续属性，熵更偏向于离散属性。</p>
 <p>决策树算法很容易过拟合（overfitting），剪枝算法就是用来防止决策树过拟合，提高泛华性能的方法。</p>
 <p>剪枝分为预剪枝与后剪枝。</p>
 <p><strong>预剪枝</strong>是指在决策树的生成过程中，对每个节点在划分前先进行评估，若当前的划分不能带来泛化性能的提升，则停止划分，并将当前节点标记为叶节点。</p>
+<p>若增加分支提高分类正确率，则不减，若增加分支不能提高，则剪枝或者终止划分</p>
 <p><strong>后剪枝</strong>是指先从训练集生成一颗完整的决策树，然后自底向上对非叶节点进行考察，若将该节点对应的子树替换为叶节点，能带来泛化性能的提升，则将该子树替换为叶节点。</p>
 <p>那么怎么来判断是否带来泛化性能的提升呢？最简单的就是留出法，即预留一部分数据作为验证集来进行性能评估。</p>
 </div>
@@ -808,7 +812,7 @@ sqrt(n_features)，跟auto一样；</p></li>
 <p>随机森林</p>
 <p>组合分类器的概念
 最终结果由多个分类器的结果投票表决，或者取多个分类器的平均值等。
-森林：顾名思义就是树的组合。</p>
+森林：顾名思义就是树的组合。是bagging的变体，特指基学习器是tree</p>
 <p>决策树相当于一个大师，通过自己在数据集中学到的知识对于新的数据进行分类。但是俗话说得好，一个诸葛亮，玩不过三个臭皮匠。随机森林就是希望构建多个臭皮匠，希望最终的分类效果能够超过单个大师的一种算法</p>
 <div id="定义" class="section level2">
 <h2><span class="header-section-number">2.1</span> 定义</h2>
@@ -931,7 +935,8 @@ min_samples_split: 内部节点再划分所需最小样本数，默认2。这个
 <blockquote>
 <p>集成学习通过构建并结合多个学习器来完成学习任务，也叫多分类器系统。</p>
 </blockquote>
-<p>是并行集成学习的代表</p>
+<p>其基学习器可以是树，也可以还是其他分类or回归模型
+是并行集成学习的代表</p>
 <p>集成学习
 - 同质集成：同类型的学习器
 - 异质集成：不同类型的学习器</p>
@@ -1146,7 +1151,8 @@ end for
 </div>
 <div id="adaboost" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> AdaBoost</h1>
-<p>自适应增强树</p>
+<p>自适应增强提升算法
+一般是二分类算法</p>
 <blockquote>
 <p>AdaBoost全称为AdaptiveBoosting:自适应提升算法；虽然名字听起来给人一种高大上的感觉，但其实背后的原理并不难理解。什么叫做自适应，就是这个算法可以在不同的数据集上都适用,这个基本和废话一样,一个算法肯定要能适应不同的数据集。</p>
 </blockquote>
@@ -1224,9 +1230,10 @@ end for
 <p><strong>n_estimators:</strong>基分类器提升（循环）次数，默认是50次，这个值过大，模型容易过拟合；值过小，模型容易欠拟合。</p>
 <p><strong>learning_rate:</strong>学习率，表示梯度收敛速度，默认为1，如果过大，容易错过最优值，如果过小，则收敛速度会很慢；该值需要和n_estimators进行一个权衡，当分类器迭代次数较少时，学习率可以小一些，当迭代次数较多时，学习率可以适当放大。</p>
 <p><strong>algorithm:boosting</strong>算法，也就是模型提升准则，有两种方式SAMME, 和SAMME.R两种，默认是SAMME.R，两者的区别主要是弱学习器权重的度量，前者是对样本集预测错误的概率进行划分的，后者是对样本集的预测错误的比例，即错分率进行划分的，默认是用的SAMME.R。</p>
-<p><strong>random_state:</strong>随机种子设置。
-### 属性
-<strong>estimators_:</strong>以列表的形式返回所有的分类器。</p>
+<p><strong>random_state:</strong>随机种子设置。</p>
+<div id="属性-1" class="section level3">
+<h3><span class="header-section-number">5.8.1</span> 属性</h3>
+<p><strong>estimators_:</strong>以列表的形式返回所有的分类器。</p>
 <p><strong>classes_:</strong>类别标签</p>
 <p><strong>estimator_weights_:</strong>每个分类器权重</p>
 <p><strong>estimator_errors_:</strong>每个分类器的错分率，与分类器权重相对应。</p>
@@ -1277,6 +1284,7 @@ decision_function(X):返回决策函数值（比如svm中的决策距离）</p>
 <a class="sourceLine" id="cb11-28" title="28"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
 <a class="sourceLine" id="cb11-29" title="29">    ROC AUC score: <span class="fl">0.71</span></a></code></pre></div>
 
+</div>
 </div>
 </div>
 <div id="gradient-boost-decision-tree" class="section level1">
@@ -1791,6 +1799,14 @@ RMSE：MSE开平方</p>
 
 </div>
 </div>
+<div id="tuning-hyperparameters" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Tuning-Hyperparameters</h1>
+<p>超参数调节</p>
+<blockquote>
+
+</blockquote>
+
+</div>
             </section>
 
           </div>
@@ -1841,7 +1857,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["DecisionTree.pdf", "DecisionTree.epub"],
+"download": null,
 "toolbar": {
 "position": "fixed",
 "search": false
