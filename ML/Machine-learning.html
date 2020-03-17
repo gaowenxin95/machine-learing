@@ -24,7 +24,7 @@
 <meta name="author" content="高文欣" />
 
 
-<meta name="date" content="2020-02-29" />
+<meta name="date" content="2020-03-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -152,11 +152,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.6.5" data-path=""><a href="#gini-指数-vs-熵"><i class="fa fa-check"></i><b>1.6.5</b> Gini 指数 vs 熵</a></li>
 </ul></li>
 <li class="chapter" data-level="1.7" data-path=""><a href="#剪枝"><i class="fa fa-check"></i><b>1.7</b> 剪枝</a></li>
-<li class="chapter" data-level="1.8" data-path=""><a href="#复现"><i class="fa fa-check"></i><b>1.8</b> 复现</a></li>
-<li class="chapter" data-level="1.9" data-path=""><a href="#sklearn.tree.decisiontreeclassifier"><i class="fa fa-check"></i><b>1.9</b> sklearn.tree.DecisionTreeClassifier</a><ul>
-<li class="chapter" data-level="1.9.1" data-path=""><a href="#参数说明"><i class="fa fa-check"></i><b>1.9.1</b> 参数说明</a></li>
-<li class="chapter" data-level="1.9.2" data-path=""><a href="#练习"><i class="fa fa-check"></i><b>1.9.2</b> 练习</a></li>
+<li class="chapter" data-level="1.8" data-path=""><a href="#分类与回归"><i class="fa fa-check"></i><b>1.8</b> 分类与回归</a></li>
+<li class="chapter" data-level="1.9" data-path=""><a href="#复现"><i class="fa fa-check"></i><b>1.9</b> 复现</a></li>
+<li class="chapter" data-level="1.10" data-path=""><a href="#sklearn.tree.decisiontreeclassifier"><i class="fa fa-check"></i><b>1.10</b> sklearn.tree.DecisionTreeClassifier</a><ul>
+<li class="chapter" data-level="1.10.1" data-path=""><a href="#参数说明"><i class="fa fa-check"></i><b>1.10.1</b> 参数说明</a></li>
 </ul></li>
+<li class="chapter" data-level="1.11" data-path=""><a href="#总结"><i class="fa fa-check"></i><b>1.11</b> 总结</a></li>
+<li class="chapter" data-level="1.12" data-path=""><a href="#分类与回归的区别"><i class="fa fa-check"></i><b>1.12</b> 分类与回归的区别</a></li>
+<li class="chapter" data-level="1.13" data-path=""><a href="#基本概念辨析"><i class="fa fa-check"></i><b>1.13</b> 基本概念辨析</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path=""><a href="#randomforest"><i class="fa fa-check"></i><b>2</b> RandomForest</a><ul>
 <li class="chapter" data-level="2.1" data-path=""><a href="#定义"><i class="fa fa-check"></i><b>2.1</b> 定义</a><ul>
@@ -164,12 +167,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1.2" data-path=""><a href="#待选特征的随机选取"><i class="fa fa-check"></i><b>2.1.2</b> 待选特征的随机选取：</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path=""><a href="#构造过程"><i class="fa fa-check"></i><b>2.2</b> 构造过程</a></li>
-<li class="chapter" data-level="2.3" data-path=""><a href="#特点"><i class="fa fa-check"></i><b>2.3</b> 特点</a></li>
-<li class="chapter" data-level="2.4" data-path=""><a href="#randomforestregressor-随机回归树"><i class="fa fa-check"></i><b>2.4</b> RandomForestRegressor 随机回归树</a><ul>
-<li class="chapter" data-level="2.4.1" data-path=""><a href="#参数"><i class="fa fa-check"></i><b>2.4.1</b> 参数</a></li>
+<li class="chapter" data-level="2.3" data-path=""><a href="#特点"><i class="fa fa-check"></i><b>2.3</b> 特点</a><ul>
+<li class="chapter" data-level="2.3.1" data-path=""><a href="#参数"><i class="fa fa-check"></i><b>2.3.1</b> 参数</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path=""><a href="#随机分类树"><i class="fa fa-check"></i><b>2.5</b> 随机分类树</a></li>
-<li class="chapter" data-level="2.6" data-path=""><a href="#调参实例"><i class="fa fa-check"></i><b>2.6</b> 调参实例</a></li>
+<li class="chapter" data-level="2.4" data-path=""><a href="#随机分类树"><i class="fa fa-check"></i><b>2.4</b> 随机分类树</a></li>
+<li class="chapter" data-level="2.5" data-path=""><a href="#调参实例"><i class="fa fa-check"></i><b>2.5</b> 调参实例</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path=""><a href="#bagging"><i class="fa fa-check"></i><b>3</b> Bagging</a><ul>
 <li class="chapter" data-level="3.1" data-path=""><a href="#自助采样"><i class="fa fa-check"></i><b>3.1</b> 自助采样</a></li>
@@ -188,6 +190,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path=""><a href="#boosting"><i class="fa fa-check"></i><b>4</b> Boosting</a><ul>
 <li class="chapter" data-level="4.1" data-path=""><a href="#重赋权"><i class="fa fa-check"></i><b>4.1</b> 重赋权</a></li>
 <li class="chapter" data-level="4.2" data-path=""><a href="#重采样"><i class="fa fa-check"></i><b>4.2</b> 重采样</a></li>
+<li class="chapter" data-level="4.3" data-path=""><a href="#boosting与bagging的区别"><i class="fa fa-check"></i><b>4.3</b> boosting与bagging的区别</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path=""><a href="#adaboost"><i class="fa fa-check"></i><b>5</b> AdaBoost</a><ul>
 <li class="chapter" data-level="5.1" data-path=""><a href="#boosting过程"><i class="fa fa-check"></i><b>5.1</b> boosting过程</a></li>
@@ -195,22 +198,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path=""><a href="#权重"><i class="fa fa-check"></i><b>5.3</b> 权重</a></li>
 <li class="chapter" data-level="5.4" data-path=""><a href="#加法模型"><i class="fa fa-check"></i><b>5.4</b> 加法模型</a></li>
 <li class="chapter" data-level="5.5" data-path=""><a href="#前向分步算法"><i class="fa fa-check"></i><b>5.5</b> 前向分步算法</a></li>
-<li class="chapter" data-level="5.6" data-path=""><a href="#boosting与adaboost的关系"><i class="fa fa-check"></i><b>5.6</b> boosting与adaboost的关系</a></li>
-<li class="chapter" data-level="5.7" data-path=""><a href="#残差树"><i class="fa fa-check"></i><b>5.7</b> 残差树</a></li>
-<li class="chapter" data-level="5.8" data-path=""><a href="#复现-1"><i class="fa fa-check"></i><b>5.8</b> 复现</a><ul>
-<li class="chapter" data-level="5.8.1" data-path=""><a href="#属性-1"><i class="fa fa-check"></i><b>5.8.1</b> 属性</a></li>
+<li class="chapter" data-level="5.6" data-path=""><a href="#adaboost的数据权重"><i class="fa fa-check"></i><b>5.6</b> Adaboost的数据权重</a></li>
+<li class="chapter" data-level="5.7" data-path=""><a href="#adaboost分类器的权重"><i class="fa fa-check"></i><b>5.7</b> Adaboost分类器的权重</a></li>
+<li class="chapter" data-level="5.8" data-path=""><a href="#优劣"><i class="fa fa-check"></i><b>5.8</b> 优劣</a></li>
+<li class="chapter" data-level="5.9" data-path=""><a href="#boosting与adaboost的关系"><i class="fa fa-check"></i><b>5.9</b> boosting与adaboost的关系</a></li>
+<li class="chapter" data-level="5.10" data-path=""><a href="#残差树"><i class="fa fa-check"></i><b>5.10</b> 残差树</a></li>
+<li class="chapter" data-level="5.11" data-path=""><a href="#复现-1"><i class="fa fa-check"></i><b>5.11</b> 复现</a><ul>
+<li class="chapter" data-level="5.11.1" data-path=""><a href="#属性-1"><i class="fa fa-check"></i><b>5.11.1</b> 属性</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path=""><a href="#gradient-boost-decision-tree"><i class="fa fa-check"></i><b>6</b> Gradient Boost Decision Tree</a><ul>
 <li class="chapter" data-level="6.1" data-path=""><a href="#定义-1"><i class="fa fa-check"></i><b>6.1</b> 定义</a></li>
-<li class="chapter" data-level="6.2" data-path=""><a href="#基于残差的gradient"><i class="fa fa-check"></i><b>6.2</b> 基于残差的gradient</a><ul>
-<li class="chapter" data-level="6.2.1" data-path=""><a href="#评价-1"><i class="fa fa-check"></i><b>6.2.1</b> 评价</a></li>
+<li class="chapter" data-level="6.2" data-path=""><a href="#梯度下降"><i class="fa fa-check"></i><b>6.2</b> 梯度下降</a></li>
+<li class="chapter" data-level="6.3" data-path=""><a href="#gbdt回归"><i class="fa fa-check"></i><b>6.3</b> GBDT回归</a><ul>
+<li class="chapter" data-level="6.3.1" data-path=""><a href="#评价-1"><i class="fa fa-check"></i><b>6.3.1</b> 评价</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path=""><a href="#boosting-1"><i class="fa fa-check"></i><b>6.3</b> boosting</a><ul>
-<li class="chapter" data-level="6.3.1" data-path=""><a href="#贪心算法"><i class="fa fa-check"></i><b>6.3.1</b> 贪心算法</a></li>
-<li class="chapter" data-level="6.3.2" data-path=""><a href="#如何学习一个新模型"><i class="fa fa-check"></i><b>6.3.2</b> 如何学习一个新模型</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path=""><a href="#demo"><i class="fa fa-check"></i><b>6.4</b> demo</a></li>
+<li class="chapter" data-level="6.4" data-path=""><a href="#gbdt分类算法"><i class="fa fa-check"></i><b>6.4</b> GBDT分类算法</a></li>
+<li class="chapter" data-level="6.5" data-path=""><a href="#常见损失函数"><i class="fa fa-check"></i><b>6.5</b> 常见损失函数</a></li>
+<li class="chapter" data-level="6.6" data-path=""><a href="#boosting-1"><i class="fa fa-check"></i><b>6.6</b> boosting</a></li>
+<li class="chapter" data-level="6.7" data-path=""><a href="#调参"><i class="fa fa-check"></i><b>6.7</b> 调参</a></li>
+<li class="chapter" data-level="6.8" data-path=""><a href="#demo"><i class="fa fa-check"></i><b>6.8</b> demo</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path=""><a href="#模型的评估与选择"><i class="fa fa-check"></i><b>7</b> 模型的评估与选择</a><ul>
 <li class="chapter" data-level="7.1" data-path=""><a href="#经验误差与过拟合"><i class="fa fa-check"></i><b>7.1</b> 经验误差与过拟合</a></li>
@@ -238,10 +245,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8" data-path=""><a href="#bias-varinace-error"><i class="fa fa-check"></i><b>8</b> bias-varinace-error</a><ul>
 <li class="chapter" data-level="8.1" data-path=""><a href="#bias"><i class="fa fa-check"></i><b>8.1</b> bias</a></li>
 <li class="chapter" data-level="8.2" data-path=""><a href="#variance"><i class="fa fa-check"></i><b>8.2</b> variance</a></li>
-<li class="chapter" data-level="8.3" data-path=""><a href="#总结"><i class="fa fa-check"></i><b>8.3</b> 总结</a></li>
+<li class="chapter" data-level="8.3" data-path=""><a href="#总结-1"><i class="fa fa-check"></i><b>8.3</b> 总结</a></li>
 <li class="chapter" data-level="8.4" data-path=""><a href="#error"><i class="fa fa-check"></i><b>8.4</b> error</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path=""><a href="#tuning-hyperparameters"><i class="fa fa-check"></i><b>9</b> Tuning-Hyperparameters</a></li>
+<li class="chapter" data-level="10" data-path=""><a href="#方法"><i class="fa fa-check"></i><b>10</b> 方法</a><ul>
+<li class="chapter" data-level="10.1" data-path=""><a href="#梯度下降-1"><i class="fa fa-check"></i><b>10.1</b> 梯度下降</a></li>
+<li class="chapter" data-level="10.2" data-path=""><a href="#梯度"><i class="fa fa-check"></i><b>10.2</b> 梯度</a></li>
+<li class="chapter" data-level="10.3" data-path=""><a href="#上升vs下降"><i class="fa fa-check"></i><b>10.3</b> 上升vs下降</a></li>
+<li class="chapter" data-level="10.4" data-path=""><a href="#梯度下降-2"><i class="fa fa-check"></i><b>10.4</b> 梯度下降</a></li>
+<li class="chapter" data-level="10.5" data-path=""><a href="#最小二乘"><i class="fa fa-check"></i><b>10.5</b> 最小二乘</a></li>
+<li class="chapter" data-level="10.6" data-path=""><a href="#牛顿法"><i class="fa fa-check"></i><b>10.6</b> 牛顿法</a></li>
+<li class="chapter" data-level="10.7" data-path=""><a href="#坐标轴下降"><i class="fa fa-check"></i><b>10.7</b> 坐标轴下降</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path=""><a href="#xgboost"><i class="fa fa-check"></i><b>11</b> XGBoost</a><ul>
+<li class="chapter" data-level="11.1" data-path=""><a href="#基本知识"><i class="fa fa-check"></i><b>11.1</b> 基本知识</a></li>
+<li class="chapter" data-level="11.2" data-path=""><a href="#xgb的定义"><i class="fa fa-check"></i><b>11.2</b> xgb的定义</a></li>
+<li class="chapter" data-level="11.3" data-path=""><a href="#目标函数的正则项"><i class="fa fa-check"></i><b>11.3</b> 目标函数的正则项</a></li>
+<li class="chapter" data-level="11.4" data-path=""><a href="#枚举所有不同树结构的贪心法"><i class="fa fa-check"></i><b>11.4</b> 枚举所有不同树结构的贪心法</a></li>
+<li class="chapter" data-level="11.5" data-path=""><a href="#近似算法"><i class="fa fa-check"></i><b>11.5</b> 近似算法</a><ul>
+<li class="chapter" data-level="11.5.1" data-path=""><a href="#选择分位点"><i class="fa fa-check"></i><b>11.5.1</b> 选择分位点</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path=""><a href="#xgb缺失值的处理"><i class="fa fa-check"></i><b>11.6</b> xgb缺失值的处理</a><ul>
+<li class="chapter" data-level="11.6.1" data-path=""><a href="#稀疏感知算法"><i class="fa fa-check"></i><b>11.6.1</b> 稀疏感知算法</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path=""><a href="#工程实现"><i class="fa fa-check"></i><b>11.7</b> 工程实现</a><ul>
+<li class="chapter" data-level="11.7.1" data-path=""><a href="#column-block-for-parallel-learning"><i class="fa fa-check"></i><b>11.7.1</b> Column Block for Parallel Learning</a></li>
+</ul></li>
+<li class="chapter" data-level="11.8" data-path=""><a href="#缓存访问优化算法"><i class="fa fa-check"></i><b>11.8</b> 缓存访问优化算法</a></li>
+<li class="chapter" data-level="11.9" data-path=""><a href="#核外块计算"><i class="fa fa-check"></i><b>11.9</b> “核外”块计算</a></li>
+<li class="chapter" data-level="11.10" data-path=""><a href="#优点"><i class="fa fa-check"></i><b>11.10</b> 优点</a></li>
+<li class="chapter" data-level="11.11" data-path=""><a href="#缺点"><i class="fa fa-check"></i><b>11.11</b> 缺点</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -262,7 +297,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">DecisionTree</h1>
 <p class="author"><em>高文欣</em></p>
-<p class="date"><em>2020-02-29</em></p>
+<p class="date"><em>2020-03-17</em></p>
 </div>
 <div id="序言" class="section level1 unnumbered">
 <h1>序言</h1>
@@ -276,13 +311,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="步骤" class="section level2">
 <h2><span class="header-section-number">1.1</span> 步骤</h2>
 <ul>
-<li>特征选择</li>
+<li>特征选择:基于三个准则：ID3,C4.5,CART</li>
 <li>决策树的生成</li>
 <li>决策树的修剪。</li>
 </ul>
+<p>决策树的灵魂:依靠某种指标进行树的分裂达到分类/回归的目的，总是希望纯度越高越好</p>
 <blockquote>
 <p>用决策树分类：从根节点开始，对实例的某一特征进行测试，根据测试结果将实例分配到其子节点，此时每个子节点对应着该特征的一个取值，如此递归的对实例进行测试并分配，直到到达叶节点，最后将实例分到叶节点的类中<a href="https://blog.csdn.net/jiaoyangwm/article/details/79525237">机器学习实战</a></p>
 </blockquote>
+<p>结点的意义</p>
+<ul>
+<li>根节点：包含数据集中的所有数据的集合</li>
+<li>内部节点：每个内部节点为一个判断条件，并且包含数据集中满足从根节点到该节点所有条件的数据的集合。根据内部结点的判断条件测试结果，内部节点对应的数据的集合别分到两个或多个子节点中。</li>
+<li>叶节点：叶节点为最终的类别，被包含在该叶节点的数据属于该类别。</li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(knitr)</a>
 <a class="sourceLine" id="cb1-2" title="2">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/01.png&quot;</span>)</a></code></pre></div>
 <p><img src="figs/01.png" width="314" /></p>
@@ -299,6 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="id3" class="section level2">
 <h2><span class="header-section-number">1.3</span> ID3</h2>
+<p>多叉树只能用于分类</p>
 <p>划分数据集的大原则是：将无序数据变得更加有序，但是各种方法都有各自的优缺点，信息论是量化处理信息的分支科学，在划分数据集前后信息发生的变化称为信息增益，获得信息增益最高的特征就是最好的选择，所以必须先学习如何计算信息增益，集合信息的度量方式称为香农熵，或者简称熵。</p>
 <div id="信息熵" class="section level3">
 <h3><span class="header-section-number">1.3.1</span> 信息熵</h3>
@@ -320,7 +363,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="信息增益" class="section level3">
 <h3><span class="header-section-number">1.3.3</span> 信息增益</h3>
-<p>是信息熵-条件熵
+<p>信息增益=信息熵-条件熵
 代表了在一个条件下，信息复杂度（不确定性）减少的程度</p>
 <p>信息增益是相对于特征而言的。所以，特征A对训练数据集D的信息增益g(D,A)，定义为集合D的经验熵H(D)与特征A给定条件下D的经验条件熵H(D|A)之差，</p>
 <p><span class="math inline">\(g(D, A)=H(D)-H(D | A)\)</span></p>
@@ -342,6 +385,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>C4.5 算法最大的特点是克服了 ID3 对特征数目的偏重这一缺点，引入<strong>信息增益率</strong>来作为分类标准
 基于信息增益率准则选择最优分割属性的算法
 信息增益比率通过引入一个被称作分裂信息(Split information)的项来惩罚取值较多的属性。</p>
+<blockquote>
+<p>对于缺失值处理的问题，主要需要解决的是两个问题，一是在样本某些特征缺失的情况下选择划分的属性，二是选定了划分属性，对于在该属性上缺失特征的样本的处理。
+对于第一个子问题，对于某一个有缺失特征值的特征A。C4.5的思路是将数据分成两部分，对每个样本设置一个权重（初始可以都为1），然后划分数据，一部分是有特征值A的数据D1，另一部分是没有特征A的数据D2. 然后对于没有缺失特征A的数据集D1来和对应的A特征的各个特征值一起计算加权重后的信息增益比，最后乘上一个系数，这个系数是无特征A缺失的样本加权后所占加权总样本的比例。
+对于第二个子问题，可以将缺失特征的样本同时划分入所有的子节点，不过将该样本的权重按各个子节点样本的数量比例来分配。比如缺失特征A的样本a之前权重为1，特征A有3个特征值A1,A2,A3。 3个特征值对应的无缺失A特征的样本个数为2,3,4.则a同时划分入A1，A2，A3。对应权重调节为2/9,3/9, 4/9。</p>
+</blockquote>
 <div id="信息增益率比" class="section level3">
 <h3><span class="header-section-number">1.4.1</span> 信息增益率(比)</h3>
 <p>信息增益比：特征A对训练数据集D的信息增益比<span class="math inline">\(g_R(D,A)\)</span>定义为其信息增益<span class="math inline">\(g(D,A)\)</span>与训练数据集D的经验熵之比：</p>
@@ -378,11 +426,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="cart-1" class="section level3">
 <h3><span class="header-section-number">1.6.3</span> CART</h3>
 <p>CART 与 ID3，C4.5 不同之处在于 CART 生成的树必须是二叉树。也就是说，无论是回归还是分类问题，无论特征是离散的还是连续的，无论属性取值有多个还是两个，内部节点只能根据属性值进行二分。</p>
-<p>CART 的全称是分类与回归树。从这个名字中就应该知道，CART 既可以用于分类问题，也可以用于回归问题。</p>
+<p>CART 的全称是分类与回归树。从这个名字中就应该知道，CART既可以用于分类问题，也可以用于回归问题。
+&gt;对于CART分类树离散值的处理问题，采用的思路是不停的二分离散特征。
+回忆下ID3或者C4.5，如果某个特征A被选取建立决策树节点，如果它有A1,A2,A3三种类别，我们会在决策树上一下建立一个三叉的节点。这样导致决策树是多叉树。但是CART分类树使用的方法不同，他采用的是不停的二分，还是这个例子，CART分类树会考虑把A分成{A1}和{A2,A3}, {A2}和{A1,A3}, {A3}和{A1,A2}三种情况，找到基尼系数最小的组合，比如{A2}和{A1,A3},然后建立二叉树节点，一个节点是A2对应的样本，另一个节点是{A1,A3}对应的节点。同时，由于这次没有把特征A的取值完全分开，后面我们还有机会在子节点继续选择到特征A来划分A1和A3。这和ID3或者C4.5不同，在ID3或者C4.5的一棵子树中，离散特征只会参与一次节点的建立。<a href="https://www.cnblogs.com/pinard/p/6053344.html">cnblog</a></p>
 <p>回归树中，使用平方误差最小化准则来选择特征并进行划分。每一个叶子节点给出的预测值，是划分到该叶子节点的所有样本目标值的均值，这样只是在给定划分的情况下最小化了平方误差。</p>
 <p>要确定最优化分，还需要遍历所有属性，以及其所有的取值来分别尝试划分并计算在此种划分情况下的最小平方误差，选取最小的作为此次划分的依据。由于回归树生成使用平方误差最小化准则，所以又叫做最小二乘回归树。</p>
 <p>分类树种，使用 Gini 指数最小化准则来选择特征并进行划分；</p>
 <p>Gini 指数表示集合的不确定性，或者是不纯度。基尼指数越大，集合不确定性越高，不纯度也越大。这一点和熵类似。另一种理解基尼指数的思路是，基尼指数是为了最小化误分类的概率。</p>
+<blockquote>
+<p>无论是ID3, C4.5还是CART,在做特征选择的时候都是选择最优的一个特征来做分类决策，但是大多数，分类决策不应该是由某一个特征决定的，而是应该由一组特征决定的。这样决策得到的决策树更加准确。这个决策树叫做多变量决策树(multi-variate decision tree)。在选择最优特征的时候，多变量决策树不是选择某一个最优特征，而是选择最优的一个特征线性组合来做决策。这个算法的代表是OC1，这里不多介绍。
+如果样本发生一点点的改动，就会导致树结构的剧烈改变。这个可以通过集成学习里面的随机森林之类的方法解决。　　　</p>
+</blockquote>
 </div>
 <div id="信息增益-vs-信息增益比" class="section level3">
 <h3><span class="header-section-number">1.6.4</span> 信息增益 vs 信息增益比</h3>
@@ -397,15 +451,28 @@ Gini 指数更偏向于连续属性，熵更偏向于离散属性。</p>
 </div>
 <div id="剪枝" class="section level2">
 <h2><span class="header-section-number">1.7</span> 剪枝</h2>
+<p>ID3没有剪枝策略</p>
 <p>决策树算法很容易过拟合（overfitting），剪枝算法就是用来防止决策树过拟合，提高泛华性能的方法。</p>
 <p>剪枝分为预剪枝与后剪枝。</p>
 <p><strong>预剪枝</strong>是指在决策树的生成过程中，对每个节点在划分前先进行评估，若当前的划分不能带来泛化性能的提升，则停止划分，并将当前节点标记为叶节点。</p>
 <p>若增加分支提高分类正确率，则不减，若增加分支不能提高，则剪枝或者终止划分</p>
-<p><strong>后剪枝</strong>是指先从训练集生成一颗完整的决策树，然后自底向上对非叶节点进行考察，若将该节点对应的子树替换为叶节点，能带来泛化性能的提升，则将该子树替换为叶节点。</p>
+<p>CART采取的剪枝策略是后剪枝
+<strong>后剪枝</strong>是指先从训练集生成一颗完整的决策树，然后自底向上对非叶节点进行考察，若将该节点对应的子树替换为叶节点，能带来泛化性能的提升，则将该子树替换为叶节点。</p>
 <p>那么怎么来判断是否带来泛化性能的提升呢？最简单的就是留出法，即预留一部分数据作为验证集来进行性能评估。</p>
 </div>
+<div id="分类与回归" class="section level2">
+<h2><span class="header-section-number">1.8</span> 分类与回归</h2>
+<p>什么是回归树，什么是分类树。两者的区别在于样本输出，如果样本输出是离散值，那么这是一颗分类树。如果果样本输出是连续值，那么那么这是一颗回归树。
+除了概念的不同，CART回归树和CART分类树的建立和预测的区别主要有下面两点：
+- 1)连续值的处理方法不同
+- 2)决策树建立后做预测的方式不同。</p>
+<blockquote>
+<p>对于连续值的处理，我们知道CART分类树采用的是用基尼系数的大小来度量特征的各个划分点的优劣情况。这比较适合分类模型，但是对于回归模型，我们使用了常见的和方差的度量方式，CART回归树的度量目标是，对于任意划分特征A，对应的任意划分点s两边划分成的数据集D1和D2，求出使D1和D2各自集合的均方差最小，同时D1和D2的均方差之和最小所对应的特征和特征值划分点。</p>
+</blockquote>
+<p>对于决策树建立后做预测的方式，上面讲到了CART分类树采用叶子节点里概率最大的类别作为当前节点的预测类别。而回归树输出不是类别，它采用的是用最终叶子的均值或者中位数来预测输出结果。<a href="https://www.cnblogs.com/pinard/p/6053344.html">cnblog</a></p>
+</div>
 <div id="复现" class="section level2">
-<h2><span class="header-section-number">1.8</span> 复现</h2>
+<h2><span class="header-section-number">1.9</span> 复现</h2>
 <p><a href="https://blog.csdn.net/jiaoyangwm/article/details/79525237">csdn的一个小demo</a></p>
 <p>可以方便我复习语法和代码:smile:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1"><span class="im">from</span> math <span class="im">import</span> log</a>
@@ -761,11 +828,11 @@ Gini 指数更偏向于连续属性，熵更偏向于离散属性。</p>
 <p><img src="figs/03.png" width="416" /></p>
 </div>
 <div id="sklearn.tree.decisiontreeclassifier" class="section level2">
-<h2><span class="header-section-number">1.9</span> sklearn.tree.DecisionTreeClassifier</h2>
+<h2><span class="header-section-number">1.10</span> sklearn.tree.DecisionTreeClassifier</h2>
 <p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier">sklearn.tree.DecisionTreeClassifier</a></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">class</span> sklearn.tree.DecisionTreeClassifier(criterion<span class="op">=</span>’gini’, splitter<span class="op">=</span>’best’, max_depth<span class="op">=</span><span class="va">None</span>, min_samples_split<span class="op">=</span><span class="dv">2</span>, min_samples_leaf<span class="op">=</span><span class="dv">1</span>, min_weight_fraction_leaf<span class="op">=</span><span class="fl">0.0</span>, max_features<span class="op">=</span><span class="va">None</span>, random_state<span class="op">=</span><span class="va">None</span>, max_leaf_nodes<span class="op">=</span><span class="va">None</span>, min_impurity_decrease<span class="op">=</span><span class="fl">0.0</span>, min_impurity_split<span class="op">=</span><span class="va">None</span>, class_weight<span class="op">=</span><span class="va">None</span>, presort<span class="op">=</span><span class="va">False</span>)[source]</a></code></pre></div>
 <div id="参数说明" class="section level3">
-<h3><span class="header-section-number">1.9.1</span> 参数说明</h3>
+<h3><span class="header-section-number">1.10.1</span> 参数说明</h3>
 <p><strong>criterion：</strong>特征选择标准，可选参数，默认是gini，可以设置为entropy。gini是基尼不纯度，是将来自集合的某种结果随机应用于某一数据项的预期误差率，是一种基于统计的思想。entropy是香农熵，也就是上篇文章讲过的内容，是一种基于信息论的思想。Sklearn把gini设为默认参数.ID3算法使用的是entropy，CART算法使用的则是gini。</p>
 <p><strong>splitter：</strong>特征划分点选择标准，可选参数，默认是best，可以设置为random。每个结点的选择策略。best参数是根据算法选择最佳的切分特征，例如gini、entropy。random随机的在部分划分点中找局部最优的划分点。默认的<strong>”best”适合样本量不大的时候</strong>，而如果<strong>样本数据量非常大，此时决策树构建推荐”random”</strong>。</p>
 <p><strong>max_features：</strong>划分时考虑的最大特征数，可选参数，默认是None。寻找最佳切分时考虑的最大特征数(n_features为总共的特征数)，有如下6种情况：
@@ -798,13 +865,59 @@ sqrt(n_features)，跟auto一样；</p></li>
 <li><p>推荐多用决策树的可视化，同时先限制决策树的深度，这样可以先观察下生成的决策树里数据的初步拟合情况，然后再决定是否要增加深度。
 在训练模型时，注意观察样本的类别情况（主要指分类树），如果类别分布非常不均匀，就要考虑用class_weight来限制模型过于偏向样本多的类别。
 决策树的数组使用的是numpy的float32类型，如果训练数据不是这样的格式，算法会先做copy再运行。</p></li>
-<li><p>如果输入的样本矩阵是稀疏的，推荐在拟合前调用csc_matrix稀疏化，在预测前调用csr_matrix稀疏化。</p></li>
+<li><p>如果输入的样本矩阵是稀疏的，推荐在拟合前调用csc_matrix稀疏化，在预测前调用csr_matrix稀疏化。　<a href="https://www.cnblogs.com/pinard/p/6056319.html" class="uri">https://www.cnblogs.com/pinard/p/6056319.html</a></p></li>
 </ul>
 </div>
-<div id="练习" class="section level3">
-<h3><span class="header-section-number">1.9.2</span> 练习</h3>
-
 </div>
+<div id="总结" class="section level2">
+<h2><span class="header-section-number">1.11</span> 总结</h2>
+<p>决策树的优缺点</p>
+<p>首先我们看看决策树算法的优点：</p>
+<p>　　　　1）简单直观，生成的决策树很直观。</p>
+<p>　　　　2）基本不需要预处理，不需要提前归一化，处理缺失值。</p>
+<p>　　　　3）使用决策树预测的代价是O(log2m)。 m为样本数。</p>
+<p>　　　　4）既可以处理离散值也可以处理连续值。很多算法只是专注于离散值或者连续值。</p>
+<p>　　　　5）可以处理多维度输出的分类问题。</p>
+<p>　　　　6）相比于神经网络之类的黑盒分类模型，决策树在逻辑上可以得到很好的解释</p>
+<p>　　　　7）可以交叉验证的剪枝来选择模型，从而提高泛化能力。</p>
+<p>　　　　8） 对于异常点的容错能力好，健壮性高。</p>
+<p>　　　　我们再看看决策树算法的缺点:</p>
+<p>　　　　1）决策树算法非常容易过拟合，导致泛化能力不强。可以通过设置节点最少样本数量和限制决策树深度来改进。</p>
+<p>　　　　2）决策树会因为样本发生一点点的改动，就会导致树结构的剧烈改变。这个可以通过集成学习之类的方法解决。</p>
+<p>　　　　3）寻找最优的决策树是一个NP难的问题，我们一般是通过启发式方法，容易陷入局部最优。可以通过集成学习之类的方法来改善。</p>
+<p>　　　　4）有些比较复杂的关系，决策树很难学习，比如异或。这个就没有办法了，一般这种关系可以换神经网络分类方法来解决。</p>
+<p>　　　　5）如果某些特征的样本比例过大，生成决策树容易偏向于这些特征。这个可以通过调节样本权重来改善。<a href="https://www.cnblogs.com/pinard/p/6053344.html">cnblog</a>
+　　　</p>
+</div>
+<div id="分类与回归的区别" class="section level2">
+<h2><span class="header-section-number">1.12</span> 分类与回归的区别</h2>
+<blockquote>
+<p>分类与回归是两个很接近的问题，分类的目标是根据已知样本的某些特征，判断一个新的样本属于哪种已知的样本类，它的结果是离散值。而回归的结果是连续的值。当然，本质是一样的，都是特征（feature）到结果/标签（label）之间的映射</p>
+</blockquote>
+<p>比如：判断西瓜是好瓜坏瓜，最后只要给出0，1就行了，就是分类问题，<strong>是什么</strong>
+但是要判断西瓜的成熟度：比如0.95，0.21，再比如预测上海黄浦区的2020年房价<strong>是多少</strong></p>
+<p>1、分类树分析是指预测结果是数据所属的类（比如某个电影去看还是不看）
+2、回归树分析是指预测结果可以被认为是实数（例如房屋的价格，或患者在医院中的逗留时间）
+<strong>而术语分类和回归树（CART，Classification And Regression Tree）分析是用于指代上述两种树的总称，由Breiman等人首先提出</strong></p>
+<blockquote>
+<p>分类树的样本输出（即响应值）是类的形式，比如判断这个救命药是真的还是假的，周末去看电影《风语咒》还是不去。而回归树的样本输出是数值的形式，比如给某人发放房屋贷款的数额就是具体的数值，可以是0到300万元之间的任意值。
+所以，对于回归树，你没法再用分类树那套信息增益、信息增益率、基尼系数来判定树的节点分裂了，你需要采取新的方式评估效果，包括预测误差（常用的有均方误差、对数误差等）。而且节点不再是类别，是数值（预测值），那么怎么确定呢？有的是节点内样本均值，有的是最优化算出来的比如Xgboost。</p>
+</blockquote>
+</div>
+<div id="基本概念辨析" class="section level2">
+<h2><span class="header-section-number">1.13</span> 基本概念辨析</h2>
+<p>可以参考这篇<a href="https://blog.csdn.net/weixin_41445387/article/details/96024886">blog</a></p>
+<p><strong>label</strong>：标签是我们要预测的事物，即简单线性回归中的y变量。回归问题中的label标签可以是小麦未来的价格、图片中显示的动物品种、音频剪辑的含义或任何事物。比如分类问题中的好瓜坏瓜，垃圾邮件or非垃圾邮件</p>
+<p><strong>特征</strong>：特征是输入变量，即简单线性回归中的x变量。简单的机器学习项目可能会使用单个特征，而比较复杂的机器学习项目可能会使用数百万个特征，按如下方式指定：</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/19.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/19.png" width="662" /></p>
+<p><strong>模型:</strong>模型定义了特征与标签之间的关系。例如，垃圾邮件检测模型可能会将某些特征与“垃圾邮件”紧密联系起来。我们来重点介绍一下模型生命周期的两个阶段：</p>
+<p><strong>训练:</strong>是指创建或学习模型。也就是说，向模型展示有标签样本，让模型逐渐学习特征与标签之间的关系。</p>
+<p><strong>推断</strong>是指将训练后的模型应用于无标签样本。也就是说，使用经过训练的模型做出有用的预测 (y’)。例如，在推断期间，您可以针对新的无标签样本预测 medianHouseValue。</p>
+<p><strong>无监督：</strong>没label的数据
+<strong>监督：</strong>有label数据
+<strong>半监督：</strong>这个数据集里有label的没label的混在了一起</p>
+
 </div>
 </div>
 <div id="randomforest" class="section level1">
@@ -813,7 +926,8 @@ sqrt(n_features)，跟auto一样；</p></li>
 <p>组合分类器的概念
 最终结果由多个分类器的结果投票表决，或者取多个分类器的平均值等。
 森林：顾名思义就是树的组合。是bagging的变体，特指基学习器是tree</p>
-<p>决策树相当于一个大师，通过自己在数据集中学到的知识对于新的数据进行分类。但是俗话说得好，一个诸葛亮，玩不过三个臭皮匠。随机森林就是希望构建多个臭皮匠，希望最终的分类效果能够超过单个大师的一种算法</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/17.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/17.png" width="532" /></p>
 <div id="定义" class="section level2">
 <h2><span class="header-section-number">2.1</span> 定义</h2>
 <p>随机森林是一个典型的多个决策树的组合分类器。主要包括两个方面：数据的随机性选取，以及待选特征的随机选取。</p>
@@ -825,7 +939,8 @@ sqrt(n_features)，跟auto一样；</p></li>
 </div>
 <div id="待选特征的随机选取" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> 待选特征的随机选取：</h3>
-<p>与数据集的随机选取类似，随机森林中的子树的每一个分裂过程并未用到所有的待选特征，而是从所有的待选特征中随机选取一定的特征，之后再在随机选取的特征中选取最优的特征。这样能够使得随机森林中的决策树都能够彼此不同，提升系统的多样性，从而提升分类性能</p>
+<p>与数据集的随机选取类似，随机森林中的子树的每一个分裂过程并未用到所有的待选特征，而是从所有的待选特征中随机选取一定的特征，之后再在随机选取的特征中选取最优的特征。这样能够使得随机森林中的决策树都能够<strong>彼此不同</strong>，提升系统的多样性，从而提升分类性能</p>
+<p>这里我还是不太明白好处，哈哈</p>
 </div>
 </div>
 <div id="构造过程" class="section level2">
@@ -843,90 +958,102 @@ sqrt(n_features)，跟auto一样；</p></li>
 它能够处理很高维度（feature很多）的数据，并且不用做特征选择，对数据集的适应能力强：既能处理离散型数据，也能处理连续型数据，数据集无需规范化
 训练速度快，可以得到变量重要性排序（两种：基于OOB误分率的增加量和基于分裂时的GINI下降量</p>
 <p>随机森林（random forest）是一种利用多个分类树对数据进行判别与分类的方法，它在对数据进行分类的同时，还可以给出各个变量（基因）的重要性评分，评估各个变量在分类中所起的作用</p>
-</div>
-<div id="randomforestregressor-随机回归树" class="section level2">
-<h2><span class="header-section-number">2.4</span> RandomForestRegressor 随机回归树</h2>
+<p>RF在bagging的基础上增加了随机抽样和随机特征抽样</p>
+<p>RF的主要优点有：</p>
+<p>　　　　1） 训练可以高度并行化，对于大数据时代的大样本训练速度有优势。个人觉得这是的最主要的优点。</p>
+<p>　　　　2） 由于可以随机选择决策树节点划分特征，这样在样本特征维度很高的时候，仍然能高效的训练模型。</p>
+<p>　　　　3） 在训练后，可以给出各个特征对于输出的重要性</p>
+<p>　　　　4） 由于采用了随机采样，训练出的模型的方差小，泛化能力强。</p>
+<p>　　　　5） 相对于Boosting系列的Adaboost和GBDT， RF实现比较简单。</p>
+<p>　　　　6） 对部分特征缺失不敏感。</p>
+<p>　　　　RF的主要缺点有：</p>
+<p>　　　　1）在某些噪音比较大的样本集上，RF模型容易陷入过拟合。</p>
+<p>　　　　2) 取值划分比较多的特征容易对RF的决策产生更大的影响，从而影响拟合的模型的效果。
+## RandomForestRegressor 随机回归树</p>
 <p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor">sklearn.ensemble.RandomForestRegressor</a></p>
 <div id="参数" class="section level3">
-<h3><span class="header-section-number">2.4.1</span> 参数</h3>
-<p><strong>n_estimators:</strong>integer, optional (default=100) The number of trees in the forest.森林中树的数量
+<h3><span class="header-section-number">2.3.1</span> 参数</h3>
+<p><strong>n_estimators:</strong>integer, optional (default=100) The number of trees in the forest.最大弱学习器的个数,注意和boosting参数的区别哦
 <strong>random_state</strong>：int, RandomState instance or None, optional (default=None)
-Controls both the randomness of the bootstrapping of the samples used when building trees (if bootstrap=True) and the sampling of the features to consider when looking for the best split at each node (if max_features &lt; n_features)</p>
-<p>max_features: RF划分时考虑的最大特征数。可以使用很多种类型的值，默认是“None”,意味着划分时考虑所有的特征数；如果是“log2”意味着划分时最多考虑log2N个特征；如果是“sqrt”或者“auto”意味着划分时最多考虑N−−√N个特征。如果是整数，代表考虑的特征绝对数。如果是浮点数，代表考虑特征百分比，即考虑（百分比xN）取整后的特征数，其中N为样本总特征数。一般来说，如果样本特征数不多，比如小于50，我们用默认的“None”就可以了，如果特征数非常多，我们可以灵活使用刚才描述的其他取值来控制划分时考虑的最大特征数，以控制决策树的生成时间。</p>
+Controls both the randomness of the bootstrapping of the samples used when building trees (if bootstrap=True) and the sampling of the features to consider when looking for the best split at each node (if max_features &lt; n_features)
+<strong>oob_score </strong>:即是否采用袋外样本来评估模型的好坏。默认识False。个人推荐设置为True，因为袋外分数反应了一个模型拟合后的泛化能力。</p>
+<p>** criterion**: 即CART树做划分时对特征的评价标准。分类模型和回归模型的损失函数是不一样的。分类RF对应的CART分类树默认是基尼系数gini,另一个可选择的标准是信息增益。回归RF对应的CART回归树默认是均方差mse，另一个可以选择的标准是绝对值差mae。一般来说选择默认的标准就已经很好的。</p>
+<p>决策树调参
+<strong>max_features</strong>: RF划分时考虑的最大特征数。可以使用很多种类型的值，默认是“None”,意味着划分时考虑所有的特征数；如果是“log2”意味着划分时最多考虑log2N个特征；如果是“sqrt”或者“auto”意味着划分时最多考虑N−−√N个特征。如果是整数，代表考虑的特征绝对数。如果是浮点数，代表考虑特征百分比，即考虑（百分比xN）取整后的特征数，其中N为样本总特征数。一般来说，如果样本特征数不多，比如小于50，我们用默认的“None”就可以了，如果特征数非常多，我们可以灵活使用刚才描述的其他取值来控制划分时考虑的最大特征数，以控制决策树的生成时间。</p>
 <p>max_depth: 决策树最大深度。默认为“None”，决策树在建立子树的时候不会限制子树的深度这样建树时，会使每一个叶节点只有一个类别，或是达到min_samples_split。一般来说，数据少或者特征少的时候可以不管这个值。如果模型样本量多，特征也多的情况下，推荐限制这个最大深度，具体的取值取决于数据的分布。常用的可以取值10-100之间。
 min_samples_split: 内部节点再划分所需最小样本数，默认2。这个值限制了子树继续划分的条件，如果某节点的样本数少于min_samples_split，则不会继续再尝试选择最优特征来进行划分。 默认是2.如果样本量不大，不需要管这个值。如果样本量数量级非常大，则推荐增大这个值。</p>
 <p>min_samples_leaf:叶子节点最少样本数。 这个值限制了叶子节点最少的样本数，如果某叶子节点数目小于样本数，则会和兄弟节点一起被剪枝。 默认是1,可以输入最少的样本数的整数，或者最少样本数占样本总数的百分比。如果样本量不大，不需要管这个值。如果样本量数量级非常大，则推荐增大这个值。</p>
 <p>min_weight_fraction_leaf：叶子节点最小的样本权重和。这个值限制了叶子节点所有样本权重和的最小值，如果小于这个值，则会和兄弟节点一起被剪枝。 默认是0，就是不考虑权重问题。一般来说，如果我们有较多样本有缺失值，或者分类树样本的分布类别偏差很大，就会引入样本权重，这时我们就要注意这个值了。</p>
 <p>max_leaf_nodes: 最大叶子节点数。通过限制最大叶子节点数，可以防止过拟合，默认是“None”，即不限制最大的叶子节点数。如果加了限制，算法会建立在最大叶子节点数内最优的决策树。如果特征不多，可以不考虑这个值，但是如果特征分成多的话，可以加以限制，具体的值可以通过交叉验证得到。</p>
 <p>min_impurity_split: 节点划分最小不纯度。这个值限制了决策树的增长，如果某节点的不纯度(基于基尼系数，均方差)小于这个阈值，则该节点不再生成子节点，即为叶子节点 。一般不推荐改动默认值1e-7</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1"></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="co"># Import RandomForestRegressor</span></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</a>
-<a class="sourceLine" id="cb5-4" title="4"></a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="co"># Instantiate rf</span></a>
-<a class="sourceLine" id="cb5-6" title="6">rf <span class="op">=</span> RandomForestRegressor(n_estimators<span class="op">=</span><span class="dv">25</span>,</a>
-<a class="sourceLine" id="cb5-7" title="7">            random_state<span class="op">=</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb5-8" title="8">            </a>
-<a class="sourceLine" id="cb5-9" title="9"><span class="co"># Fit rf to the training set    </span></a>
-<a class="sourceLine" id="cb5-10" title="10">rf.fit(X_train ,y_train) </a>
-<a class="sourceLine" id="cb5-11" title="11"></a>
-<a class="sourceLine" id="cb5-12" title="12"><span class="co"># Import mean_squared_error as MSE</span></a>
-<a class="sourceLine" id="cb5-13" title="13"><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error <span class="im">as</span> MSE</a>
-<a class="sourceLine" id="cb5-14" title="14"></a>
-<a class="sourceLine" id="cb5-15" title="15"><span class="co"># Predict the test set labels</span></a>
-<a class="sourceLine" id="cb5-16" title="16">y_pred <span class="op">=</span> rf.predict(X_test)</a>
-<a class="sourceLine" id="cb5-17" title="17"></a>
-<a class="sourceLine" id="cb5-18" title="18"><span class="co"># Evaluate the test set RMSE</span></a>
-<a class="sourceLine" id="cb5-19" title="19">rmse_test <span class="op">=</span> MSE(y_test, y_pred)<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb5-20" title="20"></a>
-<a class="sourceLine" id="cb5-21" title="21"><span class="co"># Print rmse_test</span></a>
-<a class="sourceLine" id="cb5-22" title="22"><span class="bu">print</span>(<span class="st">&#39;Test set RMSE of rf: </span><span class="sc">{:.2f}</span><span class="st">&#39;</span>.<span class="bu">format</span>(rmse_test))</a>
-<a class="sourceLine" id="cb5-23" title="23"></a>
-<a class="sourceLine" id="cb5-24" title="24"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
-<a class="sourceLine" id="cb5-25" title="25">    Test <span class="bu">set</span> RMSE of rf: <span class="fl">51.97</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1"></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="co"># Import RandomForestRegressor</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</a>
+<a class="sourceLine" id="cb7-4" title="4"></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="co"># Instantiate rf</span></a>
+<a class="sourceLine" id="cb7-6" title="6">rf <span class="op">=</span> RandomForestRegressor(n_estimators<span class="op">=</span><span class="dv">25</span>,</a>
+<a class="sourceLine" id="cb7-7" title="7">            random_state<span class="op">=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb7-8" title="8">            </a>
+<a class="sourceLine" id="cb7-9" title="9"><span class="co"># Fit rf to the training set    </span></a>
+<a class="sourceLine" id="cb7-10" title="10">rf.fit(X_train ,y_train) </a>
+<a class="sourceLine" id="cb7-11" title="11"></a>
+<a class="sourceLine" id="cb7-12" title="12"><span class="co"># Import mean_squared_error as MSE</span></a>
+<a class="sourceLine" id="cb7-13" title="13"><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error <span class="im">as</span> MSE</a>
+<a class="sourceLine" id="cb7-14" title="14"></a>
+<a class="sourceLine" id="cb7-15" title="15"><span class="co"># Predict the test set labels</span></a>
+<a class="sourceLine" id="cb7-16" title="16">y_pred <span class="op">=</span> rf.predict(X_test)</a>
+<a class="sourceLine" id="cb7-17" title="17"></a>
+<a class="sourceLine" id="cb7-18" title="18"><span class="co"># Evaluate the test set RMSE</span></a>
+<a class="sourceLine" id="cb7-19" title="19">rmse_test <span class="op">=</span> MSE(y_test, y_pred)<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb7-20" title="20"></a>
+<a class="sourceLine" id="cb7-21" title="21"><span class="co"># Print rmse_test</span></a>
+<a class="sourceLine" id="cb7-22" title="22"><span class="bu">print</span>(<span class="st">&#39;Test set RMSE of rf: </span><span class="sc">{:.2f}</span><span class="st">&#39;</span>.<span class="bu">format</span>(rmse_test))</a>
+<a class="sourceLine" id="cb7-23" title="23"></a>
+<a class="sourceLine" id="cb7-24" title="24"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
+<a class="sourceLine" id="cb7-25" title="25">    Test <span class="bu">set</span> RMSE of rf: <span class="fl">51.97</span></a></code></pre></div>
 </div>
 </div>
 <div id="随机分类树" class="section level2">
-<h2><span class="header-section-number">2.5</span> 随机分类树</h2>
+<h2><span class="header-section-number">2.4</span> 随机分类树</h2>
 <p>RandomForestClassifier
 <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier">可以直接查看官方文档</a>
 与随机森林回归树是一致</p>
 </div>
 <div id="调参实例" class="section level2">
-<h2><span class="header-section-number">2.6</span> 调参实例</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># Define the dictionary &#39;params_rf&#39;</span></a>
-<a class="sourceLine" id="cb6-2" title="2">params_rf <span class="op">=</span> {</a>
-<a class="sourceLine" id="cb6-3" title="3">             <span class="st">&#39;n_estimators&#39;</span>: [<span class="dv">100</span>, <span class="dv">350</span>, <span class="dv">500</span>],</a>
-<a class="sourceLine" id="cb6-4" title="4">             <span class="st">&#39;max_features&#39;</span>: [<span class="st">&#39;log2&#39;</span>, <span class="st">&#39;auto&#39;</span>, <span class="st">&#39;sqrt&#39;</span>],</a>
-<a class="sourceLine" id="cb6-5" title="5">             <span class="st">&#39;min_samples_leaf&#39;</span>: [<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">30</span>], </a>
-<a class="sourceLine" id="cb6-6" title="6">             }</a>
-<a class="sourceLine" id="cb6-7" title="7"><span class="co"># Import GridSearchCV</span></a>
-<a class="sourceLine" id="cb6-8" title="8"><span class="im">from</span> sklearn.model_selection <span class="im">import</span>  GridSearchCV</a>
-<a class="sourceLine" id="cb6-9" title="9"></a>
-<a class="sourceLine" id="cb6-10" title="10"><span class="co"># Instantiate grid_rf</span></a>
-<a class="sourceLine" id="cb6-11" title="11">grid_rf <span class="op">=</span> GridSearchCV(estimator<span class="op">=</span>rf,</a>
-<a class="sourceLine" id="cb6-12" title="12">                       param_grid<span class="op">=</span>params_rf,</a>
-<a class="sourceLine" id="cb6-13" title="13">                       scoring<span class="op">=</span><span class="st">&#39;neg_mean_squared_error&#39;</span>,</a>
-<a class="sourceLine" id="cb6-14" title="14">                       cv<span class="op">=</span><span class="dv">3</span>,</a>
-<a class="sourceLine" id="cb6-15" title="15">                       verbose<span class="op">=</span><span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb6-16" title="16">                       n_jobs<span class="op">=-</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb6-17" title="17"><span class="co"># Import mean_squared_error from sklearn.metrics as MSE </span></a>
-<a class="sourceLine" id="cb6-18" title="18"><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error <span class="im">as</span> MSE</a>
-<a class="sourceLine" id="cb6-19" title="19"></a>
-<a class="sourceLine" id="cb6-20" title="20"><span class="co"># Extract the best estimator</span></a>
-<a class="sourceLine" id="cb6-21" title="21">best_model <span class="op">=</span> grid_rf.best_estimator_</a>
-<a class="sourceLine" id="cb6-22" title="22"></a>
-<a class="sourceLine" id="cb6-23" title="23"><span class="co"># Predict test set labels</span></a>
-<a class="sourceLine" id="cb6-24" title="24">y_pred <span class="op">=</span> best_model.predict(X_test)</a>
-<a class="sourceLine" id="cb6-25" title="25"></a>
-<a class="sourceLine" id="cb6-26" title="26"><span class="co"># Compute rmse_test</span></a>
-<a class="sourceLine" id="cb6-27" title="27">rmse_test <span class="op">=</span> MSE(y_test, y_pred)<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb6-28" title="28"></a>
-<a class="sourceLine" id="cb6-29" title="29"><span class="co"># Print rmse_test</span></a>
-<a class="sourceLine" id="cb6-30" title="30"><span class="bu">print</span>(<span class="st">&#39;Test RMSE of best model: </span><span class="sc">{:.3f}</span><span class="st">&#39;</span>.<span class="bu">format</span>(rmse_test)) </a>
-<a class="sourceLine" id="cb6-31" title="31"></a>
-<a class="sourceLine" id="cb6-32" title="32"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
-<a class="sourceLine" id="cb6-33" title="33">    Test RMSE of best model: <span class="fl">50.569</span></a></code></pre></div>
+<h2><span class="header-section-number">2.5</span> 调参实例</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># Define the dictionary &#39;params_rf&#39;</span></a>
+<a class="sourceLine" id="cb8-2" title="2">params_rf <span class="op">=</span> {</a>
+<a class="sourceLine" id="cb8-3" title="3">             <span class="st">&#39;n_estimators&#39;</span>: [<span class="dv">100</span>, <span class="dv">350</span>, <span class="dv">500</span>],</a>
+<a class="sourceLine" id="cb8-4" title="4">             <span class="st">&#39;max_features&#39;</span>: [<span class="st">&#39;log2&#39;</span>, <span class="st">&#39;auto&#39;</span>, <span class="st">&#39;sqrt&#39;</span>],</a>
+<a class="sourceLine" id="cb8-5" title="5">             <span class="st">&#39;min_samples_leaf&#39;</span>: [<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">30</span>], </a>
+<a class="sourceLine" id="cb8-6" title="6">             }</a>
+<a class="sourceLine" id="cb8-7" title="7"><span class="co"># Import GridSearchCV</span></a>
+<a class="sourceLine" id="cb8-8" title="8"><span class="im">from</span> sklearn.model_selection <span class="im">import</span>  GridSearchCV</a>
+<a class="sourceLine" id="cb8-9" title="9"></a>
+<a class="sourceLine" id="cb8-10" title="10"><span class="co"># Instantiate grid_rf</span></a>
+<a class="sourceLine" id="cb8-11" title="11">grid_rf <span class="op">=</span> GridSearchCV(estimator<span class="op">=</span>rf,</a>
+<a class="sourceLine" id="cb8-12" title="12">                       param_grid<span class="op">=</span>params_rf,</a>
+<a class="sourceLine" id="cb8-13" title="13">                       scoring<span class="op">=</span><span class="st">&#39;neg_mean_squared_error&#39;</span>,</a>
+<a class="sourceLine" id="cb8-14" title="14">                       cv<span class="op">=</span><span class="dv">3</span>,</a>
+<a class="sourceLine" id="cb8-15" title="15">                       verbose<span class="op">=</span><span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb8-16" title="16">                       n_jobs<span class="op">=-</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb8-17" title="17"><span class="co"># Import mean_squared_error from sklearn.metrics as MSE </span></a>
+<a class="sourceLine" id="cb8-18" title="18"><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error <span class="im">as</span> MSE</a>
+<a class="sourceLine" id="cb8-19" title="19"></a>
+<a class="sourceLine" id="cb8-20" title="20"><span class="co"># Extract the best estimator</span></a>
+<a class="sourceLine" id="cb8-21" title="21">best_model <span class="op">=</span> grid_rf.best_estimator_</a>
+<a class="sourceLine" id="cb8-22" title="22"></a>
+<a class="sourceLine" id="cb8-23" title="23"><span class="co"># Predict test set labels</span></a>
+<a class="sourceLine" id="cb8-24" title="24">y_pred <span class="op">=</span> best_model.predict(X_test)</a>
+<a class="sourceLine" id="cb8-25" title="25"></a>
+<a class="sourceLine" id="cb8-26" title="26"><span class="co"># Compute rmse_test</span></a>
+<a class="sourceLine" id="cb8-27" title="27">rmse_test <span class="op">=</span> MSE(y_test, y_pred)<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb8-28" title="28"></a>
+<a class="sourceLine" id="cb8-29" title="29"><span class="co"># Print rmse_test</span></a>
+<a class="sourceLine" id="cb8-30" title="30"><span class="bu">print</span>(<span class="st">&#39;Test RMSE of best model: </span><span class="sc">{:.3f}</span><span class="st">&#39;</span>.<span class="bu">format</span>(rmse_test)) </a>
+<a class="sourceLine" id="cb8-31" title="31"></a>
+<a class="sourceLine" id="cb8-32" title="32"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
+<a class="sourceLine" id="cb8-33" title="33">    Test RMSE of best model: <span class="fl">50.569</span></a></code></pre></div>
 
 </div>
 </div>
@@ -945,14 +1072,16 @@ min_samples_split: 内部节点再划分所需最小样本数，默认2。这个
 </blockquote>
 <p>一般来说，集成学习的结果通过“投票产生”及少数服从多数。个体的学习器要有一定的”准确性“即不能太坏，并且具有一定的多样性，即学习器之间具有差异性。但是个体学习器的“准确性”和“多样性”本身就存在冲突
 &gt;准确性很高之后要增加多样性就要牺牲准确性，事实上如何产生“好而不同”的个体学习器，正是集成学学习研究的核心。</p>
+<p>bagging对于弱学习器没有限制，这和Adaboost一样。但是最常用的一般也是决策树和神经网络</p>
 <div id="自助采样" class="section level2">
 <h2><span class="header-section-number">3.1</span> 自助采样</h2>
+<p>booststrap</p>
 <p>有放回的随机，采样，使得下次采样时该样本仍有可能被选中。
 <a href="https://blog.csdn.net/bqw18744018044/article/details/81024520">csdn</a></p>
 <blockquote>
 <p>自助法在数据集较小难以划分训练/测试集时很有用</p>
 </blockquote>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/05.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/05.png&quot;</span>)</a></code></pre></div>
 <p><img src="figs/05.png" width="719" /></p>
 </div>
 <div id="包外估计" class="section level2">
@@ -984,7 +1113,7 @@ end for
 </div>
 <div id="流程图" class="section level2">
 <h2><span class="header-section-number">3.4</span> 流程图</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/04.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/04.png&quot;</span>)</a></code></pre></div>
 <p><img src="figs/04.png" width="696" /></p>
 </div>
 <div id="实现描述" class="section level2">
@@ -997,6 +1126,9 @@ end for
 每个自助样本集都和原数据一样大
 有放回抽样，一些样本可能在同一训练集中出现多次，一些可能被忽略。
 <a href="https://blog.csdn.net/github_35965351/article/details/61193516">csdn</a></p>
+<p>周志华的西瓜书是有这部分的</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/18.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/18.png" width="515" /></p>
 </div>
 <div id="评价" class="section level2">
 <h2><span class="header-section-number">3.6</span> 评价</h2>
@@ -1030,81 +1162,83 @@ end for
 <li><p>oob_prediction_ : array of shape = [n_samples]。在训练集上用out-of-bag估计计算的预测。 如果n_estimator很小，则可能在抽样过程中数据点不会被忽略。 在这种情况下，oob_prediction_可能包含NaN。</p></li>
 </ul>
 <p>这个栗子是datacamp上面的一个小demo</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" title="1"><span class="co"># Import DecisionTreeClassifier</span></a>
-<a class="sourceLine" id="cb9-2" title="2"><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</a>
-<a class="sourceLine" id="cb9-3" title="3"></a>
-<a class="sourceLine" id="cb9-4" title="4"><span class="co"># Import BaggingClassifier</span></a>
-<a class="sourceLine" id="cb9-5" title="5"><span class="im">from</span> sklearn.ensemble <span class="im">import</span> BaggingClassifier</a>
-<a class="sourceLine" id="cb9-6" title="6"></a>
-<a class="sourceLine" id="cb9-7" title="7"><span class="co"># Instantiate dt</span></a>
-<a class="sourceLine" id="cb9-8" title="8">dt <span class="op">=</span> DecisionTreeClassifier(random_state<span class="op">=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb9-9" title="9"></a>
-<a class="sourceLine" id="cb9-10" title="10"><span class="co"># Instantiate bc</span></a>
-<a class="sourceLine" id="cb9-11" title="11">bc <span class="op">=</span> BaggingClassifier(base_estimator<span class="op">=</span>dt, n_estimators<span class="op">=</span><span class="dv">50</span>, random_state<span class="op">=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb9-12" title="12"></a>
-<a class="sourceLine" id="cb9-13" title="13"><span class="co"># Fit bc to the training set</span></a>
-<a class="sourceLine" id="cb9-14" title="14">bc.fit(X_train, y_train)</a>
-<a class="sourceLine" id="cb9-15" title="15"></a>
-<a class="sourceLine" id="cb9-16" title="16"><span class="co"># Predict test set labels</span></a>
-<a class="sourceLine" id="cb9-17" title="17">y_pred <span class="op">=</span> bc.predict(X_test)</a>
-<a class="sourceLine" id="cb9-18" title="18"></a>
-<a class="sourceLine" id="cb9-19" title="19"><span class="co"># Evaluate acc_test</span></a>
-<a class="sourceLine" id="cb9-20" title="20">acc_test <span class="op">=</span> accuracy_score(y_test, y_pred)</a>
-<a class="sourceLine" id="cb9-21" title="21"><span class="bu">print</span>(<span class="st">&#39;Test set accuracy of bc: </span><span class="sc">{:.2f}</span><span class="st">&#39;</span>.<span class="bu">format</span>(acc_test))</a>
-<a class="sourceLine" id="cb9-22" title="22"></a>
-<a class="sourceLine" id="cb9-23" title="23"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
-<a class="sourceLine" id="cb9-24" title="24">    Test <span class="bu">set</span> accuracy of bc: <span class="fl">0.71</span></a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1"><span class="co"># Import DecisionTreeClassifier</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</a>
+<a class="sourceLine" id="cb12-3" title="3"></a>
+<a class="sourceLine" id="cb12-4" title="4"><span class="co"># Import BaggingClassifier</span></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="im">from</span> sklearn.ensemble <span class="im">import</span> BaggingClassifier</a>
+<a class="sourceLine" id="cb12-6" title="6"></a>
+<a class="sourceLine" id="cb12-7" title="7"><span class="co"># Instantiate dt</span></a>
+<a class="sourceLine" id="cb12-8" title="8">dt <span class="op">=</span> DecisionTreeClassifier(random_state<span class="op">=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb12-9" title="9"></a>
+<a class="sourceLine" id="cb12-10" title="10"><span class="co"># Instantiate bc</span></a>
+<a class="sourceLine" id="cb12-11" title="11">bc <span class="op">=</span> BaggingClassifier(base_estimator<span class="op">=</span>dt, n_estimators<span class="op">=</span><span class="dv">50</span>, random_state<span class="op">=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb12-12" title="12"></a>
+<a class="sourceLine" id="cb12-13" title="13"><span class="co"># Fit bc to the training set</span></a>
+<a class="sourceLine" id="cb12-14" title="14">bc.fit(X_train, y_train)</a>
+<a class="sourceLine" id="cb12-15" title="15"></a>
+<a class="sourceLine" id="cb12-16" title="16"><span class="co"># Predict test set labels</span></a>
+<a class="sourceLine" id="cb12-17" title="17">y_pred <span class="op">=</span> bc.predict(X_test)</a>
+<a class="sourceLine" id="cb12-18" title="18"></a>
+<a class="sourceLine" id="cb12-19" title="19"><span class="co"># Evaluate acc_test</span></a>
+<a class="sourceLine" id="cb12-20" title="20">acc_test <span class="op">=</span> accuracy_score(y_test, y_pred)</a>
+<a class="sourceLine" id="cb12-21" title="21"><span class="bu">print</span>(<span class="st">&#39;Test set accuracy of bc: </span><span class="sc">{:.2f}</span><span class="st">&#39;</span>.<span class="bu">format</span>(acc_test))</a>
+<a class="sourceLine" id="cb12-22" title="22"></a>
+<a class="sourceLine" id="cb12-23" title="23"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
+<a class="sourceLine" id="cb12-24" title="24">    Test <span class="bu">set</span> accuracy of bc: <span class="fl">0.71</span></a></code></pre></div>
 </div>
 <div id="out-of-bag-evaluation" class="section level2">
 <h2><span class="header-section-number">3.9</span> Out of Bag Evaluation</h2>
 <p>使用包外估计进行数据集的划分</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># Import DecisionTreeClassifier</span></a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</a>
-<a class="sourceLine" id="cb10-3" title="3"></a>
-<a class="sourceLine" id="cb10-4" title="4"><span class="co"># Import BaggingClassifier</span></a>
-<a class="sourceLine" id="cb10-5" title="5"><span class="im">from</span> sklearn.ensemble <span class="im">import</span> BaggingClassifier</a>
-<a class="sourceLine" id="cb10-6" title="6"></a>
-<a class="sourceLine" id="cb10-7" title="7"><span class="co"># Instantiate dt</span></a>
-<a class="sourceLine" id="cb10-8" title="8">dt <span class="op">=</span> DecisionTreeClassifier(min_samples_leaf<span class="op">=</span><span class="dv">8</span>, random_state<span class="op">=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb10-9" title="9"></a>
-<a class="sourceLine" id="cb10-10" title="10"><span class="co"># Instantiate bc</span></a>
-<a class="sourceLine" id="cb10-11" title="11">bc <span class="op">=</span> BaggingClassifier(base_estimator<span class="op">=</span>dt, </a>
-<a class="sourceLine" id="cb10-12" title="12">                       n_estimators<span class="op">=</span><span class="dv">50</span>,</a>
-<a class="sourceLine" id="cb10-13" title="13">                       oob_score<span class="op">=</span><span class="va">True</span>,</a>
-<a class="sourceLine" id="cb10-14" title="14">                       random_state<span class="op">=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb10-15" title="15"></a>
-<a class="sourceLine" id="cb10-16" title="16"><span class="co"># Fit bc to the training set </span></a>
-<a class="sourceLine" id="cb10-17" title="17">bc.fit(X_train, y_train)</a>
-<a class="sourceLine" id="cb10-18" title="18"></a>
-<a class="sourceLine" id="cb10-19" title="19"><span class="co"># Predict test set labels</span></a>
-<a class="sourceLine" id="cb10-20" title="20">y_pred <span class="op">=</span> bc.predict(X_test)</a>
-<a class="sourceLine" id="cb10-21" title="21"></a>
-<a class="sourceLine" id="cb10-22" title="22"><span class="co"># Evaluate test set accuracy</span></a>
-<a class="sourceLine" id="cb10-23" title="23">acc_test <span class="op">=</span> accuracy_score(y_test, y_pred)</a>
-<a class="sourceLine" id="cb10-24" title="24"></a>
-<a class="sourceLine" id="cb10-25" title="25"><span class="co"># Evaluate OOB accuracy</span></a>
-<a class="sourceLine" id="cb10-26" title="26">acc_oob <span class="op">=</span> bc.oob_score_</a>
-<a class="sourceLine" id="cb10-27" title="27"></a>
-<a class="sourceLine" id="cb10-28" title="28"><span class="co"># Print acc_test and acc_oob</span></a>
-<a class="sourceLine" id="cb10-29" title="29"><span class="bu">print</span>(<span class="st">&#39;Test set accuracy: </span><span class="sc">{:.3f}</span><span class="st">, OOB accuracy: </span><span class="sc">{:.3f}</span><span class="st">&#39;</span>.<span class="bu">format</span>(acc_test, acc_oob))</a>
-<a class="sourceLine" id="cb10-30" title="30"></a>
-<a class="sourceLine" id="cb10-31" title="31"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
-<a class="sourceLine" id="cb10-32" title="32">    Test <span class="bu">set</span> accuracy: <span class="fl">0.698</span>, OOB accuracy: <span class="fl">0.704</span></a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># Import DecisionTreeClassifier</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</a>
+<a class="sourceLine" id="cb13-3" title="3"></a>
+<a class="sourceLine" id="cb13-4" title="4"><span class="co"># Import BaggingClassifier</span></a>
+<a class="sourceLine" id="cb13-5" title="5"><span class="im">from</span> sklearn.ensemble <span class="im">import</span> BaggingClassifier</a>
+<a class="sourceLine" id="cb13-6" title="6"></a>
+<a class="sourceLine" id="cb13-7" title="7"><span class="co"># Instantiate dt</span></a>
+<a class="sourceLine" id="cb13-8" title="8">dt <span class="op">=</span> DecisionTreeClassifier(min_samples_leaf<span class="op">=</span><span class="dv">8</span>, random_state<span class="op">=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb13-9" title="9"></a>
+<a class="sourceLine" id="cb13-10" title="10"><span class="co"># Instantiate bc</span></a>
+<a class="sourceLine" id="cb13-11" title="11">bc <span class="op">=</span> BaggingClassifier(base_estimator<span class="op">=</span>dt, </a>
+<a class="sourceLine" id="cb13-12" title="12">                       n_estimators<span class="op">=</span><span class="dv">50</span>,</a>
+<a class="sourceLine" id="cb13-13" title="13">                       oob_score<span class="op">=</span><span class="va">True</span>,</a>
+<a class="sourceLine" id="cb13-14" title="14">                       random_state<span class="op">=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb13-15" title="15"></a>
+<a class="sourceLine" id="cb13-16" title="16"><span class="co"># Fit bc to the training set </span></a>
+<a class="sourceLine" id="cb13-17" title="17">bc.fit(X_train, y_train)</a>
+<a class="sourceLine" id="cb13-18" title="18"></a>
+<a class="sourceLine" id="cb13-19" title="19"><span class="co"># Predict test set labels</span></a>
+<a class="sourceLine" id="cb13-20" title="20">y_pred <span class="op">=</span> bc.predict(X_test)</a>
+<a class="sourceLine" id="cb13-21" title="21"></a>
+<a class="sourceLine" id="cb13-22" title="22"><span class="co"># Evaluate test set accuracy</span></a>
+<a class="sourceLine" id="cb13-23" title="23">acc_test <span class="op">=</span> accuracy_score(y_test, y_pred)</a>
+<a class="sourceLine" id="cb13-24" title="24"></a>
+<a class="sourceLine" id="cb13-25" title="25"><span class="co"># Evaluate OOB accuracy</span></a>
+<a class="sourceLine" id="cb13-26" title="26">acc_oob <span class="op">=</span> bc.oob_score_</a>
+<a class="sourceLine" id="cb13-27" title="27"></a>
+<a class="sourceLine" id="cb13-28" title="28"><span class="co"># Print acc_test and acc_oob</span></a>
+<a class="sourceLine" id="cb13-29" title="29"><span class="bu">print</span>(<span class="st">&#39;Test set accuracy: </span><span class="sc">{:.3f}</span><span class="st">, OOB accuracy: </span><span class="sc">{:.3f}</span><span class="st">&#39;</span>.<span class="bu">format</span>(acc_test, acc_oob))</a>
+<a class="sourceLine" id="cb13-30" title="30"></a>
+<a class="sourceLine" id="cb13-31" title="31"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
+<a class="sourceLine" id="cb13-32" title="32">    Test <span class="bu">set</span> accuracy: <span class="fl">0.698</span>, OOB accuracy: <span class="fl">0.704</span></a></code></pre></div>
 </div>
 <div id="集成学习分类" class="section level2">
 <h2><span class="header-section-number">3.10</span> 集成学习分类</h2>
 <ul>
-<li><p>个体学习器间存在强依赖关系，必须串行生成的序列化方法</p>
+<li>个体学习器间存在强依赖关系，必须串行生成的序列化方法</li>
+</ul>
+<p>后面弱分类器的训练是依赖于强分类器的</p>
 <ul>
-<li>boosting</li>
-</ul></li>
+<li><p>boosting</p></li>
 <li><p>个体学习器之间不存在强依赖关系，可同时生成的并行化方法</p>
 <ul>
 <li>bagging和随机森林</li>
 </ul>
 <blockquote>
 <p>从bias-variance角度讲，bagging主要关注降低方差，因为它不在剪枝决策树，神经网络等易受样本扰动的学习器上效用更为明显。</p>
-</blockquote></li>
+</blockquote>
+<p>这句不太严谨</p></li>
 </ul>
 </div>
 <div id="rf-vs-bagging" class="section level2">
@@ -1146,6 +1280,23 @@ end for
 <p>boosting在训练的每一轮都要检查当前生成的基学习器是否满足基本条件，否则抛弃。</p>
 </blockquote>
 <p>从bias-variance角度看，boosting主要关注降低偏差，因此boosting能基于泛化性能相当弱的学习器构建出很强的集成</p>
+<p>Bagging + 决策树 = 随机森林
+AdaBoost + 决策树 = 提升树
+Gradient Boosting + 决策树 = GBDT</p>
+<p>总结一下bagging和boosting的区别与联系</p>
+<p>总体来说都是集成的思想
+不同的是bagging的多个学习器并行分类，最后采取投票原则，觉得决定分类
+boosting是一种串行的弱分类器训练，不断的训练被分错的样本，增加弱分类器个数，最后组成一个强分类器。
+不可以并行哦。</p>
+</div>
+<div id="boosting与bagging的区别" class="section level2">
+<h2><span class="header-section-number">4.3</span> boosting与bagging的区别</h2>
+<blockquote>
+<p>所谓集成学习，是指构建多个分类器（弱分类器）对数据集进行预测，然后用某种策略将多个分类器预测的结果集成起来，作为最终预测结果。通俗比喻就是“三个臭皮匠赛过诸葛亮”，或一个公司董事会上的各董事投票决策，它要求每个弱分类器具备一定的“准确性”，分类器之间具备“差异性”。</p>
+</blockquote>
+<p>集成学习根据各个弱分类器之间有无依赖关系，分为Boosting和Bagging两大流派：
+Boosting流派，各分类器之间有依赖关系，必须串行，比如Adaboost、GBDT(Gradient Boosting Decision Tree)、Xgboost
+Bagging流派，各分类器之间没有依赖关系，可各自并行，比如随机森林（Random Forest）</p>
 
 </div>
 </div>
@@ -1156,7 +1307,8 @@ end for
 <blockquote>
 <p>AdaBoost全称为AdaptiveBoosting:自适应提升算法；虽然名字听起来给人一种高大上的感觉，但其实背后的原理并不难理解。什么叫做自适应，就是这个算法可以在不同的数据集上都适用,这个基本和废话一样,一个算法肯定要能适应不同的数据集。</p>
 </blockquote>
-<p>提升方法是指:分类问题中，通过改变训练样本的权重，学习多个分类器，并将这些分类器进行线性组合，提高分类器的性能。</p>
+<p>提升方法是指:分类问题中，通过改变训练样本的权重，学习多个分类器，并将这些分类器进行线性组合，提高分类器的性能。
+利用前一轮迭代弱学习器的误差率来更新训练集的权重，这样一轮轮的迭代下去</p>
 <blockquote>
 <p>但是标准的adaboost只适用于二分类任务。</p>
 </blockquote>
@@ -1182,12 +1334,14 @@ end for
 </div>
 <div id="权重" class="section level2">
 <h2><span class="header-section-number">5.3</span> 权重</h2>
-<p>那么每个基分类器的权重就显得十分重要了，那么这个权重是如何确定的呢，AdaBoost是这么考虑的，如果一个基分类器的准确率高，那么它的权重就会更高一点，反之权重就会较低</p>
-<p>通常我们认为AdaBoost算法是模型为加法模型、损失函数为指数函数、学习算法为前向分步算法的二类分类学习方法。现在有出现了三个新名词</p>
+<p>Adaboost训练过程中有两个权重，一个是怎加被分错训练样本的权重，另一个就是增加误差比较小的弱分类器的权重。
+针对为何要提高被分错样本的权重，可以参考<a href="https://www.cnblogs.com/pinard/p/6133937.html">cnblog</a></p>
+<p>个人感觉就是，Adaboost的最终目的是给误差较小的弱分类器的赋加大的权重基于此构造一个强分类器，但在训练基分类器的过程中会增加没被分类正确的样本的权重，使其在下一轮训练中继续分，若分对了则总的loss会减小，此时进行下一轮弱分类器的训练。</p>
+<p>这样总结一下思路会比较清晰就是很罗嗦，嘿嘿，表达有待提高。。</p>
 </div>
 <div id="加法模型" class="section level2">
 <h2><span class="header-section-number">5.4</span> 加法模型</h2>
-<p>三个关键字：基分类器，累加，权重</p>
+<p>就是增加一个前一轮的弱分类器已经变成了强分类器，那在本轮训练中只考虑当前训练的弱分类器能否使loss减小即可。</p>
 <p>也就是一个函数（模型）是由<strong>多个函数（模型）累加</strong>起来的<span class="math inline">\(f(x)=\sum_{m=1}^{M} \beta_{m} b\left(x ; \gamma_{m}\right)\)</span></p>
 <p>其中 <span class="math inline">\(\beta_{m}\)</span>是每个基函数的系数， <span class="math inline">\(\gamma_{m}\)</span> 是每个基函数的参数， <span class="math inline">\(b\left(x ; \gamma_{m}\right)\)</span> 就是一个基函数了</p>
 <p>假设一个基函数为 <span class="math inline">\(e^{ax}\)</span> ，那么一个加法模型就可以写成: <span class="math inline">\(f(x)=e^{x}+2 e^{2 x}-2 e^{x / 2}\)</span></p>
@@ -1199,8 +1353,8 @@ end for
 <p>这个问题直接优化比较困难，前向分步算法解决这个问题的思想如下:由于我们最终的分类器其实加法模型，所以我们可以从前向后考虑，<strong>每增加一个基分类器，就使损失函数<span class="math inline">\(L(y,f(x))\)</span>的值更小一点，逐步的逼近最优解</strong>。这样考虑的话，<strong>每一次计算损失函数的时候，我们只需要考虑当前基分类器的系数和参数</strong>，同时<strong>此次之前基分类器的系数和参数不受此次的影响</strong>。算法的思想有点类似梯度下降，<strong>每一次都向最优解移动一点</strong></p>
 <p>步骤</p>
 <p><strong>输入训练数据</strong>：<span class="math inline">\(T=\left\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \ldots\left(x_{n}, y_{n}\right)\right\}\)</span>，其中<span class="math inline">\(x_{i} \in \chi \subseteq R^{n}\)</span>，<span class="math inline">\(y \in Y\{-1,+1\}\)</span>，最后需要得到分类器<span class="math inline">\(G(X)\)</span></p>
-<p><strong>初始化训练值的权值分布</strong>
-<span class="math inline">\(D_{1}=\left(w_{1 i}, w_{2 i}, \ldots, w_{1 N}\right) ， w_{1 i}=\frac{1}{N}\)</span></p>
+<p><strong>初始化训练值的权值分布</strong></p>
+<p><span class="math inline">\(D_{1}=\left(w_{1 i}, w_{2 i}, \ldots, w_{1 N}\right) ，w_{1 i}=\frac{1}{N}\)</span></p>
 <p>对于<span class="math inline">\(m=1,2,...,M\)</span>
 <strong>a</strong>使用具有权值分布 <span class="math inline">\(D_{m} 的训练数据集学习，得到基本分类器\)</span>G_{m}(x)$ 。</p>
 <p><strong>b</strong>计算 <span class="math inline">\(G_{m}(x)\)</span>在训练集上的分类误差率</p>
@@ -1214,17 +1368,47 @@ end for
 <span class="math inline">\(f(x)=\sum_{m=1}^{M} a_{m} G_{m}(x)\)</span>
 <span class="math inline">\(G(x)=\operatorname{sign}(f(x))\)</span></p>
 </div>
+<div id="adaboost的数据权重" class="section level2">
+<h2><span class="header-section-number">5.6</span> Adaboost的数据权重</h2>
+<blockquote>
+<p>如果训练数据保持不变，那么在数据的某个特定维度上单层决策树找到的最佳决策点每一次必然都是一样的，为什么呢？因为单层决策树是把所有可能的决策点都找了一遍然后选择了最好的，如果训练数据不变，那么每次找到的最好的点当然都是同一个点了。
+所以，这里Adaboost数据权重就派上用场了，所谓“数据的权重主要用于弱分类器寻找其分类误差最小的点”，其实，在单层决策树计算误差时，Adaboost要求其乘上权重，即计算带权重的误差。</p>
+</blockquote>
+<p>举个例子，在以前没有权重时（其实是平局权重时），一共10个点时，对应每个点的权重都是0.1，分错1个，错误率就加0.1；分错3个，错误率就是0.3。现在，每个点的权重不一样了，还是10个点，权重依次是[0.01,0.01,0.01,0.01,0.01,0.01, 0.01,0.01,0.01,0.91]，如果分错了第1一个点，那么错误率是0.01，如果分错了第3个点，那么错误率是0.01，要是分错了最后一个点，那么错误率就是0.91。这样，在<strong>选择决策点的时候自然是要尽量把权重大的点（本例中是最后一个点）分对才能降低误差率</strong>。由此可见，权重分布影响着单层决策树决策点的选择，权重大的点得到更多的关注，权重小的点得到更少的关注。</p>
+<blockquote>
+<p>在Adaboost算法中，每训练完一个弱分类器都就会调整权重，上一轮训练中被误分类的点的权重会增加，在本轮训练中，由于权重影响，本轮的弱分类器将更有可能把上一轮的误分类点分对，如果还是没有分对，那么分错的点的权重将继续增加，下一个弱分类器将更加关注这个点，尽量将其分对。</p>
+</blockquote>
+<p><strong>这一点也说明Adaboost对异常值会很敏感，因此对剔除异常值的需求比较大</strong></p>
+<p>这样，达到“你分不对的我来分”，下一个分类器主要关注上一个分类器没分对的点，每个分类器都各有侧重。</p>
+</div>
+<div id="adaboost分类器的权重" class="section level2">
+<h2><span class="header-section-number">5.7</span> Adaboost分类器的权重</h2>
+<p>由于Adaboost中若干个分类器的关系是第N个分类器更可能分对第N-1个分类器没分对的数据，而不能保证以前分对的数据也能同时分对。所以在Adaboost中，每个弱分类器都有各自最关注的点，每个弱分类器都只关注整个数据集的中一部分数据，所以它们必然是共同组合在一起才能发挥出作用。所以最终投票表决时，需要根据弱分类器的权重来进行加权投票，权重大小是根据弱分类器的分类错误率计算得出的，总的规律就是弱分类器错误率越低，其权重就越高。<a href="http://www.uml.org.cn/sjjmwj/2019030721.asp">原理</a></p>
+</div>
+<div id="优劣" class="section level2">
+<h2><span class="header-section-number">5.8</span> 优劣</h2>
+<p>Adaboost的主要优点有：</p>
+<ul>
+<li>Adaboost作为分类器时，分类精度很高</li>
+<li>在Adaboost的框架下，可以使用各种回归分类模型来构建弱学习器，非常灵活。</li>
+<li>作为简单的二元分类器时，构造简单，结果可理解。</li>
+<li>不容易发生过拟合</li>
+<li>Adaboost的主要缺点有：</li>
+<li>对异常样本敏感，异常样本在迭代中可能会获得较高的权重，影响最终的强学习器的预测准确性。</li>
+</ul>
+<p>Adaboost有分类树和回归树两种。回归树就是以CART作为基分类器</p>
+</div>
 <div id="boosting与adaboost的关系" class="section level2">
-<h2><span class="header-section-number">5.6</span> boosting与adaboost的关系</h2>
+<h2><span class="header-section-number">5.9</span> boosting与adaboost的关系</h2>
 <p>提升树和AdaBoost之间的关系就好像编程语言中对象和类的关系，一个类可以生成多个不同的对象。提升树就是AdaBoost算法中基分类器选取决策树桩得到的算法。</p>
 <p>用于分类的决策树主要有利用ID3和C4.5两种算法，我们选取任意一种算法，生成只有一层的决策树，即为决策树桩。</p>
 </div>
 <div id="残差树" class="section level2">
-<h2><span class="header-section-number">5.7</span> 残差树</h2>
+<h2><span class="header-section-number">5.10</span> 残差树</h2>
 <p>我们可以看到AdaBoost和提升树都是针对分类问题，如果是回归问题，上面的方法就不奏效了；而残差树则是针对回归问题的一种提升方法。其基学习器是基于CART算法的回归树，模型依旧为加法模型、损失函数为平方函数、学习算法为前向分步算法。</p>
 </div>
 <div id="复现-1" class="section level2">
-<h2><span class="header-section-number">5.8</span> 复现</h2>
+<h2><span class="header-section-number">5.11</span> 复现</h2>
 <p>参数
 <strong>base_estimator：</strong>基分类器，默认是决策树，在该分类器基础上进行boosting，理论上可以是任意一个分类器，但是如果是其他分类器时需要指明样本权重</p>
 <p><strong>n_estimators:</strong>基分类器提升（循环）次数，默认是50次，这个值过大，模型容易过拟合；值过小，模型容易欠拟合。</p>
@@ -1232,7 +1416,7 @@ end for
 <p><strong>algorithm:boosting</strong>算法，也就是模型提升准则，有两种方式SAMME, 和SAMME.R两种，默认是SAMME.R，两者的区别主要是弱学习器权重的度量，前者是对样本集预测错误的概率进行划分的，后者是对样本集的预测错误的比例，即错分率进行划分的，默认是用的SAMME.R。</p>
 <p><strong>random_state:</strong>随机种子设置。</p>
 <div id="属性-1" class="section level3">
-<h3><span class="header-section-number">5.8.1</span> 属性</h3>
+<h3><span class="header-section-number">5.11.1</span> 属性</h3>
 <p><strong>estimators_:</strong>以列表的形式返回所有的分类器。</p>
 <p><strong>classes_:</strong>类别标签</p>
 <p><strong>estimator_weights_:</strong>每个分类器权重</p>
@@ -1254,56 +1438,84 @@ decision_function(X):返回决策函数值（比如svm中的决策距离）</p>
 <p>staged_predict_proba(X):返回每个基分类器的预测数据集X的概率结果。</p>
 <p>staged_score(X, Y):返回每个基分类器的预测准确率。</p>
 <p>datacamp的栗子</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># Import DecisionTreeClassifier</span></a>
-<a class="sourceLine" id="cb11-2" title="2"><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</a>
-<a class="sourceLine" id="cb11-3" title="3"></a>
-<a class="sourceLine" id="cb11-4" title="4"><span class="co"># Import AdaBoostClassifier</span></a>
-<a class="sourceLine" id="cb11-5" title="5"><span class="im">from</span> sklearn.ensemble <span class="im">import</span> AdaBoostClassifier</a>
-<a class="sourceLine" id="cb11-6" title="6"></a>
-<a class="sourceLine" id="cb11-7" title="7"><span class="co"># Instantiate dt</span></a>
-<a class="sourceLine" id="cb11-8" title="8">dt <span class="op">=</span> DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb11-9" title="9"></a>
-<a class="sourceLine" id="cb11-10" title="10"><span class="co"># Instantiate ada</span></a>
-<a class="sourceLine" id="cb11-11" title="11">ada <span class="op">=</span> AdaBoostClassifier(base_estimator<span class="op">=</span>dt, n_estimators<span class="op">=</span><span class="dv">180</span>, random_state<span class="op">=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb11-12" title="12"></a>
-<a class="sourceLine" id="cb11-13" title="13"><span class="co"># Fit ada to the training set</span></a>
-<a class="sourceLine" id="cb11-14" title="14">ada.fit(X_train, y_train)</a>
-<a class="sourceLine" id="cb11-15" title="15"></a>
-<a class="sourceLine" id="cb11-16" title="16"><span class="co"># Compute the probabilities of obtaining the positive class</span></a>
-<a class="sourceLine" id="cb11-17" title="17">y_pred_proba <span class="op">=</span> ada.predict_proba(X_test)[:,<span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb11-18" title="18"></a>
-<a class="sourceLine" id="cb11-19" title="19"><span class="co"># Import roc_auc_score</span></a>
-<a class="sourceLine" id="cb11-20" title="20"><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_auc_score</a>
-<a class="sourceLine" id="cb11-21" title="21"></a>
-<a class="sourceLine" id="cb11-22" title="22"><span class="co"># Evaluate test-set roc_auc_score</span></a>
-<a class="sourceLine" id="cb11-23" title="23">ada_roc_auc <span class="op">=</span> roc_auc_score(y_test, y_pred_proba)</a>
-<a class="sourceLine" id="cb11-24" title="24"></a>
-<a class="sourceLine" id="cb11-25" title="25"><span class="co"># Print roc_auc_score</span></a>
-<a class="sourceLine" id="cb11-26" title="26"><span class="bu">print</span>(<span class="st">&#39;ROC AUC score: </span><span class="sc">{:.2f}</span><span class="st">&#39;</span>.<span class="bu">format</span>(ada_roc_auc))</a>
-<a class="sourceLine" id="cb11-27" title="27"></a>
-<a class="sourceLine" id="cb11-28" title="28"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
-<a class="sourceLine" id="cb11-29" title="29">    ROC AUC score: <span class="fl">0.71</span></a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" title="1"><span class="co"># Import DecisionTreeClassifier</span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</a>
+<a class="sourceLine" id="cb14-3" title="3"></a>
+<a class="sourceLine" id="cb14-4" title="4"><span class="co"># Import AdaBoostClassifier</span></a>
+<a class="sourceLine" id="cb14-5" title="5"><span class="im">from</span> sklearn.ensemble <span class="im">import</span> AdaBoostClassifier</a>
+<a class="sourceLine" id="cb14-6" title="6"></a>
+<a class="sourceLine" id="cb14-7" title="7"><span class="co"># Instantiate dt</span></a>
+<a class="sourceLine" id="cb14-8" title="8">dt <span class="op">=</span> DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb14-9" title="9"></a>
+<a class="sourceLine" id="cb14-10" title="10"><span class="co"># Instantiate ada</span></a>
+<a class="sourceLine" id="cb14-11" title="11">ada <span class="op">=</span> AdaBoostClassifier(base_estimator<span class="op">=</span>dt, n_estimators<span class="op">=</span><span class="dv">180</span>, random_state<span class="op">=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb14-12" title="12"></a>
+<a class="sourceLine" id="cb14-13" title="13"><span class="co"># Fit ada to the training set</span></a>
+<a class="sourceLine" id="cb14-14" title="14">ada.fit(X_train, y_train)</a>
+<a class="sourceLine" id="cb14-15" title="15"></a>
+<a class="sourceLine" id="cb14-16" title="16"><span class="co"># Compute the probabilities of obtaining the positive class</span></a>
+<a class="sourceLine" id="cb14-17" title="17">y_pred_proba <span class="op">=</span> ada.predict_proba(X_test)[:,<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb14-18" title="18"></a>
+<a class="sourceLine" id="cb14-19" title="19"><span class="co"># Import roc_auc_score</span></a>
+<a class="sourceLine" id="cb14-20" title="20"><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_auc_score</a>
+<a class="sourceLine" id="cb14-21" title="21"></a>
+<a class="sourceLine" id="cb14-22" title="22"><span class="co"># Evaluate test-set roc_auc_score</span></a>
+<a class="sourceLine" id="cb14-23" title="23">ada_roc_auc <span class="op">=</span> roc_auc_score(y_test, y_pred_proba)</a>
+<a class="sourceLine" id="cb14-24" title="24"></a>
+<a class="sourceLine" id="cb14-25" title="25"><span class="co"># Print roc_auc_score</span></a>
+<a class="sourceLine" id="cb14-26" title="26"><span class="bu">print</span>(<span class="st">&#39;ROC AUC score: </span><span class="sc">{:.2f}</span><span class="st">&#39;</span>.<span class="bu">format</span>(ada_roc_auc))</a>
+<a class="sourceLine" id="cb14-27" title="27"></a>
+<a class="sourceLine" id="cb14-28" title="28"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
+<a class="sourceLine" id="cb14-29" title="29">    ROC AUC score: <span class="fl">0.71</span></a></code></pre></div>
 
 </div>
 </div>
 </div>
 <div id="gradient-boost-decision-tree" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Gradient Boost Decision Tree</h1>
-<p>梯度增强决策树</p>
+<p>梯度增强决策树
+GBDT的子采样是无放回采样，而Bagging的子采样是放回采样</p>
 <div id="定义-1" class="section level2">
 <h2><span class="header-section-number">6.1</span> 定义</h2>
 <p>哈哈，偷个懒，mathpix这个月的免费次数用完了。。</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/06.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/06.png&quot;</span>)</a></code></pre></div>
 <p><img src="figs/06.png" width="746" /></p>
 <p><a href="https://zhuanlan.zhihu.com/p/29765582">图片来源知乎</a>
 GBDT的含义就是用Gradient Boosting的策略训练出来的DT模型。模型的结果是一组回归分类树组合(CART Tree Ensemble)：<span class="math inline">\(T_1...T_K\)</span> 。其中 <span class="math inline">\(T_j\)</span> 学习的是之前 <span class="math inline">\(j-1\)</span>棵树预测结果的残差，这种思想就像准备考试前的复习，先做一遍习题册，然后把做错的题目挑出来，在做一次，然后把做错的题目挑出来在做一次，经过反复多轮训练，取得最好的成绩。<a href="https://zhuanlan.zhihu.com/p/30339807">知乎</a></p>
-<p>目前我的理解就是：先随机抽取一些样本进行训练，得到一个基分类器，然后再次训练拟合模型的残差。
+<p>目前我的理解就是：先随机抽取一些样本进行训练，得到一个基分类器，然后再次训练拟合模型的残差。一轮一轮进行迭代直到模型的残差很小了
 残差的定义：<span class="math inline">\(y_{真实}-y_{预测}\)</span>，前一个基分类器未能拟合的部分也就是残差，于是新分类器继续拟合，直到残差达到指定的阈值。</p>
+<p>在GBDT的迭代中，假设我们前一轮迭代得到的强学习器是<span class="math inline">\(f_{t−1}(x)\)</span>, 损失函数是<span class="math inline">\(L(y,f_{t−1}(x))\)</span>, 我们本轮迭代的目标是找到一个CART回归树模型的弱学习器<span class="math inline">\(h_{t(x)}\)</span>，让本轮的损失函数L(y,<span class="math inline">\({t(x)}=L(y,f_{t−1}(x))+h_{t(x)}\)</span>最小。也就是说，本轮迭代找到决策树，要让样本的损失尽量变得更小。</p>
 </div>
-<div id="基于残差的gradient" class="section level2">
-<h2><span class="header-section-number">6.2</span> 基于残差的gradient</h2>
-<p>gradient是梯度的意思，也可以说是一阶导数</p>
-<p><strong>平方损失函数MSE：</strong><span class="math inline">\(\frac{1}{2} \sum_{0}^{n}\left(y_{i}-F\left(x_{i}\right)\right)^{2}\)</span>
+<div id="梯度下降" class="section level2">
+<h2><span class="header-section-number">6.2</span> 梯度下降</h2>
+<p>GBDT的基本思路就是不断地拟合残差，但是没有解决损失函数拟合方法的问题。针对这个问题，大牛Freidman提出了用损失函数的负梯度来拟合本轮损失的近似值，进而拟合一个CART回归树。第t轮的第i个样本的损失函数的负梯度表示为</p>
+<p><span class="math display">\[r_{t i}=-\left[\frac{\left.\partial L\left(y_{i}, f\left(x_{i}\right)\right)\right)}{\partial f\left(x_{i}\right)}\right]_{f(x)=f_{t-1}(x)}\]</span></p>
+<p>负梯度就是残差，哈哈哈</p>
+<p>利用<span class="math inline">\(\left(x_{i}, r_{t i}\right)(i=1,2, \dots m)\)</span>,我们可以拟合一颗CART回归树，得到了第t颗回归树，其对应的叶节点区域<span class="math inline">\(R_{t j}, j=1,2, \ldots, J\)</span>。其中J为叶子节点的个数
+。
+针对每一个叶子节点里的样本，我们求出使损失函数最小，也就是拟合叶子节点最好的的输出值<span class="math inline">\(c_{t j}\)</span>如下：
+<span class="math display">\[c_{t j}=\underbrace{\arg \min }_{c} \sum_{x_{i} \in R_{t j}} L\left(y_{i}, f_{t-1}\left(x_{i}\right)+c\right)\]</span></p>
+<p>这样我们就得到了本轮的决策树拟合函数如下：
+<span class="math display">\[h_{t}(x)=\sum_{j=1}^{J} c_{t j} I\left(x \in R_{t j}\right)\]</span></p>
+<p>从而本轮最终得到的强学习器的表达式如下：
+<span class="math display">\[f_{t}(x)=f_{t-1}(x)+\sum_{j=1}^{J} c_{t j} I\left(x \in R_{t j}\right)\]</span></p>
+</div>
+<div id="gbdt回归" class="section level2">
+<h2><span class="header-section-number">6.3</span> GBDT回归</h2>
+<p>思想是一样的</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/14.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/14.png" width="508" />
+<a href="https://www.cnblogs.com/pinard/p/6140514.html">liu</a></p>
+<p><strong>举个栗子</strong>
+预测一家人谁是谁</p>
+<p>可以先按照age划分男女得到一个分数</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/21.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/21.png" width="658" />
+就这样，训练出了2棵树tree1和tree2，类似之前gbdt的原理，两棵树的结论累加起来便是最终的结论，所以小孩的预测分数就是两棵树中小孩所落到的结点的分数相加：2 + 0.9 = 2.9。爷爷的预测分数同理：-1 + （-0.9）= -1.9</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/20.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/20.png" width="394" />
+这个就是GBDT回归的一个栗子，即把每棵树的最优叶子结点相加，图来自陈天奇的ppt</p>
+<p><strong>平方损失函数MSE：这个是针对回归算法来说的</strong><span class="math inline">\(\frac{1}{2} \sum_{0}^{n}\left(y_{i}-F\left(x_{i}\right)\right)^{2}\)</span>
 熟悉其他算法的原理应该知道，这个损失函数主要针对回归类型的问题，分类则是用熵值类的损失函数。具体到平方损失函数的式子，你可能已经发现它的一阶导其实就是残差的形式，所以基于残差的GBDT是一种特殊的GBDT模型，它的损失函数是平方损失函数，常用来处理回归类的问题。具体形式可以如下表示：
 <strong>损失函数：</strong><span class="math inline">\(L(y, F(x))=\frac{1}{2}(y-F(X))^{2}\)</span>
 因此求最小化的<span class="math inline">\(J=\frac{1}{2}(y-F(X))^{2}\)</span>
@@ -1311,13 +1523,26 @@ GBDT的含义就是用Gradient Boosting的策略训练出来的DT模型。模型
 <strong>损失函数的一阶导数（梯度）：</strong><span class="math inline">\(\frac{\partial J}{\partial F\left(x_{i}\right)}=\frac{\partial \sum_{i} L\left(y_{i}, F\left(x_{i}\right)\right)}{\partial F\left(x_{i}\right)}=\frac{\partial L\left(y_{i}, F\left(x_{i}\right)\right)}{\partial F\left(x_{i}\right)}=F\left(x_{i}\right)-y_{i}\)</span>
 而参数就是负的梯度：<span class="math inline">\(y_{i}-F\left(x_{i}\right)=-\frac{\partial J}{\partial F\left(x_{i}\right)}\)</span></p>
 <div id="评价-1" class="section level3">
-<h3><span class="header-section-number">6.2.1</span> 评价</h3>
+<h3><span class="header-section-number">6.3.1</span> 评价</h3>
 <p>基于残差的GBDT在解决回归问题上不算是一个好的选择，一个比较明显的缺点就是对异常值过于敏感。
 当存在一个异常值的时候，就会导致残差灰常之大。。自行理解</p>
 </div>
 </div>
+<div id="gbdt分类算法" class="section level2">
+<h2><span class="header-section-number">6.4</span> GBDT分类算法</h2>
+<p>这里我们再看看GBDT分类算法，GBDT的分类算法从思想上和GBDT的回归算法没有区别，但是由于样本输出不是连续的值，而是离散的类别，导致我们无法直接从输出类别去拟合类别输出的误差。
+为了解决这个问题，主要有两个方法，一个是用指数损失函数，此时GBDT退化为Adaboost算法。另一种方法是用类似于逻辑回归的<strong>对数似然损失函数</strong>的方法。也就是说，我们用的是类别的预测概率值和真实概率值的差来拟合损失。本文仅讨论用对数似然损失函数的GBDT分类。而对于对数似然损失函数，我们又有二元分类和多元分类的区别。</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/16.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/16.png" width="449" /></p>
+<p>这里就是用到逻辑回归的损失函数了，其求导的特殊性</p>
+</div>
+<div id="常见损失函数" class="section level2">
+<h2><span class="header-section-number">6.5</span> 常见损失函数</h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/15.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/15.png" width="363" /></p>
+</div>
 <div id="boosting-1" class="section level2">
-<h2><span class="header-section-number">6.3</span> boosting</h2>
+<h2><span class="header-section-number">6.6</span> boosting</h2>
 <p>gbdt模型可以认为是是由k个基模型组成的一个加法运算式</p>
 <p><span class="math inline">\(\hat{y}_{i}=\sum_{k=1}^{K} f_{k}\left(x_{i}\right), f_{k} \in F\)</span></p>
 <p>其中F是指所有基模型组成的函数空间
@@ -1326,28 +1551,13 @@ GBDT的含义就是用Gradient Boosting的策略训练出来的DT模型。模型
 <p>更一般的，我们知道一个好的模型，在偏差和方差上有一个较好的平衡，而算法的损失函数正是代表了模型的偏差面，最小化损失函数，就相当于最小化模型的偏差，但同时我们也需要兼顾模型的方差，所以目标函数还包括抑制模型复杂度的正则项，因此目标函数可以写成
 <span class="math inline">\(O b j=\sum_{i=1}^{n} l\left(y_{i}, \hat{y}_{i}\right)+\sum_{k=1}^{K} \Omega\left(f_{k}\right)\)</span>
 其中 <span class="math inline">\(\Omega\)</span> 代表了基模型的复杂度，若基模型是树模型，则树的深度、叶子节点数等指标可以反应树的复杂程度。</p>
-<div id="贪心算法" class="section level3">
-<h3><span class="header-section-number">6.3.1</span> 贪心算法</h3>
-<p>对于Boosting来说，它采用的是前向优化算法，即从前往后，逐渐建立基模型来优化逼近目标函数，具体过程如下：</p>
-<p><span class="math inline">\(\hat{y}_{i}^{0}=0\)</span>
-<span class="math inline">\(\hat{y}_{i}^{1}=f_{1}\left(x_{i}\right)=\hat{y}_{i}^{0}+f_{1}\left(x_{i}\right)\)</span>
-<span class="math inline">\(\hat{y}_{i}^{2}=f_{1}\left(x_{i}\right)+f_{2}\left(x_{i}\right)=\hat{y}_{i}^{1}+f_{2}\left(x_{i}\right)\)</span>
-<span class="math inline">\(\cdots\)</span>
-<span class="math inline">\(\hat{y}_{i}^{t}=\sum_{k=1}^{t} f_{k}\left(x_{i}\right)=\hat{y}_{i}^{t-1}+f_{t}\left(x_{i}\right)\)</span></p>
 </div>
-<div id="如何学习一个新模型" class="section level3">
-<h3><span class="header-section-number">6.3.2</span> 如何学习一个新模型</h3>
-<p>关键还是在于GBDT的目标函数上，即新模型的加入总是以优化目标函数为目的的。</p>
-<p>以第t步的模型拟合为例，在这一步，模型对第 <span class="math inline">\(i\)</span>个样本 <span class="math inline">\(x_i\)</span> 的预测为：
-<span class="math inline">\(\hat{y}_{i}^{t}=\hat{y}_{i}^{t-1}+f_{t}\left(x_{i}\right)\)</span></p>
-<p>其中 <span class="math inline">\(f_{t}\left(x_{i}\right)\)</span> 就是我们这次需要加入的新模型，即需要拟合的模型，此时，目标函数就可以写成：</p>
-<p><span class="math inline">\(\begin{aligned} O b j^{(t)} &amp;=\sum_{i=1}^{n} l\left(y_{i}, \hat{y}_{i}^{t}\right)+\sum_{i=i}^{t} \Omega\left(f_{i}\right) \\ &amp;=\sum_{i=1}^{n} l\left(y_{i}, \hat{y}_{i}^{t-1}+f_{t}\left(x_{i}\right)\right)+\Omega\left(f_{t}\right)+\text { constant } \end{aligned}\)</span> (1)
-因此当求出最优目标函数的时候也就相当于求出了<span class="math inline">\(f_{t}\left(x_{i}\right)\)</span></p>
-<p>所以我么只要求出每一步损失函数的一阶和二阶导的值（由于前一步的 <span class="math inline">\(\hat{y}_{i}^{t-1}\)</span> 是已知的，所以这两个值就是常数）代入等式4，然后最优化目标函数，就可以得到每一步的 <span class="math inline">\(f(x)\)</span> ，最后根据加法模型得到一个整体模型</p>
-</div>
+<div id="调参" class="section level2">
+<h2><span class="header-section-number">6.7</span> 调参</h2>
+<p>见https://www.cnblogs.com/pinard/p/6143927.html</p>
 </div>
 <div id="demo" class="section level2">
-<h2><span class="header-section-number">6.4</span> demo</h2>
+<h2><span class="header-section-number">6.8</span> demo</h2>
 <p><a href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/b194674c42d54b26137a456c510c5fdba1ba23e0?urlpath=lab%2Ftree%2Fnotebooks%2Fauto_examples%2Fensemble%2Fplot_gradient_boosting_regression.ipynb">看一个官方案例</a></p>
 
 </div>
@@ -1399,34 +1609,34 @@ GBDT的含义就是用Gradient Boosting的策略训练出来的DT模型。模型
 <li>S小，T大，学习器训练的样本少，评估结果更加不准</li>
 </ul>
 <p>scikit-learn中的train-test-split函数可以直接暴力划分</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># Import necessary modules</span></a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</a>
-<a class="sourceLine" id="cb13-3" title="3"><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</a>
-<a class="sourceLine" id="cb13-4" title="4"><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</a>
-<a class="sourceLine" id="cb13-5" title="5"></a>
-<a class="sourceLine" id="cb13-6" title="6"><span class="co"># Create the hyperparameter grid</span></a>
-<a class="sourceLine" id="cb13-7" title="7">c_space <span class="op">=</span> np.logspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">15</span>)</a>
-<a class="sourceLine" id="cb13-8" title="8">param_grid <span class="op">=</span> {<span class="st">&#39;C&#39;</span>: c_space, <span class="st">&#39;penalty&#39;</span>: [<span class="st">&#39;l1&#39;</span>, <span class="st">&#39;l2&#39;</span>]}</a>
-<a class="sourceLine" id="cb13-9" title="9"></a>
-<a class="sourceLine" id="cb13-10" title="10"><span class="co"># Instantiate the logistic regression classifier: logreg</span></a>
-<a class="sourceLine" id="cb13-11" title="11">logreg <span class="op">=</span> LogisticRegression()</a>
-<a class="sourceLine" id="cb13-12" title="12"></a>
-<a class="sourceLine" id="cb13-13" title="13"><span class="co"># Create train and test sets</span></a>
-<a class="sourceLine" id="cb13-14" title="14">X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.4</span>, random_state<span class="op">=</span><span class="dv">42</span>)</a>
-<a class="sourceLine" id="cb13-15" title="15"></a>
-<a class="sourceLine" id="cb13-16" title="16"><span class="co"># Instantiate the GridSearchCV object: logreg_cv</span></a>
-<a class="sourceLine" id="cb13-17" title="17">logreg_cv <span class="op">=</span> GridSearchCV(logreg, param_grid, cv<span class="op">=</span><span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb13-18" title="18"></a>
-<a class="sourceLine" id="cb13-19" title="19"><span class="co"># Fit it to the training data</span></a>
-<a class="sourceLine" id="cb13-20" title="20">logreg_cv.fit(X_train, y_train)</a>
-<a class="sourceLine" id="cb13-21" title="21"></a>
-<a class="sourceLine" id="cb13-22" title="22"><span class="co"># Print the optimal parameters and best score</span></a>
-<a class="sourceLine" id="cb13-23" title="23"><span class="bu">print</span>(<span class="st">&quot;Tuned Logistic Regression Parameter: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(logreg_cv.best_params_))</a>
-<a class="sourceLine" id="cb13-24" title="24"><span class="bu">print</span>(<span class="st">&quot;Tuned Logistic Regression Accuracy: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(logreg_cv.best_score_))</a>
-<a class="sourceLine" id="cb13-25" title="25"></a>
-<a class="sourceLine" id="cb13-26" title="26"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
-<a class="sourceLine" id="cb13-27" title="27">    Tuned Logistic Regression Parameter: {<span class="st">&#39;C&#39;</span>: <span class="fl">0.4393970560760795</span>, <span class="st">&#39;penalty&#39;</span>: <span class="st">&#39;l1&#39;</span>}</a>
-<a class="sourceLine" id="cb13-28" title="28">    Tuned Logistic Regression Accuracy: <span class="fl">0.7652173913043478</span></a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" title="1"><span class="co"># Import necessary modules</span></a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</a>
+<a class="sourceLine" id="cb21-3" title="3"><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</a>
+<a class="sourceLine" id="cb21-4" title="4"><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</a>
+<a class="sourceLine" id="cb21-5" title="5"></a>
+<a class="sourceLine" id="cb21-6" title="6"><span class="co"># Create the hyperparameter grid</span></a>
+<a class="sourceLine" id="cb21-7" title="7">c_space <span class="op">=</span> np.logspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">15</span>)</a>
+<a class="sourceLine" id="cb21-8" title="8">param_grid <span class="op">=</span> {<span class="st">&#39;C&#39;</span>: c_space, <span class="st">&#39;penalty&#39;</span>: [<span class="st">&#39;l1&#39;</span>, <span class="st">&#39;l2&#39;</span>]}</a>
+<a class="sourceLine" id="cb21-9" title="9"></a>
+<a class="sourceLine" id="cb21-10" title="10"><span class="co"># Instantiate the logistic regression classifier: logreg</span></a>
+<a class="sourceLine" id="cb21-11" title="11">logreg <span class="op">=</span> LogisticRegression()</a>
+<a class="sourceLine" id="cb21-12" title="12"></a>
+<a class="sourceLine" id="cb21-13" title="13"><span class="co"># Create train and test sets</span></a>
+<a class="sourceLine" id="cb21-14" title="14">X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.4</span>, random_state<span class="op">=</span><span class="dv">42</span>)</a>
+<a class="sourceLine" id="cb21-15" title="15"></a>
+<a class="sourceLine" id="cb21-16" title="16"><span class="co"># Instantiate the GridSearchCV object: logreg_cv</span></a>
+<a class="sourceLine" id="cb21-17" title="17">logreg_cv <span class="op">=</span> GridSearchCV(logreg, param_grid, cv<span class="op">=</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb21-18" title="18"></a>
+<a class="sourceLine" id="cb21-19" title="19"><span class="co"># Fit it to the training data</span></a>
+<a class="sourceLine" id="cb21-20" title="20">logreg_cv.fit(X_train, y_train)</a>
+<a class="sourceLine" id="cb21-21" title="21"></a>
+<a class="sourceLine" id="cb21-22" title="22"><span class="co"># Print the optimal parameters and best score</span></a>
+<a class="sourceLine" id="cb21-23" title="23"><span class="bu">print</span>(<span class="st">&quot;Tuned Logistic Regression Parameter: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(logreg_cv.best_params_))</a>
+<a class="sourceLine" id="cb21-24" title="24"><span class="bu">print</span>(<span class="st">&quot;Tuned Logistic Regression Accuracy: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(logreg_cv.best_score_))</a>
+<a class="sourceLine" id="cb21-25" title="25"></a>
+<a class="sourceLine" id="cb21-26" title="26"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
+<a class="sourceLine" id="cb21-27" title="27">    Tuned Logistic Regression Parameter: {<span class="st">&#39;C&#39;</span>: <span class="fl">0.4393970560760795</span>, <span class="st">&#39;penalty&#39;</span>: <span class="st">&#39;l1&#39;</span>}</a>
+<a class="sourceLine" id="cb21-28" title="28">    Tuned Logistic Regression Accuracy: <span class="fl">0.7652173913043478</span></a></code></pre></div>
 </div>
 <div id="交叉验证法" class="section level2">
 <h2><span class="header-section-number">7.4</span> 交叉验证法</h2>
@@ -1462,64 +1672,64 @@ GBDT的含义就是用Gradient Boosting的策略训练出来的DT模型。模型
 <li>混淆矩阵说白了就是一张表格-</li>
 <li>所有正确的预测结果都在对角线上，所以从混淆矩阵中可以很方便直观的看出哪里有错误，因为他们呈现在对角线外面。</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/07.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/07.png&quot;</span>)</a></code></pre></div>
 <p><img src="figs/07.png" width="706" /></p>
 <ul>
 <li>举个直观的例子</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/08.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/08.png&quot;</span>)</a></code></pre></div>
 <p><img src="figs/08.png" width="441" /></p>
 <p>这个表格是一个混淆矩阵</p>
 <blockquote>
 <p>正确的值是上边的表格，混淆矩阵是下面的表格，这就表示，apple应该有两个，但是只预测对了一个，其中一个判断为banana了，banana应该有8ge，但是5个预测对了3个判断为pear了，pear有应该有6个，但是2个判断为apple了，可见对角线上是正确的预测值，对角线之外的都是错误的。
 这个混淆矩阵的实现代码</p>
 </blockquote>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1"><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</a>
-<a class="sourceLine" id="cb16-2" title="2"><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report</a>
-<a class="sourceLine" id="cb16-3" title="3">y_test<span class="op">=</span>[<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;a&quot;</span>]</a>
-<a class="sourceLine" id="cb16-4" title="4">y_pred<span class="op">=</span>[<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;a&quot;</span>,<span class="st">&quot;a&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>]</a>
-<a class="sourceLine" id="cb16-5" title="5">confusion_matrix(y_test, y_pred,labels<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>])</a>
-<a class="sourceLine" id="cb16-6" title="6"><span class="co">#array([[1, 1, 0],</span></a>
-<a class="sourceLine" id="cb16-7" title="7">       [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">3</span>],</a>
-<a class="sourceLine" id="cb16-8" title="8">       [<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">4</span>]], dtype<span class="op">=</span>int64)</a>
-<a class="sourceLine" id="cb16-9" title="9"></a>
-<a class="sourceLine" id="cb16-10" title="10"><span class="bu">print</span>(classification_report(y_test,y_pred))</a>
-<a class="sourceLine" id="cb16-11" title="11"><span class="co">##</span></a>
-<a class="sourceLine" id="cb16-12" title="12">               precision    recall  f1<span class="op">-</span>score   support</a>
-<a class="sourceLine" id="cb16-13" title="13"></a>
-<a class="sourceLine" id="cb16-14" title="14">          a       <span class="fl">0.33</span>      <span class="fl">0.50</span>      <span class="fl">0.40</span>         <span class="dv">2</span></a>
-<a class="sourceLine" id="cb16-15" title="15">          b       <span class="fl">0.83</span>      <span class="fl">0.62</span>      <span class="fl">0.71</span>         <span class="dv">8</span></a>
-<a class="sourceLine" id="cb16-16" title="16">          p       <span class="fl">0.57</span>      <span class="fl">0.67</span>      <span class="fl">0.62</span>         <span class="dv">6</span></a>
-<a class="sourceLine" id="cb16-17" title="17"></a>
-<a class="sourceLine" id="cb16-18" title="18">avg <span class="op">/</span> total       <span class="fl">0.67</span>      <span class="fl">0.62</span>      <span class="fl">0.64</span>        <span class="dv">16</span></a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" title="1"><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report</a>
+<a class="sourceLine" id="cb24-3" title="3">y_test<span class="op">=</span>[<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;a&quot;</span>]</a>
+<a class="sourceLine" id="cb24-4" title="4">y_pred<span class="op">=</span>[<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;a&quot;</span>,<span class="st">&quot;a&quot;</span>,<span class="st">&quot;p&quot;</span>,<span class="st">&quot;b&quot;</span>]</a>
+<a class="sourceLine" id="cb24-5" title="5">confusion_matrix(y_test, y_pred,labels<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>,<span class="st">&quot;p&quot;</span>])</a>
+<a class="sourceLine" id="cb24-6" title="6"><span class="co">#array([[1, 1, 0],</span></a>
+<a class="sourceLine" id="cb24-7" title="7">       [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">3</span>],</a>
+<a class="sourceLine" id="cb24-8" title="8">       [<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">4</span>]], dtype<span class="op">=</span>int64)</a>
+<a class="sourceLine" id="cb24-9" title="9"></a>
+<a class="sourceLine" id="cb24-10" title="10"><span class="bu">print</span>(classification_report(y_test,y_pred))</a>
+<a class="sourceLine" id="cb24-11" title="11"><span class="co">##</span></a>
+<a class="sourceLine" id="cb24-12" title="12">               precision    recall  f1<span class="op">-</span>score   support</a>
+<a class="sourceLine" id="cb24-13" title="13"></a>
+<a class="sourceLine" id="cb24-14" title="14">          a       <span class="fl">0.33</span>      <span class="fl">0.50</span>      <span class="fl">0.40</span>         <span class="dv">2</span></a>
+<a class="sourceLine" id="cb24-15" title="15">          b       <span class="fl">0.83</span>      <span class="fl">0.62</span>      <span class="fl">0.71</span>         <span class="dv">8</span></a>
+<a class="sourceLine" id="cb24-16" title="16">          p       <span class="fl">0.57</span>      <span class="fl">0.67</span>      <span class="fl">0.62</span>         <span class="dv">6</span></a>
+<a class="sourceLine" id="cb24-17" title="17"></a>
+<a class="sourceLine" id="cb24-18" title="18">avg <span class="op">/</span> total       <span class="fl">0.67</span>      <span class="fl">0.62</span>      <span class="fl">0.64</span>        <span class="dv">16</span></a></code></pre></div>
 <p>我传到<a href="https://github.com/gaowenxin95/machine-learing/tree/master/confusion-matrix_roc_auc_acc-score">github</a>上面了</p>
 <p>混淆矩阵demo</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1"><span class="co"># Import necessary modules</span></a>
-<a class="sourceLine" id="cb17-2" title="2"><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report</a>
-<a class="sourceLine" id="cb17-3" title="3"></a>
-<a class="sourceLine" id="cb17-4" title="4"><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</a>
-<a class="sourceLine" id="cb17-5" title="5"></a>
-<a class="sourceLine" id="cb17-6" title="6"><span class="co"># Create training and test set</span></a>
-<a class="sourceLine" id="cb17-7" title="7">X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X,y,test_size<span class="op">=</span><span class="fl">0.4</span>,random_state<span class="op">=</span><span class="dv">42</span>)</a>
-<a class="sourceLine" id="cb17-8" title="8"></a>
-<a class="sourceLine" id="cb17-9" title="9"><span class="co"># Instantiate a k-NN classifier: knn</span></a>
-<a class="sourceLine" id="cb17-10" title="10">knn <span class="op">=</span> KNeighborsClassifier(<span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb17-11" title="11"></a>
-<a class="sourceLine" id="cb17-12" title="12"><span class="co"># Fit the classifier to the training data</span></a>
-<a class="sourceLine" id="cb17-13" title="13">knn.fit(X_train,y_train)</a>
-<a class="sourceLine" id="cb17-14" title="14"></a>
-<a class="sourceLine" id="cb17-15" title="15"><span class="co"># Predict the labels of the test data: y_pred</span></a>
-<a class="sourceLine" id="cb17-16" title="16">y_pred <span class="op">=</span> knn.predict(X_test)</a>
-<a class="sourceLine" id="cb17-17" title="17"></a>
-<a class="sourceLine" id="cb17-18" title="18"><span class="co"># Generate the confusion matrix and classification report</span></a>
-<a class="sourceLine" id="cb17-19" title="19"><span class="bu">print</span>(confusion_matrix(y_test,y_pred))</a>
-<a class="sourceLine" id="cb17-20" title="20"><span class="bu">print</span>(classification_report(y_test,y_pred))</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" title="1"><span class="co"># Import necessary modules</span></a>
+<a class="sourceLine" id="cb25-2" title="2"><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report</a>
+<a class="sourceLine" id="cb25-3" title="3"></a>
+<a class="sourceLine" id="cb25-4" title="4"><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</a>
+<a class="sourceLine" id="cb25-5" title="5"></a>
+<a class="sourceLine" id="cb25-6" title="6"><span class="co"># Create training and test set</span></a>
+<a class="sourceLine" id="cb25-7" title="7">X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X,y,test_size<span class="op">=</span><span class="fl">0.4</span>,random_state<span class="op">=</span><span class="dv">42</span>)</a>
+<a class="sourceLine" id="cb25-8" title="8"></a>
+<a class="sourceLine" id="cb25-9" title="9"><span class="co"># Instantiate a k-NN classifier: knn</span></a>
+<a class="sourceLine" id="cb25-10" title="10">knn <span class="op">=</span> KNeighborsClassifier(<span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb25-11" title="11"></a>
+<a class="sourceLine" id="cb25-12" title="12"><span class="co"># Fit the classifier to the training data</span></a>
+<a class="sourceLine" id="cb25-13" title="13">knn.fit(X_train,y_train)</a>
+<a class="sourceLine" id="cb25-14" title="14"></a>
+<a class="sourceLine" id="cb25-15" title="15"><span class="co"># Predict the labels of the test data: y_pred</span></a>
+<a class="sourceLine" id="cb25-16" title="16">y_pred <span class="op">=</span> knn.predict(X_test)</a>
+<a class="sourceLine" id="cb25-17" title="17"></a>
+<a class="sourceLine" id="cb25-18" title="18"><span class="co"># Generate the confusion matrix and classification report</span></a>
+<a class="sourceLine" id="cb25-19" title="19"><span class="bu">print</span>(confusion_matrix(y_test,y_pred))</a>
+<a class="sourceLine" id="cb25-20" title="20"><span class="bu">print</span>(classification_report(y_test,y_pred))</a></code></pre></div>
 </div>
 <div id="补充知识" class="section level2">
 <h2><span class="header-section-number">7.10</span> 补充知识</h2>
 <p><strong>先给一个二分类的例子</strong>
 其他同理</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/09.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/09.png&quot;</span>)</a></code></pre></div>
 <p><img src="figs/09.png" width="397" /></p>
 <ul>
 <li>TP(True Positive)：将正类预测为正类数，真实为0，预测也为0</li>
@@ -1541,7 +1751,7 @@ GBDT的含义就是用Gradient Boosting的策略训练出来的DT模型。模型
 <li>灵敏度（Sensitivity）：就是召回率（Recall）召回率 = 提取出的正确信息条数 / 样本中的信息条数。通俗地说，就是所有准确的条目有多少被检索出来了</li>
 <li>特异度（Specificity）</li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/10.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/10.png&quot;</span>)</a></code></pre></div>
 <p><img src="figs/10.png" width="712" /></p>
 </div>
 <div id="三级指标" class="section level2">
@@ -1554,40 +1764,40 @@ F1-Score指标综合了Precision与Recall的产出的结果。F1-Score的取值�
 <h2><span class="header-section-number">7.13</span> accuracy_score</h2>
 <p>分类准确率分数
 - 分类准确率分数是指所有分类正确的百分比。分类准确率这一衡量分类器的标准比较容易理解，但是它不能告诉你响应值的潜在分布，并且它也不能告诉你分类器犯错的类型</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" title="1">sklearn.metrics.accuracy_score(y_true, y_pred, normalize<span class="op">=</span><span class="va">True</span>, sample_weight<span class="op">=</span><span class="va">None</span>)</a>
-<a class="sourceLine" id="cb20-2" title="2"><span class="co">#normalize：默认值为True，返回正确分类的比例；如果为False，返回正确分类的样本数</span></a></code></pre></div>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" title="1"><span class="co">#accuracy_score</span></a>
-<a class="sourceLine" id="cb21-2" title="2"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb21-3" title="3"><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</a>
-<a class="sourceLine" id="cb21-4" title="4">y_pred <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb21-5" title="5">y_true <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">1</span>,<span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb21-6" title="6"><span class="bu">print</span>(accuracy_score(y_true, y_pred))</a>
-<a class="sourceLine" id="cb21-7" title="7"><span class="bu">print</span>(accuracy_score(y_true, y_pred, normalize<span class="op">=</span><span class="va">False</span>))</a>
-<a class="sourceLine" id="cb21-8" title="8"></a>
-<a class="sourceLine" id="cb21-9" title="9"><span class="co">#4</span></a>
-<a class="sourceLine" id="cb21-10" title="10"><span class="co">#5</span></a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" title="1">sklearn.metrics.accuracy_score(y_true, y_pred, normalize<span class="op">=</span><span class="va">True</span>, sample_weight<span class="op">=</span><span class="va">None</span>)</a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="co">#normalize：默认值为True，返回正确分类的比例；如果为False，返回正确分类的样本数</span></a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" title="1"><span class="co">#accuracy_score</span></a>
+<a class="sourceLine" id="cb29-2" title="2"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb29-3" title="3"><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</a>
+<a class="sourceLine" id="cb29-4" title="4">y_pred <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb29-5" title="5">y_true <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">1</span>,<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb29-6" title="6"><span class="bu">print</span>(accuracy_score(y_true, y_pred))</a>
+<a class="sourceLine" id="cb29-7" title="7"><span class="bu">print</span>(accuracy_score(y_true, y_pred, normalize<span class="op">=</span><span class="va">False</span>))</a>
+<a class="sourceLine" id="cb29-8" title="8"></a>
+<a class="sourceLine" id="cb29-9" title="9"><span class="co">#4</span></a>
+<a class="sourceLine" id="cb29-10" title="10"><span class="co">#5</span></a></code></pre></div>
 <p>datacamp上面的一个例子</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" title="1"><span class="co"># Import necessary modules</span></a>
-<a class="sourceLine" id="cb22-2" title="2"><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier </a>
-<a class="sourceLine" id="cb22-3" title="3"><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</a>
-<a class="sourceLine" id="cb22-4" title="4"></a>
-<a class="sourceLine" id="cb22-5" title="5"><span class="co"># Create feature and target arrays</span></a>
-<a class="sourceLine" id="cb22-6" title="6">X <span class="op">=</span> digits.data</a>
-<a class="sourceLine" id="cb22-7" title="7">y <span class="op">=</span> digits.target</a>
-<a class="sourceLine" id="cb22-8" title="8"></a>
-<a class="sourceLine" id="cb22-9" title="9"><span class="co"># Split into training and test set</span></a>
-<a class="sourceLine" id="cb22-10" title="10">X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>, stratify<span class="op">=</span>y)</a>
-<a class="sourceLine" id="cb22-11" title="11"></a>
-<a class="sourceLine" id="cb22-12" title="12"><span class="co"># Create a k-NN classifier with 7 neighbors: knn</span></a>
-<a class="sourceLine" id="cb22-13" title="13">knn <span class="op">=</span> KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">7</span>)</a>
-<a class="sourceLine" id="cb22-14" title="14"></a>
-<a class="sourceLine" id="cb22-15" title="15"><span class="co"># Fit the classifier to the training data</span></a>
-<a class="sourceLine" id="cb22-16" title="16">knn.fit(X_train, y_train)</a>
-<a class="sourceLine" id="cb22-17" title="17">y_pred<span class="op">=</span>knn.predict(X_test)</a>
-<a class="sourceLine" id="cb22-18" title="18"><span class="co"># Print the accuracy</span></a>
-<a class="sourceLine" id="cb22-19" title="19"><span class="bu">print</span>(accuracy_score(y_test, y_pred))</a>
-<a class="sourceLine" id="cb22-20" title="20"></a>
-<a class="sourceLine" id="cb22-21" title="21"><span class="co">#0.89996709</span></a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" title="1"><span class="co"># Import necessary modules</span></a>
+<a class="sourceLine" id="cb30-2" title="2"><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier </a>
+<a class="sourceLine" id="cb30-3" title="3"><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</a>
+<a class="sourceLine" id="cb30-4" title="4"></a>
+<a class="sourceLine" id="cb30-5" title="5"><span class="co"># Create feature and target arrays</span></a>
+<a class="sourceLine" id="cb30-6" title="6">X <span class="op">=</span> digits.data</a>
+<a class="sourceLine" id="cb30-7" title="7">y <span class="op">=</span> digits.target</a>
+<a class="sourceLine" id="cb30-8" title="8"></a>
+<a class="sourceLine" id="cb30-9" title="9"><span class="co"># Split into training and test set</span></a>
+<a class="sourceLine" id="cb30-10" title="10">X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>, stratify<span class="op">=</span>y)</a>
+<a class="sourceLine" id="cb30-11" title="11"></a>
+<a class="sourceLine" id="cb30-12" title="12"><span class="co"># Create a k-NN classifier with 7 neighbors: knn</span></a>
+<a class="sourceLine" id="cb30-13" title="13">knn <span class="op">=</span> KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb30-14" title="14"></a>
+<a class="sourceLine" id="cb30-15" title="15"><span class="co"># Fit the classifier to the training data</span></a>
+<a class="sourceLine" id="cb30-16" title="16">knn.fit(X_train, y_train)</a>
+<a class="sourceLine" id="cb30-17" title="17">y_pred<span class="op">=</span>knn.predict(X_test)</a>
+<a class="sourceLine" id="cb30-18" title="18"><span class="co"># Print the accuracy</span></a>
+<a class="sourceLine" id="cb30-19" title="19"><span class="bu">print</span>(accuracy_score(y_test, y_pred))</a>
+<a class="sourceLine" id="cb30-20" title="20"></a>
+<a class="sourceLine" id="cb30-21" title="21"><span class="co">#0.89996709</span></a></code></pre></div>
 </div>
 <div id="roc" class="section level2">
 <h2><span class="header-section-number">7.14</span> ROC</h2>
@@ -1629,44 +1839,44 @@ F1-Score指标综合了Precision与Recall的产出的结果。F1-Score的取值�
 <li>在分类问题中，我们模型预测的结果不是negative/positive。而是一个negatvie或positive的概率。那么在多大的概率下我们认为观测值应该是negative或positive呢？这个判定的值就是阈值（threshold）。</li>
 <li>ROC曲线上众多的点，每个点都对应着一个阈值的情况下模型的表现。多个点连起来就是ROC曲线了</li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" title="1">sklearn.metrics.roc_curve(y_true,y_score,pos_label<span class="op">=</span><span class="va">None</span>, sample_weight<span class="op">=</span><span class="va">None</span>, drop_intermediate<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" title="1"><span class="co"># Import the necessary modules</span></a>
-<a class="sourceLine" id="cb24-2" title="2"><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</a>
-<a class="sourceLine" id="cb24-3" title="3"><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix ,classification_report</a>
-<a class="sourceLine" id="cb24-4" title="4"></a>
-<a class="sourceLine" id="cb24-5" title="5"><span class="co"># Create training and test sets</span></a>
-<a class="sourceLine" id="cb24-6" title="6">X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.4</span>, random_state<span class="op">=</span><span class="dv">42</span>)</a>
-<a class="sourceLine" id="cb24-7" title="7"></a>
-<a class="sourceLine" id="cb24-8" title="8"><span class="co"># Create the classifier: logreg</span></a>
-<a class="sourceLine" id="cb24-9" title="9">logreg <span class="op">=</span> LogisticRegression()</a>
-<a class="sourceLine" id="cb24-10" title="10"></a>
-<a class="sourceLine" id="cb24-11" title="11"><span class="co"># Fit the classifier to the training data</span></a>
-<a class="sourceLine" id="cb24-12" title="12">logreg.fit(X_train,y_train)</a>
-<a class="sourceLine" id="cb24-13" title="13"></a>
-<a class="sourceLine" id="cb24-14" title="14"><span class="co"># Predict the labels of the test set: y_pred</span></a>
-<a class="sourceLine" id="cb24-15" title="15">y_pred <span class="op">=</span> logreg.predict(X_test)</a>
-<a class="sourceLine" id="cb24-16" title="16"></a>
-<a class="sourceLine" id="cb24-17" title="17"><span class="co"># Compute and print the confusion matrix and classification report</span></a>
-<a class="sourceLine" id="cb24-18" title="18"><span class="bu">print</span>(confusion_matrix(y_test, y_pred))</a>
-<a class="sourceLine" id="cb24-19" title="19"><span class="bu">print</span>(classification_report(y_test, y_pred))</a>
-<a class="sourceLine" id="cb24-20" title="20"></a>
-<a class="sourceLine" id="cb24-21" title="21"></a>
-<a class="sourceLine" id="cb24-22" title="22"><span class="co"># Import necessary modules</span></a>
-<a class="sourceLine" id="cb24-23" title="23"><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_curve</a>
-<a class="sourceLine" id="cb24-24" title="24"></a>
-<a class="sourceLine" id="cb24-25" title="25"><span class="co"># Compute predicted probabilities: y_pred_prob</span></a>
-<a class="sourceLine" id="cb24-26" title="26">y_pred_prob <span class="op">=</span> logreg.predict_proba(X_test)[:,<span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb24-27" title="27"></a>
-<a class="sourceLine" id="cb24-28" title="28"><span class="co"># Generate ROC curve values: fpr, tpr, thresholds</span></a>
-<a class="sourceLine" id="cb24-29" title="29">fpr, tpr, thresholds <span class="op">=</span> roc_curve(y_test, y_pred_prob)</a>
-<a class="sourceLine" id="cb24-30" title="30"></a>
-<a class="sourceLine" id="cb24-31" title="31"><span class="co"># Plot ROC curve</span></a>
-<a class="sourceLine" id="cb24-32" title="32">plt.plot([<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="dv">1</span>], <span class="st">&#39;k--&#39;</span>)</a>
-<a class="sourceLine" id="cb24-33" title="33">plt.plot(fpr, tpr)</a>
-<a class="sourceLine" id="cb24-34" title="34">plt.xlabel(<span class="st">&#39;False Positive Rate&#39;</span>)</a>
-<a class="sourceLine" id="cb24-35" title="35">plt.ylabel(<span class="st">&#39;True Positive Rate&#39;</span>)</a>
-<a class="sourceLine" id="cb24-36" title="36">plt.title(<span class="st">&#39;ROC Curve&#39;</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/11.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" title="1">sklearn.metrics.roc_curve(y_true,y_score,pos_label<span class="op">=</span><span class="va">None</span>, sample_weight<span class="op">=</span><span class="va">None</span>, drop_intermediate<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" title="1"><span class="co"># Import the necessary modules</span></a>
+<a class="sourceLine" id="cb32-2" title="2"><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</a>
+<a class="sourceLine" id="cb32-3" title="3"><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix ,classification_report</a>
+<a class="sourceLine" id="cb32-4" title="4"></a>
+<a class="sourceLine" id="cb32-5" title="5"><span class="co"># Create training and test sets</span></a>
+<a class="sourceLine" id="cb32-6" title="6">X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.4</span>, random_state<span class="op">=</span><span class="dv">42</span>)</a>
+<a class="sourceLine" id="cb32-7" title="7"></a>
+<a class="sourceLine" id="cb32-8" title="8"><span class="co"># Create the classifier: logreg</span></a>
+<a class="sourceLine" id="cb32-9" title="9">logreg <span class="op">=</span> LogisticRegression()</a>
+<a class="sourceLine" id="cb32-10" title="10"></a>
+<a class="sourceLine" id="cb32-11" title="11"><span class="co"># Fit the classifier to the training data</span></a>
+<a class="sourceLine" id="cb32-12" title="12">logreg.fit(X_train,y_train)</a>
+<a class="sourceLine" id="cb32-13" title="13"></a>
+<a class="sourceLine" id="cb32-14" title="14"><span class="co"># Predict the labels of the test set: y_pred</span></a>
+<a class="sourceLine" id="cb32-15" title="15">y_pred <span class="op">=</span> logreg.predict(X_test)</a>
+<a class="sourceLine" id="cb32-16" title="16"></a>
+<a class="sourceLine" id="cb32-17" title="17"><span class="co"># Compute and print the confusion matrix and classification report</span></a>
+<a class="sourceLine" id="cb32-18" title="18"><span class="bu">print</span>(confusion_matrix(y_test, y_pred))</a>
+<a class="sourceLine" id="cb32-19" title="19"><span class="bu">print</span>(classification_report(y_test, y_pred))</a>
+<a class="sourceLine" id="cb32-20" title="20"></a>
+<a class="sourceLine" id="cb32-21" title="21"></a>
+<a class="sourceLine" id="cb32-22" title="22"><span class="co"># Import necessary modules</span></a>
+<a class="sourceLine" id="cb32-23" title="23"><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_curve</a>
+<a class="sourceLine" id="cb32-24" title="24"></a>
+<a class="sourceLine" id="cb32-25" title="25"><span class="co"># Compute predicted probabilities: y_pred_prob</span></a>
+<a class="sourceLine" id="cb32-26" title="26">y_pred_prob <span class="op">=</span> logreg.predict_proba(X_test)[:,<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb32-27" title="27"></a>
+<a class="sourceLine" id="cb32-28" title="28"><span class="co"># Generate ROC curve values: fpr, tpr, thresholds</span></a>
+<a class="sourceLine" id="cb32-29" title="29">fpr, tpr, thresholds <span class="op">=</span> roc_curve(y_test, y_pred_prob)</a>
+<a class="sourceLine" id="cb32-30" title="30"></a>
+<a class="sourceLine" id="cb32-31" title="31"><span class="co"># Plot ROC curve</span></a>
+<a class="sourceLine" id="cb32-32" title="32">plt.plot([<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="dv">1</span>], <span class="st">&#39;k--&#39;</span>)</a>
+<a class="sourceLine" id="cb32-33" title="33">plt.plot(fpr, tpr)</a>
+<a class="sourceLine" id="cb32-34" title="34">plt.xlabel(<span class="st">&#39;False Positive Rate&#39;</span>)</a>
+<a class="sourceLine" id="cb32-35" title="35">plt.ylabel(<span class="st">&#39;True Positive Rate&#39;</span>)</a>
+<a class="sourceLine" id="cb32-36" title="36">plt.title(<span class="st">&#39;ROC Curve&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/11.png&quot;</span>)</a></code></pre></div>
 <p><img src="figs/11.png" width="458" /></p>
 </div>
 <div id="auc-area-under-the-roc-curve" class="section level2">
@@ -1679,26 +1889,26 @@ F1-Score指标综合了Precision与Recall的产出的结果。F1-Score的取值�
 <li><p>0 &lt; AUC &lt; 0.5，代表ROC曲线在45度线下方，预测不如50/50的猜测。</p></li>
 <li><p>AUC = 0，代表ROC曲线在横轴上，预测完全不准确。</p></li>
 </ul>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" title="1">sklearn.metrics.auc(x, y, reorder<span class="op">=</span><span class="va">False</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb27-1" title="1"><span class="co"># Import necessary modules</span></a>
-<a class="sourceLine" id="cb27-2" title="2"><span class="im">from</span> sklearn.model_selection <span class="im">import</span> cross_val_score</a>
-<a class="sourceLine" id="cb27-3" title="3"><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_auc_score</a>
-<a class="sourceLine" id="cb27-4" title="4"></a>
-<a class="sourceLine" id="cb27-5" title="5"><span class="co"># Compute predicted probabilities: y_pred_prob</span></a>
-<a class="sourceLine" id="cb27-6" title="6">y_pred_prob <span class="op">=</span> logreg.predict_proba(X_test)[:,<span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb27-7" title="7"></a>
-<a class="sourceLine" id="cb27-8" title="8"><span class="co"># Compute and print AUC score</span></a>
-<a class="sourceLine" id="cb27-9" title="9"><span class="bu">print</span>(<span class="st">&quot;AUC: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(roc_auc_score(y_test, y_pred_prob)))</a>
-<a class="sourceLine" id="cb27-10" title="10"></a>
-<a class="sourceLine" id="cb27-11" title="11"><span class="co"># Compute cross-validated AUC scores: cv_auc</span></a>
-<a class="sourceLine" id="cb27-12" title="12">cv_auc <span class="op">=</span> cross_val_score(logreg, X, y, cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">&#39;roc_auc&#39;</span>)</a>
-<a class="sourceLine" id="cb27-13" title="13"></a>
-<a class="sourceLine" id="cb27-14" title="14"><span class="co"># Print list of AUC scores</span></a>
-<a class="sourceLine" id="cb27-15" title="15"><span class="bu">print</span>(<span class="st">&quot;AUC scores computed using 5-fold cross-validation: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(cv_auc))</a>
-<a class="sourceLine" id="cb27-16" title="16"></a>
-<a class="sourceLine" id="cb27-17" title="17"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
-<a class="sourceLine" id="cb27-18" title="18">    AUC: <span class="fl">0.8254806777079764</span></a>
-<a class="sourceLine" id="cb27-19" title="19">    AUC scores computed using <span class="dv">5</span><span class="op">-</span>fold cross<span class="op">-</span>validation: [<span class="fl">0.80148148</span> <span class="fl">0.8062963</span>  <span class="fl">0.81481481</span> <span class="fl">0.86245283</span> <span class="fl">0.8554717</span> ]</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" title="1">sklearn.metrics.auc(x, y, reorder<span class="op">=</span><span class="va">False</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" title="1"><span class="co"># Import necessary modules</span></a>
+<a class="sourceLine" id="cb35-2" title="2"><span class="im">from</span> sklearn.model_selection <span class="im">import</span> cross_val_score</a>
+<a class="sourceLine" id="cb35-3" title="3"><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_auc_score</a>
+<a class="sourceLine" id="cb35-4" title="4"></a>
+<a class="sourceLine" id="cb35-5" title="5"><span class="co"># Compute predicted probabilities: y_pred_prob</span></a>
+<a class="sourceLine" id="cb35-6" title="6">y_pred_prob <span class="op">=</span> logreg.predict_proba(X_test)[:,<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb35-7" title="7"></a>
+<a class="sourceLine" id="cb35-8" title="8"><span class="co"># Compute and print AUC score</span></a>
+<a class="sourceLine" id="cb35-9" title="9"><span class="bu">print</span>(<span class="st">&quot;AUC: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(roc_auc_score(y_test, y_pred_prob)))</a>
+<a class="sourceLine" id="cb35-10" title="10"></a>
+<a class="sourceLine" id="cb35-11" title="11"><span class="co"># Compute cross-validated AUC scores: cv_auc</span></a>
+<a class="sourceLine" id="cb35-12" title="12">cv_auc <span class="op">=</span> cross_val_score(logreg, X, y, cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">&#39;roc_auc&#39;</span>)</a>
+<a class="sourceLine" id="cb35-13" title="13"></a>
+<a class="sourceLine" id="cb35-14" title="14"><span class="co"># Print list of AUC scores</span></a>
+<a class="sourceLine" id="cb35-15" title="15"><span class="bu">print</span>(<span class="st">&quot;AUC scores computed using 5-fold cross-validation: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(cv_auc))</a>
+<a class="sourceLine" id="cb35-16" title="16"></a>
+<a class="sourceLine" id="cb35-17" title="17"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
+<a class="sourceLine" id="cb35-18" title="18">    AUC: <span class="fl">0.8254806777079764</span></a>
+<a class="sourceLine" id="cb35-19" title="19">    AUC scores computed using <span class="dv">5</span><span class="op">-</span>fold cross<span class="op">-</span>validation: [<span class="fl">0.80148148</span> <span class="fl">0.8062963</span>  <span class="fl">0.81481481</span> <span class="fl">0.86245283</span> <span class="fl">0.8554717</span> ]</a></code></pre></div>
 </div>
 <div id="precision-recall-curve" class="section level2">
 <h2><span class="header-section-number">7.19</span> Precision-recall Curve</h2>
@@ -1718,40 +1928,40 @@ API官方文档
 <p>方差，标准差
 MSE:<span class="math inline">\((y_真实-y_预测)^2\)</span>之和
 RMSE：MSE开平方</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" title="1"><span class="co"># Import necessary modules</span></a>
-<a class="sourceLine" id="cb28-2" title="2"><span class="im">from</span> sklearn.linear_model <span class="im">import</span> ElasticNet</a>
-<a class="sourceLine" id="cb28-3" title="3"><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</a>
-<a class="sourceLine" id="cb28-4" title="4"><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</a>
-<a class="sourceLine" id="cb28-5" title="5"><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</a>
-<a class="sourceLine" id="cb28-6" title="6"></a>
-<a class="sourceLine" id="cb28-7" title="7"><span class="co"># Create train and test sets</span></a>
-<a class="sourceLine" id="cb28-8" title="8">X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.4</span>, random_state<span class="op">=</span><span class="dv">42</span>)</a>
-<a class="sourceLine" id="cb28-9" title="9"></a>
-<a class="sourceLine" id="cb28-10" title="10"><span class="co"># Create the hyperparameter grid</span></a>
-<a class="sourceLine" id="cb28-11" title="11">l1_space <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">30</span>)</a>
-<a class="sourceLine" id="cb28-12" title="12">param_grid <span class="op">=</span> {<span class="st">&#39;l1_ratio&#39;</span>: l1_space}</a>
-<a class="sourceLine" id="cb28-13" title="13"></a>
-<a class="sourceLine" id="cb28-14" title="14"><span class="co"># Instantiate the ElasticNet regressor: elastic_net</span></a>
-<a class="sourceLine" id="cb28-15" title="15">elastic_net <span class="op">=</span> ElasticNet()</a>
-<a class="sourceLine" id="cb28-16" title="16"></a>
-<a class="sourceLine" id="cb28-17" title="17"><span class="co"># Setup the GridSearchCV object: gm_cv</span></a>
-<a class="sourceLine" id="cb28-18" title="18">gm_cv <span class="op">=</span> GridSearchCV(elastic_net, param_grid, cv<span class="op">=</span><span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb28-19" title="19"></a>
-<a class="sourceLine" id="cb28-20" title="20"><span class="co"># Fit it to the training data</span></a>
-<a class="sourceLine" id="cb28-21" title="21">gm_cv.fit(X_train, y_train)</a>
-<a class="sourceLine" id="cb28-22" title="22"></a>
-<a class="sourceLine" id="cb28-23" title="23"><span class="co"># Predict on the test set and compute metrics</span></a>
-<a class="sourceLine" id="cb28-24" title="24">y_pred <span class="op">=</span> gm_cv.predict(X_test)</a>
-<a class="sourceLine" id="cb28-25" title="25">r2 <span class="op">=</span> gm_cv.score(X_test, y_test)</a>
-<a class="sourceLine" id="cb28-26" title="26">mse <span class="op">=</span> mean_squared_error(y_test, y_pred)</a>
-<a class="sourceLine" id="cb28-27" title="27"><span class="bu">print</span>(<span class="st">&quot;Tuned ElasticNet l1 ratio: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(gm_cv.best_params_))</a>
-<a class="sourceLine" id="cb28-28" title="28"><span class="bu">print</span>(<span class="st">&quot;Tuned ElasticNet R squared: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(r2))</a>
-<a class="sourceLine" id="cb28-29" title="29"><span class="bu">print</span>(<span class="st">&quot;Tuned ElasticNet MSE: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(mse))</a>
-<a class="sourceLine" id="cb28-30" title="30"></a>
-<a class="sourceLine" id="cb28-31" title="31"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
-<a class="sourceLine" id="cb28-32" title="32">    Tuned ElasticNet l1 ratio: {<span class="st">&#39;l1_ratio&#39;</span>: <span class="fl">0.20689655172413793</span>}</a>
-<a class="sourceLine" id="cb28-33" title="33">    Tuned ElasticNet R squared: <span class="fl">0.8668305372460283</span></a>
-<a class="sourceLine" id="cb28-34" title="34">    Tuned ElasticNet MSE: <span class="fl">10.05791413339844</span></a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" title="1"><span class="co"># Import necessary modules</span></a>
+<a class="sourceLine" id="cb36-2" title="2"><span class="im">from</span> sklearn.linear_model <span class="im">import</span> ElasticNet</a>
+<a class="sourceLine" id="cb36-3" title="3"><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</a>
+<a class="sourceLine" id="cb36-4" title="4"><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</a>
+<a class="sourceLine" id="cb36-5" title="5"><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</a>
+<a class="sourceLine" id="cb36-6" title="6"></a>
+<a class="sourceLine" id="cb36-7" title="7"><span class="co"># Create train and test sets</span></a>
+<a class="sourceLine" id="cb36-8" title="8">X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.4</span>, random_state<span class="op">=</span><span class="dv">42</span>)</a>
+<a class="sourceLine" id="cb36-9" title="9"></a>
+<a class="sourceLine" id="cb36-10" title="10"><span class="co"># Create the hyperparameter grid</span></a>
+<a class="sourceLine" id="cb36-11" title="11">l1_space <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">30</span>)</a>
+<a class="sourceLine" id="cb36-12" title="12">param_grid <span class="op">=</span> {<span class="st">&#39;l1_ratio&#39;</span>: l1_space}</a>
+<a class="sourceLine" id="cb36-13" title="13"></a>
+<a class="sourceLine" id="cb36-14" title="14"><span class="co"># Instantiate the ElasticNet regressor: elastic_net</span></a>
+<a class="sourceLine" id="cb36-15" title="15">elastic_net <span class="op">=</span> ElasticNet()</a>
+<a class="sourceLine" id="cb36-16" title="16"></a>
+<a class="sourceLine" id="cb36-17" title="17"><span class="co"># Setup the GridSearchCV object: gm_cv</span></a>
+<a class="sourceLine" id="cb36-18" title="18">gm_cv <span class="op">=</span> GridSearchCV(elastic_net, param_grid, cv<span class="op">=</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb36-19" title="19"></a>
+<a class="sourceLine" id="cb36-20" title="20"><span class="co"># Fit it to the training data</span></a>
+<a class="sourceLine" id="cb36-21" title="21">gm_cv.fit(X_train, y_train)</a>
+<a class="sourceLine" id="cb36-22" title="22"></a>
+<a class="sourceLine" id="cb36-23" title="23"><span class="co"># Predict on the test set and compute metrics</span></a>
+<a class="sourceLine" id="cb36-24" title="24">y_pred <span class="op">=</span> gm_cv.predict(X_test)</a>
+<a class="sourceLine" id="cb36-25" title="25">r2 <span class="op">=</span> gm_cv.score(X_test, y_test)</a>
+<a class="sourceLine" id="cb36-26" title="26">mse <span class="op">=</span> mean_squared_error(y_test, y_pred)</a>
+<a class="sourceLine" id="cb36-27" title="27"><span class="bu">print</span>(<span class="st">&quot;Tuned ElasticNet l1 ratio: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(gm_cv.best_params_))</a>
+<a class="sourceLine" id="cb36-28" title="28"><span class="bu">print</span>(<span class="st">&quot;Tuned ElasticNet R squared: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(r2))</a>
+<a class="sourceLine" id="cb36-29" title="29"><span class="bu">print</span>(<span class="st">&quot;Tuned ElasticNet MSE: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(mse))</a>
+<a class="sourceLine" id="cb36-30" title="30"></a>
+<a class="sourceLine" id="cb36-31" title="31"><span class="op">&lt;</span>script.py<span class="op">&gt;</span> output:</a>
+<a class="sourceLine" id="cb36-32" title="32">    Tuned ElasticNet l1 ratio: {<span class="st">&#39;l1_ratio&#39;</span>: <span class="fl">0.20689655172413793</span>}</a>
+<a class="sourceLine" id="cb36-33" title="33">    Tuned ElasticNet R squared: <span class="fl">0.8668305372460283</span></a>
+<a class="sourceLine" id="cb36-34" title="34">    Tuned ElasticNet MSE: <span class="fl">10.05791413339844</span></a></code></pre></div>
 
 </div>
 </div>
@@ -1770,7 +1980,7 @@ RMSE：MSE开平方</p>
 <p>bias和variance的选择是一个tradeoff(取舍思维)，过高的varance对应的概念，有点「剑走偏锋」[矫枉过正」的意思，如果说一个人variance比较高， 可以理解为，这个人性格比较极端偏执，眼光比较狭窄，没有大局观。而过高的bias对应的概念，有点像「面面俱到」「大巧若拙] 的意思，如果说一个人bias比较高，可以理解为，这个人是个好好先生，谁都不得罪， 圆滑世故，说话的时候，什么都说了，但又好像什么都没说，眼光比较长远，有大局观。(感觉好分裂 ),或许可以说泛化能力更强，谁都适用，就是没啥用。<a href="https://www.cnblogs.com/gaowenxingxing/p/12355611.html">泛化误差笔记</a></p>
 </blockquote>
 </div>
-<div id="总结" class="section level2">
+<div id="总结-1" class="section level2">
 <h2><span class="header-section-number">8.3</span> 总结</h2>
 <p>偏差度量了学习算法的期望预测与真实结果的偏离程度，即刻画了算法本身的拟合能力；</p>
 <p>方差度量了同样大小的训练集的变动所导致的学习性能的变化，即刻画了数据扰动所造成的影响；</p>
@@ -1806,6 +2016,317 @@ RMSE：MSE开平方</p>
 
 </blockquote>
 
+</div>
+<div id="方法" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> 方法</h1>
+<div id="梯度下降-1" class="section level2">
+<h2><span class="header-section-number">10.1</span> 梯度下降</h2>
+<p>在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。</p>
+</div>
+<div id="梯度" class="section level2">
+<h2><span class="header-section-number">10.2</span> 梯度</h2>
+<blockquote>
+<p>在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数f(x,y), 分别对x,y求偏导数，求得的梯度向量就是(∂f/∂x, ∂f/∂y)T,简称grad f(x,y)或者▽f(x,y)。对于在点(x0,y0)的具体梯度向量就是(∂f/∂x0, ∂f/∂y0)T.或者▽f(x0,y0)，如果是3个参数的向量梯度，就是(∂f/∂x, ∂f/∂y，∂f/∂z)T,以此类推
+。</p>
+</blockquote>
+<p>其实就可以理解为梯度下降是求偏导</p>
+<blockquote>
+<p>那么这个梯度向量求出来有什么意义呢？他的意义从几何意义上讲，就是函数变化增加最快的地方。具体来说，对于函数f(x,y),在点(x0,y0)，沿着梯度向量的方向就是(∂f/∂x0, ∂f/∂y0)T的方向是f(x,y)增加最快的地方。或者说，沿着梯度向量的方向，更加容易找到函数的最大值。反过来说，沿着梯度向量相反的方向，也就是 -(∂f/∂x0, ∂f/∂y0)T的方向，梯度减少最快，也就是更加容易找到函数的最小值。</p>
+</blockquote>
+<p>梯度就是函数变化最快的地方</p>
+</div>
+<div id="上升vs下降" class="section level2">
+<h2><span class="header-section-number">10.3</span> 上升vs下降</h2>
+<blockquote>
+<p>在机器学习算法中，在最小化损失函数时，可以通过梯度下降法来一步步的迭代求解，得到最小化的损失函数，和模型参数值。反过来，如果我们需要求解损失函数的最大值，这时就需要用梯度上升法来迭代了。</p>
+</blockquote>
+<p>对的，求min</p>
+<p>梯度下降法和梯度上升法是可以互相转化的。比如我们需要求解损失函数f(θ)的最小值，这时我们需要用梯度下降法来迭代求解。但是实际上，我们可以反过来求解损失函数-f(θ)的最大值，这时梯度上升法就派上用场了。</p>
+</div>
+<div id="梯度下降-2" class="section level2">
+<h2><span class="header-section-number">10.4</span> 梯度下降</h2>
+<blockquote>
+<p>首先来看看梯度下降的一个直观的解释。比如我们在一座大山上的某处位置，由于我们不知道怎么下山，于是决定走一步算一步，也就是在每走到一个位置的时候，求解当前位置的梯度，沿着梯度的负方向，也就是当前最陡峭的位置向下走一步，然后继续求解当前位置梯度，向这一步所在位置沿着最陡峭最易下山的位置走一步。这样一步步的走下去，一直走到觉得我们已经到了山脚。当然这样走下去，有可能我们不能走到山脚，而是到了某一个局部的山峰低处。</p>
+</blockquote>
+<p>从上面的解释可以看出，梯度下降不一定能够找到全局的最优解，有可能是一个局部最优解。当然，如果损失函数是<strong>凸函数</strong>，梯度下降法得到的解就一定是全局最优解。</p>
+<p>因此很多时候可以转化为凸函数</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/12.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/12.png" width="987" /></p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/13.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/13.png" width="1020" /></p>
+<p>算法的推导可以参考<a href="https://www.cnblogs.com/pinard/p/5970503.html">刘建平</a></p>
+</div>
+<div id="最小二乘" class="section level2">
+<h2><span class="header-section-number">10.5</span> 最小二乘</h2>
+<p>最小二乘法是用来做函数拟合或者求函数极值的方法。在机器学习，尤其是回归模型中，经常可以看到最小二乘法的身影，这里就对我对最小二乘法的认知做一个小结。[liu]<a href="https://www.cnblogs.com/pinard/p/5976811.html" class="uri">https://www.cnblogs.com/pinard/p/5976811.html</a></p>
+</div>
+<div id="牛顿法" class="section level2">
+<h2><span class="header-section-number">10.6</span> 牛顿法</h2>
+</div>
+<div id="坐标轴下降" class="section level2">
+<h2><span class="header-section-number">10.7</span> 坐标轴下降</h2>
+
+</div>
+</div>
+<div id="xgboost" class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> XGBoost</h1>
+<p>其实这个部分是有一个专门的bookdown的，但是还是想做一个总结，确保自己真正的理解了，不理解的就再请教一下学长好了，嘻嘻。。他说他知道我的问题在哪。。。。蛤我惊了！！！</p>
+<p>一是算法本身的优化：在算法的弱学习器模型选择上，对比GBDT只支持决策树，还可以直接很多其他的弱学习器。在算法的损失函数上，除了本身的损失，还加上了正则化部分。在算法的优化方式上，GBDT的损失函数只对误差部分做负梯度（一阶泰勒）展开，而XGBoost损失函数对误差部分做二阶泰勒展开，更加准确。算法本身的优化是我们后面讨论的重点。</p>
+<p>二是算法运行效率的优化：对每个弱学习器，比如决策树建立的过程做并行选择，找到合适的子树分裂特征和特征值。在并行选择之前，先对所有的特征的值进行排序分组，方便前面说的并行选择。对分组的特征，选择合适的分组大小，使用CPU缓存进行读取加速。将各个分组保存到多个硬盘以提高IO速度。</p>
+<p>三是算法健壮性的优化：对于缺失值的特征，通过枚举所有缺失值在当前节点是进入左子树还是右子树来决定缺失值的处理方式。算法本身加入了L1和L2正则化项，可以防止过拟合，泛化能力更强。</p>
+<div id="基本知识" class="section level2">
+<h2><span class="header-section-number">11.1</span> 基本知识</h2>
+<p><strong>决策树的作用:</strong>即依靠某种指标进行树的分裂达到分类/回归的目的，总是希望纯度越高越好.</p>
+<p>Xgboost就是由很多<strong>分类和回归树集成</strong>。</p>
+<p>数据挖掘或机器学习中使用的决策树有两种主要类型：
+- 分类树分析是指预测结果是数据所属的类“yes or no”，“do or don’t”
+- 回归树分析是指预测结果可以被认为是实数（例如物价，时间长短）</p>
+<p>之前学习的CART就是分类回归树的总称</p>
+<p><strong>举个栗子：</strong>
+- 判断高文星星是不是女的：结果是or不是
+- 预测高文星星2016-2019年的花呗欠债额度：结果就是0-10000之间的任意数值了</p>
+<blockquote>
+<p>对于回归树，没法再用分类树那套信息增益、信息增益率、基尼系数来判定树的节点分裂了，你需要采取新的方式评估效果，包括预测误差（常用的有均方误差、对数误差等）。而且节点不再是类别，是数值（预测值），那么怎么确定呢？有的是节点内样本均值，有的是最优化算出来的比如Xgboost</p>
+</blockquote>
+<p><strong>集成学习</strong></p>
+<p>所谓集成学习，是指构建多个分类器（弱分类器）对数据集进行预测，然后用某种策略将多个分类器预测的结果集成起来，作为最终预测结果。通俗比喻就是“三个臭皮匠赛过诸葛亮”，或一个公司董事会上的各董事投票决策，它要求每个弱分类器具备一定的“准确性”，分类器之间具备“差异性”。</p>
+<p>集成学习根据各个弱分类器之间有无依赖关系，分为Boosting和Bagging两大流派：</p>
+<ul>
+<li>Boosting流派，各分类器之间有依赖关系，必须串行(当前分类器的训练是要依据前一个的结果的)，比如Adaboost、GBDT(Gradient Boosting Decision Tree)、Xgboost</li>
+<li>Bagging流派，各分类器之间没有依赖关系，可各自并行，比如随机森林（Random Forest）</li>
+</ul>
+<blockquote>
+<p>boosting集成学习由多个相关联的决策树联合决策，什么叫相关联？举个例子
+1、有一个样本[数据-&gt;标签]是：[(2，4，5)-&gt; 4]
+2、第一棵决策树用这个样本训练的预测为3.3
+3、那么第二棵决策树训练时的输入，这个样本就变成了：[(2，4，5)-&gt; 0.7]
+4、也就是说，下一棵决策树输入样本会与前面决策树的训练和预测相关很快你会意识到，Xgboost为何也是一个boosting的集成学习了。</p>
+</blockquote>
+<p>而一个回归树形成的关键点在于：
+1.分裂点依据什么来划分（如前面说的均方误差最小，loss）；
+2.分类后的节点预测值是多少（如前面说，有一种是将叶子节点下各样本实际值得均值作为叶子节点预测误差，或者计算所得）</p>
+<p>至于另一类集成学习方法，比如RandomForest（随机森林）算法，各个决策树是独立的、每个决策树在样本堆里随机选一批样本，随机选一批特征进行独立训练，各个决策树之间没有啥关系。主要就是vote就好</p>
+<p>理解完Adaboost和GBDT的概念之后理解xgb会比较轻松一点，因为xgb可以解决前面两个的缺陷。</p>
+</div>
+<div id="xgb的定义" class="section level2">
+<h2><span class="header-section-number">11.2</span> xgb的定义</h2>
+<p>xgb是gbdt的增强版，就是原理很相似，主要是目标函数定义会有很大的差别，但是也有别的差别</p>
+<p>目标函数
+<span class="math display">\[\begin{aligned} O b j^{(t)} &amp;=\sum_{i=1}^{n} l\left(y_{i}, \hat{y}_{i}^{t}\right)+\sum_{i=i}^{t} \Omega\left(f_{i}\right) \\ &amp;=\sum_{i=1}^{n} l\left(y_{i}, \hat{y}_{i}^{t-1}+f_{t}\left(x_{i}\right)\right)+\Omega\left(f_{t}\right)+\text { constant } \end{aligned}\]</span>
+<span class="math inline">\(\Omega\left(f_{t}\right)\)</span>是正则项，这个后面展开
+constant是常数项可以考虑忽略</p>
+<p>利用泰勒展开式近似这个目标函数：
+<span class="math display">\[f(x+\Delta x) \simeq f(x)+f^{\prime}(x) \Delta x+\frac{1}{2} f^{\prime \prime}(x) \Delta x^{2}\]</span>
+那么在目标函数中中，我们把 <span class="math inline">\(\hat{y}_{i}^{t-1}\)</span> 看成是等式泰勒展开式中的<span class="math inline">\(x\)</span>， <span class="math inline">\(f_{t}\left(x_{i}\right)\)</span> 看成是 <span class="math inline">\(\Delta x\)</span> ，因此等式目标函数可以写成：</p>
+<p><span class="math display">\[O b j^{(t)}=\sum_{i=1}^{n}\left[l\left(y_{i}, \hat{y}_{i}^{t-1}\right)+g_{i} f_{t}\left(x_{i}\right)+\frac{1}{2} h_{i} f_{t}^{2}\left(x_{i}\right)\right]+\Omega\left(f_{t}\right)+ constant  \]</span></p>
+<p>方括号里面的是损失函数，常见的损失函数有均方误差，logistic损失函数<span class="math inline">\(l\left(y_{i}, \hat{y}_{i}\right)=y_{i} \ln \left(1+e^{-y_{i}}\right)+\left(1-y_{i}\right) \ln \left(1+e^{y_{i}}\right)\)</span>等</p>
+<p>其中 <span class="math inline">\(g_{i}\)</span> 为损失函数的一阶导， <span class="math inline">\(h_i\)</span> <strong>为损失函数的二阶导，注意这里的导是对 <span class="math inline">\(\hat{y}_{i}^{t-1}\)</span> 求导</strong>。我们以平方损失函数为例<span class="math inline">\(\sum_{i=1}^{n}\left(y_{i}-\left(\hat{y}_{i}^{t-1}+f_{t}\left(x_{i}\right)\right)\right)^{2}\)</span> ，则分别给出<span class="math inline">\(g_i\)</span>,<span class="math inline">\(h_i\)</span>就是第<span class="math inline">\(t\)</span>个学习器的一阶导和二阶导</p>
+<p><span class="math display">\[g_{i}=\partial_{\hat{y}^{t-1}}\left(\hat{y}^{t-1}-y_{i}\right)^{2}=2\left(\hat{y}^{t-1}-y_{i}\right),\]</span></p>
+<p><span class="math display">\[\quad h_{i}=\partial_{\hat{y}^{t-1}}^{2}\left(\hat{y}^{t-1}-y_{i}\right)^{2}=2\]</span>
+看这个式子或许更清楚
+<span class="math inline">\(g_{t}=\frac{\partial L\left(y_{i}, f_{t-1}\left(x_{i}\right)\right.}{\partial f_{t-1}\left(x_{i}\right)}, h_{t}=\frac{\partial^{2} L\left(y_{i}, f_{t-1}\left(x_{i}\right)\right.}{\partial f_{t-1}^{2}\left(x_{i}\right)}\)</span></p>
+<p>由于在第t步 <span class="math inline">\(\hat{y}_{i}^{t-1}\)</span> 其实是一个已知的值(残差)，所以 <span class="math inline">\(l\left(y_{i}, \hat{y}_{i}^{t-1}\right)\)</span>是一个常数，其对函数优化不会产生影响，因此，目标函数可以写成：
+<span class="math display">\[O b j^{(t)} \approx \sum_{i=1}^{n}\left[g_{i} f_{t}\left(x_{i}\right)+\frac{1}{2} h_{i} f_{t}^{2}\left(x_{i}\right)\right]+\Omega\left(f_{t}\right)\]</span></p>
+<p>另外<span class="math inline">\(f_{t}(x_i)\)</span>可以转化为<span class="math inline">\(w_{q(x)}\)</span>,其中<span class="math inline">\(q(x)\)</span> 代表了每个样本在哪个叶子结点上,而 <span class="math inline">\(w_q\)</span> 则代表了哪个叶子结点取什么<span class="math inline">\(w\)</span>值,所以<span class="math inline">\(w_{q(x)}\)</span>就代表了每个样本的取值<span class="math inline">\(w_j\)</span> (即预测值).</p>
+<p>我们假设<span class="math inline">\(I_{j}=\left\{i | q\left(x_{i}\right)=j\right\}\)</span>为第j个叶子节点的样本集合，则上式根据上面的一些变换可以写成：</p>
+<p><span class="math display">\[\begin{aligned} O b j^{(t)} &amp; \approx \sum_{i=1}^{n}\left[g_{i} f_{t}\left(x_{i}\right)+\frac{1}{2} h_{i} f_{t}^{2}\left(x_{i}\right)\right]+\Omega\left(f_{t}\right) \\ &amp;=\sum_{i=1}^{n}\left[g_{i} w_{q\left(x_{i}\right)}+\frac{1}{2} h_{i} w_{q\left(x_{i}\right)}^{2}\right]+\gamma T+\frac{1}{2} \lambda \sum_{j=1}^{T} w_{j}^{2} \\ &amp;=\sum_{j=1}^{T}\left[\left(\sum_{i \in I_{j}} g_{i}\right) w_{j}+\frac{1}{2}\left(\sum_{i \in I_{j}} h_{i}+\lambda\right) w_{j}^{2}\right]+\gamma T \end{aligned}\]</span><br />
+<strong>第二步是遍历所有的样本后求每个样本的损失函数，但样本最终会落在叶子节点上，所以我们也可以遍历叶子节点，然后获取叶子节点上的样本集合，最后在求损失函数。</strong>
+即我们之前样本的集合，现在都改写成叶子结点的集合，由于一个叶子结点有多个样本存在，因此才有了<span class="math inline">\(\sum_{i \in I_{j}} g_{i}\)</span>和<span class="math inline">\(\sum_{i \in I_{j}} h_{i}\)</span>两 项，然后定义<span class="math inline">\(G_i=\sum_{i \in I_{j}} g_{i}\)</span>,<span class="math inline">\(H_i=\sum_{i \in I_{j}} h_{i}\)</span>,</p>
+<p>则上式可以写成:
+<span class="math display">\[O b j^{(t)}=\sum_{j=1}^{T}\left[G_{j} w_{j}+\frac{1}{2}\left(H_{j}+\lambda\right) w_{j}^{2}\right]+\gamma T\]</span>
+这里我们要注意 <span class="math inline">\(G_i=\sum_{i \in I_{j}} g_{i}\)</span>,<span class="math inline">\(H_i=\sum_{i \in I_{j}} h_{i}\)</span>,是前t-1步得到的结果，其值已知可视为常数，只有最后一棵树的叶子节点 <span class="math inline">\(w_{j}\)</span> 不确定，那么将目标函数对 <span class="math inline">\(w_{j}\)</span> 求一阶导并令其等0，则可以求得叶子结点 j对应的权值：
+<span class="math display">\[w_{j}^{*}=-\frac{G_{j}}{H_{j}+\lambda}\]</span>
+此时目标函数就可以简化为
+<span class="math display">\[O b j=-\frac{1}{2} \sum_{j=1}^{T} \frac{G_{j}^{2}}{H_{j}+\lambda}+\gamma T\]</span>
+<strong>最终的目标函数只依赖于每个数据点的在误差函数上的一阶导数和二阶导数</strong></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/23.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/23.png" width="365" /></p>
+</div>
+<div id="目标函数的正则项" class="section level2">
+<h2><span class="header-section-number">11.3</span> 目标函数的正则项</h2>
+<p>目标是建立K个回归树，使得树群的预测值尽量接近真实值（准确率）而且有尽量大的泛化能力（更为本质的东西）</p>
+<p>目标函数不考虑常数项可以简写成：
+<span class="math inline">\(L(\phi)=\sum_{i} l\left(\hat{y}_{i}-y_{i}\right)+\sum_{k} \Omega\left(f_{k}\right)\)</span>
+有损失函数和正则项构成</p>
+<p><strong>正则项</strong>:</p>
+<p>是考虑模型的复杂度的，在logistic那里有专门的讲过的，因此逻辑回归是基础，蛤蛤</p>
+<p>表示树的复杂度的函数，值越小复杂度越低，泛化能力越强</p>
+<p>正则表达式:
+<span class="math display">\[\Omega(f)=\gamma T+\frac{1}{2} \lambda\|w_j\|^{2}\]</span>
+<span class="math inline">\(T\)</span>表示叶子节点的个数，<span class="math inline">\(w_j\)</span>表示第j个节点的数值。直观上看，目标要求预测误差尽量小，且叶子节点<span class="math inline">\(T\)</span>尽量少，节点数值<span class="math inline">\(w_j\)</span>尽量不极端。</p>
+<p>因此xgboost算法中对树的复杂度项包含了两个部分，一个是叶子节点个数<span class="math inline">\(T\)</span>，一个是叶子节点得分，L2正则化项<span class="math inline">\(w_j\)</span>，针对每个叶结点的得分增加L2平滑，目的也是为了避免过拟合</p>
+<p>假设弱学习器是<strong>决策树</strong>下面给出了xgb基于正则项的求解方式</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/22.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/22.png" width="634" /></p>
+<p>从而，加了正则项的目标函数里就出现了两种累加</p>
+<ul>
+<li><p>一种是<span class="math inline">\(i - &gt; n\)</span>（样本数）</p></li>
+<li><p>一种是<span class="math inline">\(j -&gt; T\)</span>（叶子节点数）</p></li>
+</ul>
+<p>一般来说，目标函数都包括两项损失函数和正则项
+<span class="math inline">\(\operatorname{Obj}(\Theta)=L(\Theta)+\Omega(\Theta)\)</span></p>
+<ul>
+<li>损失函数(误差函数)是为了说明模型拟合数据集的效果</li>
+<li>正则项是为了惩罚模型的复杂度</li>
+</ul>
+<blockquote>
+<p>误差函数鼓励我们的模型尽量去拟合训练数据，使得最后的模型会有比较少的bias。而正则化项则鼓励更加简单的模型。因为当模型简单之后，有限数据拟合出来结果的随机性比较小，不容易过拟合，使得最后模型的预测更加稳定</p>
+</blockquote>
+<p><strong>xgboost的原始论文中给出了两种分裂节点的方法</strong></p>
+</div>
+<div id="枚举所有不同树结构的贪心法" class="section level2">
+<h2><span class="header-section-number">11.4</span> 枚举所有不同树结构的贪心法</h2>
+<p>目标函数的最终定义是当我们指定一个树的结构的时候，我们在目标上面最多减少多少。我们可以把它叫做结构分数(structure score)</p>
+<p>不断地枚举不同树的结构，利用这个打分函数来寻找出一个最优结构的树，加入到我们的模型中，再重复这样的操作。不过枚举所有树结构这个操作不太可行，所以常用的方法是贪心法，每一次尝试去对已有的叶子加入一个分割。对于一个具体的分割方案，我们可以获得的增益可以由如下公式计算。</p>
+<p>在GBDT里面，我们是直接拟合的CART回归树，所以树节点分裂使用的是均方误差。XGBoost这里不使用均方误差，而是使用贪心法，即每次分裂都期望最小化我们的损失函数的误差</p>
+<p><span class="math display">\[\begin{aligned} \hat{y}_{i}^{(0)} &amp;=0 \\ \hat{y}_{i}^{(1)} &amp;=f_{1}\left(x_{i}\right)=\hat{y}_{i}^{(0)}+f_{1}\left(x_{i}\right) \\ \hat{y}_{i}^{(2)} &amp;=f_{1}\left(x_{i}\right)+f_{2}\left(x_{i}\right)=\hat{y}_{i}^{(1)}+f_{2}\left(x_{i}\right) \\ &amp; \cdots \\ \hat{y}_{i}^{(t)} &amp;=\sum_{k=1}^{t} f_{k}\left(x_{i}\right)=\hat{y}_{i}^{(t-1)}+f_{t}\left(x_{i}\right) \end{aligned}\]</span></p>
+<p>因此在训练的第<span class="math inline">\(t\)</span>步<span class="math inline">\(\hat{y}_{i}^{(t-1)}\)</span>是已知对的，就是找到一个$f_{t}(x_{i}) $使得目标函数更加优化的更快。</p>
+<p><strong>贪心算法的流程</strong></p>
+<ul>
+<li><p>从深度为0的树开始，对每个叶节点<strong>枚举所有的可用特征</strong>；</p></li>
+<li><p>针对每个特征，把属于该节点的训练样本根据该特征值进行升序排列，通过线性扫描的方式来决定该特征的最佳分裂点，并记录该特征的分裂收益；</p></li>
+<li><p>选择收益最大的特征作为分裂特征，用该特征的最佳分裂点作为分裂位置，在该节点上分裂出左右两个新的叶节点，并为每个新节点关联对应的样本集回到第 1 步，递归执行到满足特定条件为止</p></li>
+</ul>
+<p><strong>计算每个特征的收益</strong></p>
+<p>那么如何计算上面的收益呢，很简单，仍然紧扣目标函数就可以了。假设我们在某一节点上二分裂成两个节点，分别是<strong>左（L）右（R）</strong>，则分列前的目标函数是:
+<span class="math display">\[-\frac{1}{2}\left[\frac{\left(G_{L}+G_{R}\right)^{2}}{H_{L}+H_{R}+\lambda}\right]+\gamma\]</span>
+分裂后
+<span class="math display">\[-\frac{1}{2}\left[\frac{G_{L}^{2}}{H_{L}+\lambda}+\frac{G_{R}^{2}}{H_{R}+\lambda}\right]+2\gamma\]</span>
+则对于目标函数来说，分裂后的收益是（这里假设是最小化目标函数，所以用分裂前-分裂后）
+<span class="math display">\[Gain =\frac{1}{2}\left[\frac{G_{L}^{2}}{H_{L}+\lambda}+\frac{G_{R}^{2}}{H_{R}+\lambda}-\frac{\left(G_{L}+G_{R}\right)^{2}}{H_{L}+H_{R}+\lambda}\right]-\gamma\]</span></p>
+<p>如果增益Gain&gt;0，即分裂为两个叶子节点后，目标函数下降了，那么我们会考虑此次分裂的结果。</p>
+<p><strong>高效的枚举</strong>
+我们可以发现对于所有的分裂点，我们只要做一遍从左到右的扫描就可以枚举出所有分割的梯度和<span class="math inline">\(G_{L}\)</span>和<span class="math inline">\(G_{R}\)</span>。然后用上面的公式计算每个分割方案的分数就可以了。</p>
+<p>对于每次扩展，我们还是要枚举所有可能的分割方案，如何高效地枚举所有的分割呢？我假设我们要枚举所有x &lt; a 这样的条件，对于某个特定的分割a我们要计算a左边和右边的导数和。</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/24.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/24.png" width="606" /></p>
+<p>可以发现对于所有的a，我们只要做一遍从左到右的扫描就可以枚举出所有分割的梯度和<span class="math inline">\(G_L\)</span>和<span class="math inline">\(G_R\)</span>。然后用上面的公式计算每个分割方案的分数就可以了。</p>
+<p>观察这个目标函数，大家会发现第二个值得注意的事情就是引入分割不一定会使得情况变好，因为我们有一个引入新叶子的惩罚项。优化这个目标对应了树的剪枝，当引入的分割带来的增益小于一个阀值的时候，我们可以剪掉这个分割。</p>
+<p>大家可以发现，当我们正式地推导目标的时候，像计算分数和剪枝这样的策略都会自然地出现，而不再是一种因为heuristic（启发式）而进行的操作了。</p>
+<p>感觉现在对阈值这个概念理解的更透彻了，其实就是指定一个临界值，方便剔除局部最优解</p>
+<p>但是，在一个结点分裂时，可能有很多个分裂点，每个分裂点都会产生一个增益，如何才能寻找到最优的分裂点呢？接下来会讲到。</p>
+</div>
+<div id="近似算法" class="section level2">
+<h2><span class="header-section-number">11.5</span> 近似算法</h2>
+<blockquote>
+<p>The exact greedy algorithm is very powerful since it enumerates over all possible splitting points greedily. However,it is impossible to efficiently do so when the data does not fit entirely into memory. Same problem also arises in the distributed setting. To support effective gradient tree boosting in these two settings, an approximate algorithm is needed.</p>
+</blockquote>
+<p>贪婪算法可以的到最优解，但当数据量太大时则无法读入内存进行计算，近似算法主要针对贪婪算法这一缺点给出了近似最优解。</p>
+<p><strong>对于每个特征，只考察分位点可以减少计算复杂度</strong>。</p>
+<blockquote>
+<p>To summarize, the algorithm first proposes candidate splitting points according to percentiles of feature distribution (a specific criteria will be given in Sec.The algorithm then maps the continuous features into buckets split by these candidate points, aggregates the statistics and finds the best solution among proposals based on the aggregated statistics.<span class="citation">(Chen and Guestrin <a href="#ref-DBLP:journals/corr/ChenG16" role="doc-biblioref">2016</a>)</span></p>
+</blockquote>
+<p>该算法会首先根据特征分布的分位数提出候选划分点，然后将连续型特征映射到由这些候选点划分的桶中，然后聚合统计信息找到所有区间的最佳分裂点。</p>
+<p>下图给出不同种分裂策略的 AUC 变换曲线，横坐标为迭代次数，纵坐标为测试集 AUC，<strong>eps 为近似算法的精度</strong>，其倒数为桶的数量。</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/25.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/25.png" width="317" /></p>
+<blockquote>
+<p>We find that the local proposal indeed requires fewer candidates. The global proposal can be as accurate as the local one given enough candidates</p>
+</blockquote>
+<p>在提出候选切分点时有两种策略：</p>
+<ul>
+<li>Global：学习每棵树前就提出候选切分点，并在每次分裂时都采用这种分割；</li>
+<li>Local：每次分裂前将重新提出候选切分点。</li>
+</ul>
+<p>直观上来看，Local 策略需要更多的计算步骤，而Global策略因为节点没有划分所以需要更多的候选点。我们可以看到 Global 策略在候选点数多时(eps小)可以和Local 策略在候选点少时（eps 大）具有相似的精度。此外我们还发现，在eps 取值合理的情况下，分位数策略可以获得与贪婪算法相同的精度。</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/26.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/26.png" width="446" /></p>
+<p>第一个 for 循环：对特征 k 根据该特征分布的分位数找到切割点的候选集合<span class="math inline">\(S_{k}=\left\{s_{k 1}, s_{k 2}, \dots, s_{k l}\right\}\)</span> 。XGBoost 支持 Global 策略和 Local 策略。</p>
+<p>第二个 for 循环：针对每个特征的候选集合，将样本映射到由该特征对应的候选点集构成的分桶区间中，即<span class="math inline">\(\boldsymbol{s}_{k, v} \geq x_{j k}&gt;s_{k, v-1}\)</span>，对每个桶统计 G,H 值，最后在这些统计量上寻找最佳分裂点。</p>
+<div id="选择分位点" class="section level3">
+<h3><span class="header-section-number">11.5.1</span> 选择分位点</h3>
+<p>事实上， XGBoost 不是简单地按照样本个数进行分位，而是以二阶导数值 <span class="math inline">\(h_i\)</span> 作为样本的权重进行划分，</p>
+<p>对于样本权值相同的数据集来说，找到候选分位点已经有了解决方案（GK 算法），但是当样本权值不一样时，该如何找到候选分位点呢？（作者给出了一个 Weighted Quantile Sketch 算法见paper</p>
+</div>
+</div>
+<div id="xgb缺失值的处理" class="section level2">
+<h2><span class="header-section-number">11.6</span> xgb缺失值的处理</h2>
+<div id="稀疏感知算法" class="section level3">
+<h3><span class="header-section-number">11.6.1</span> 稀疏感知算法</h3>
+<p>XGBoost 在构建树的节点过程中只考虑非缺失值的数据遍历，而为每个节点增加了一个缺省方向，当样本相应的特征值缺失时，可以被归类到缺省方向上，最优的缺省方向可以从数据中学到。至于如何学到缺省值的分支，其实很简单，<strong>分别枚举特征缺省的样本归为左右分支后的增益，选择增益最大的枚举项即为最优缺省方向</strong>。</p>
+<p>在构建树的过程中需要枚举特征缺失的样本，乍一看该算法的计算量增加了一倍，但其实该算法在构建树的过程中只考虑了特征未缺失的样本遍历，而特征值缺失的样本无需遍历只需直接分配到左右节点，故算法所需遍历的样本量减少，下图可以看到稀疏感知算法比 basic 算法速度快了超过 50 倍。</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/27.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/27.png" width="276" /></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/28.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/28.png" width="322" />
+算法伪代码</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/29.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/29.png" width="419" /></p>
+</div>
+</div>
+<div id="工程实现" class="section level2">
+<h2><span class="header-section-number">11.7</span> 工程实现</h2>
+<div id="column-block-for-parallel-learning" class="section level3">
+<h3><span class="header-section-number">11.7.1</span> Column Block for Parallel Learning</h3>
+<blockquote>
+<p>In order to reduce the cost of sorting, we propose to store the data in in-memory units,which we called block. Data in each block is stored in the compressed column (CSC) format, with each column sorted by the corresponding feature value. This input data layout only needs to be computed once before training, and can be reused in later iterations.<span class="citation">(Chen and Guestrin <a href="#ref-DBLP:journals/corr/ChenG16" role="doc-biblioref">2016</a>)</span></p>
+</blockquote>
+<p>我们知道，决策树的学习<strong>最耗时的一个步骤就是在每次寻找最佳分裂点是都需要对特征的值进行排序</strong>。</p>
+<p>而 XGBoost 在训练之前对根据特征对数据进行了排序，然后保存到块结构中，并在每个块结构中都采用了稀疏矩阵存储格式（Compressed Sparse Columns Format，CSC）进行存储，后面的训练过程中会重复地使用块结构，可以大大减小计算量。</p>
+<p>每一个块结构包括一个或多个已经排序好的特征；
+缺失特征值将不进行排序；
+每个特征会存储指向样本梯度统计值的索引，方便计算一阶导和二阶导数值；</p>
+<p>这种块结构存储的特征之间相互独立，方便计算机进行并行计算。在对节点进行分裂时需要选择增益最大的特征作为分裂，这时各个特征的增益计算可以同时进行，这也是 Xgboost 能够实现分布式或者多线程计算的原因。</p>
+<blockquote>
+<p>In the exact greedy algorithm, we store the entire dataset in a single block and run the split search algorithm by linearly scanning over the pre-sorted entries. We do the split finding of all leaves collectively, so one scan over the block will collect the statistics of the split candidates in all leaf branches. Fig. 6 shows how we transform a dataset into the format and find the optimal split using the block structure.<span class="citation">(Chen and Guestrin <a href="#ref-DBLP:journals/corr/ChenG16" role="doc-biblioref">2016</a>)</span></p>
+</blockquote>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./figs/30.png&quot;</span>)</a></code></pre></div>
+<p><img src="figs/30.png" width="906" /></p>
+<p>在贪婪算法中，将整个数据集存储在一个块中，并通过线性扫描预排序的条目来运行拆分搜索算法</p>
+<blockquote>
+<p>The block structure also helps when using the approximate algorithms. Multiple blocks can be used in this case,with each block corresponding to subset of rows in the dataset.Different blocks can be distributed across machines, or stored on disk in the out-of-core setting. Using the sorted structure, the quantile finding step becomes a linear scan over the sorted columns. This is especially valuable for local proposal algorithms, where candidates are generated frequently at each branch. The binary search in histogram aggregation also becomes a linear time merge style algorithm.Collecting statistics for each column can be parallelized,giving us a parallel algorithm for split finding.<span class="citation">(Chen and Guestrin <a href="#ref-DBLP:journals/corr/ChenG16" role="doc-biblioref">2016</a>)</span></p>
+</blockquote>
+<p>近似算法保存为多个块结构可以使用多个块，每个块对应于数据集中的行的子集。不同的块可以分布在计算机上，也可以以核外设置存储在磁盘上。使用排序的结构，分位数查找步骤变为对排序的列进行线性扫描。这对于本地投标算法特别有价值，因为本地投标算法会在每个分支频繁生成候选对象</p>
+</div>
+</div>
+<div id="缓存访问优化算法" class="section level2">
+<h2><span class="header-section-number">11.8</span> 缓存访问优化算法</h2>
+<p><strong>块结构的设计可以减少节点分裂时的计算量</strong>，但特征值通过索引访问样本梯度统计值的设计会导致访问操作的内存空间不连续，这样会造成缓存命中率低，从而影响到算法的效率。</p>
+<p>为了解决缓存命中率低的问题，XGBoost提出了缓存访问优化算法：为每个线程分配一个连续的缓存区，将需要的梯度信息存放在缓冲区中，这样就是实现了非连续空间到连续空间的转换，提高了算法效率。</p>
+<p>此外适当调整块大小，也可以有助于缓存优化。</p>
+<p>线程：
+进程：
+（1）以多进程形式，允许多个任务同时运行；
+（2）以多线程形式，允许单个任务分成不同的部分运行；
+（3）提供协调机制，一方面防止进程之间和线程之间产生冲突，另一方面允许进程之间和线程之间共享资源。<a href="https://www.cnblogs.com/dreamroute/p/5207813.html">cnblog</a></p>
+<blockquote>
+<p>进程就是包换上下文切换的程序执行时间总和 = CPU加载上下文+CPU执行+CPU保存上下文
+线程是什么呢？
+进程的颗粒度太大，每次都要有上下的调入，保存，调出。如果我们把进程比喻为一个运行在电脑上的软件，那么一个软件的执行不可能是一条逻辑执行的，必定有多个分支和多个程序段，就好比要实现程序A，实际分成a，b，c等多个块组合而成。那么这里具体的执行就可能变成：程序A得到CPU =》CPU加载上下文，开始执行程序A的a小段，然后执行A的b小段，然后再执行A的c小段，最后CPU保存A的上下文。
+这里a，b，c的执行是共享了A的上下文，CPU在执行的时候没有进行上下文切换的。这里的a，b，c就是线程，也就是说线程是共享了进程的上下文环境，的更为细小的CPU时间段。
+到此全文结束，再一个总结：
+进程和线程都是一个时间段的描述，是CPU工作时间段的描述，不过是颗粒大小不同。</p>
+</blockquote>
+</div>
+<div id="核外块计算" class="section level2">
+<h2><span class="header-section-number">11.9</span> “核外”块计算</h2>
+<p>这里我觉得理解一个大概就好，主要是提升速度的，对优化目标函数没有影响</p>
+<p>当数据量过大时无法将数据全部加载到内存中，只能先将无法加载到内存中的数据暂存到硬盘中，直到需要时再进行加载计算，而这种操作必然涉及到因内存与硬盘速度不同而造成的资源浪费和性能瓶颈。为了解决这个问题，XGBoost独立一个线程专门用于从硬盘读入数据，以实现处理数据和读入数据同时进行。</p>
+<p>此外，XGBoost 还用了两种方法来降低硬盘读写的开销：</p>
+<p>块压缩：对 Block 进行按列压缩，并在读取时进行解压；
+块拆分：将每个块存储到不同的磁盘中，从多个磁盘读取可以增加吞吐量。</p>
+</div>
+<div id="优点" class="section level2">
+<h2><span class="header-section-number">11.10</span> 优点</h2>
+<p><strong>精度更高</strong>：GBDT 只用到一阶泰勒展开，而XGBoost对损失函数进行了二阶泰勒展开。XGBoost 引入二阶导一方面是为了增加精度，另一方面也是为了能够自定义损失函数，二阶泰勒展开可以近似大量损失函数；
+<strong>灵活性更强</strong>：GBDT以CART作为基分类器，XGBoost不仅支持CART还支持线性分类器，（使用线性分类器的 XGBoost 相当于带L1和L2正则化项的逻辑斯蒂回归（分类问题）或者线性回归（回归问题））。此外，XGBoost 工具支持自定义损失函数，只需函数支持一阶和二阶求导；
+<strong>正则化</strong>：XGBoost 在目标函数中加入了正则项，用于控制模型的复杂度。正则项里包含了树的叶子节点个数、叶子节点权重的L2范式。正则项降低了模型的方差，使学习出来的模型更加简单，有助于防止过拟合；
+<strong>Shrinkage（缩减）</strong>：相当于学习速率。XGBoost在进行完一次迭代后，会将叶子节点的权重乘上该系数，主要是为了削弱每棵树的影响，让后面有更大的学习空间；
+<strong>列抽样</strong>：XGBoost 借鉴了随机森林的做法，支持列抽样，不仅能降低过拟合，还能减少计算；
+<strong>缺失值处理</strong>：XGBoost 采用的稀疏感知算法极大的加快了节点分裂的速度；
+可以并行化操作：块结构可以很好的支持并行计算。</p>
+</div>
+<div id="缺点" class="section level2">
+<h2><span class="header-section-number">11.11</span> 缺点</h2>
+<p>虽然利用预排序和近似算法可以降低寻找最佳分裂点的计算量，但在节点分裂过程中仍需要遍历数据集；
+预排序过程的空间复杂度过高，不仅需要存储特征值，还需要存储特征对应样本的梯度统计值的索引，相当于消耗了两倍的内存。</p>
+
+<div id="refs" class="references">
+<div id="ref-DBLP:journals/corr/ChenG16">
+<p>Chen, Tianqi, and Carlos Guestrin. 2016. “XGBoost: A Scalable Tree Boosting System.” <em>CoRR</em> abs/1603.02754. <a href="http://arxiv.org/abs/1603.02754">http://arxiv.org/abs/1603.02754</a>.</p>
+</div>
+</div>
+</div>
 </div>
             </section>
 

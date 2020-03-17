@@ -16,3 +16,23 @@
 
 
 从bias-variance角度看，boosting主要关注降低偏差，因此boosting能基于泛化性能相当弱的学习器构建出很强的集成
+
+Bagging + 决策树 = 随机森林
+AdaBoost + 决策树 = 提升树
+Gradient Boosting + 决策树 = GBDT
+
+总结一下bagging和boosting的区别与联系
+
+总体来说都是集成的思想
+不同的是bagging的多个学习器并行分类，最后采取投票原则，觉得决定分类
+boosting是一种串行的弱分类器训练，不断的训练被分错的样本，增加弱分类器个数，最后组成一个强分类器。
+不可以并行哦。
+
+## boosting与bagging的区别
+
+>所谓集成学习，是指构建多个分类器（弱分类器）对数据集进行预测，然后用某种策略将多个分类器预测的结果集成起来，作为最终预测结果。通俗比喻就是“三个臭皮匠赛过诸葛亮”，或一个公司董事会上的各董事投票决策，它要求每个弱分类器具备一定的“准确性”，分类器之间具备“差异性”。
+
+
+集成学习根据各个弱分类器之间有无依赖关系，分为Boosting和Bagging两大流派：
+Boosting流派，各分类器之间有依赖关系，必须串行，比如Adaboost、GBDT(Gradient Boosting Decision Tree)、Xgboost
+Bagging流派，各分类器之间没有依赖关系，可各自并行，比如随机森林（Random Forest）

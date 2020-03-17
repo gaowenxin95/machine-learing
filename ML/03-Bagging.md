@@ -15,7 +15,10 @@
 一般来说，集成学习的结果通过“投票产生”及少数服从多数。个体的学习器要有一定的”准确性“即不能太坏，并且具有一定的多样性，即学习器之间具有差异性。但是个体学习器的“准确性”和“多样性”本身就存在冲突
 >准确性很高之后要增加多样性就要牺牲准确性，事实上如何产生“好而不同”的个体学习器，正是集成学学习研究的核心。
 
+bagging对于弱学习器没有限制，这和Adaboost一样。但是最常用的一般也是决策树和神经网络
+
 ## 自助采样
+booststrap
 
 有放回的随机，采样，使得下次采样时该样本仍有可能被选中。
 [csdn](https://blog.csdn.net/bqw18744018044/article/details/81024520)
@@ -80,6 +83,17 @@ Bagging又叫自助聚集，是一种根据均匀概率分布从数据中重复�
 每个自助样本集都和原数据一样大
 有放回抽样，一些样本可能在同一训练集中出现多次，一些可能被忽略。
 [csdn](https://blog.csdn.net/github_35965351/article/details/61193516)
+
+周志华的西瓜书是有这部分的
+
+
+```r
+knitr::include_graphics("./figs/18.png")
+```
+
+<img src="./figs/18.png" width="515" />
+
+
 
 ## 评价
 Bagging通过降低基分类器的方差，改善了泛化误差
@@ -194,6 +208,8 @@ print('Test set accuracy: {:.3f}, OOB accuracy: {:.3f}'.format(acc_test, acc_oob
 
 - 个体学习器间存在强依赖关系，必须串行生成的序列化方法
 
+后面弱分类器的训练是依赖于强分类器的
+
   - boosting
   
 - 个体学习器之间不存在强依赖关系，可同时生成的并行化方法
@@ -201,6 +217,8 @@ print('Test set accuracy: {:.3f}, OOB accuracy: {:.3f}'.format(acc_test, acc_oob
   - bagging和随机森林
   
   >从bias-variance角度讲，bagging主要关注降低方差，因为它不在剪枝决策树，神经网络等易受样本扰动的学习器上效用更为明显。
+  
+  这句不太严谨
   
 ## RF vs Bagging
 
